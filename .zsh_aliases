@@ -9,7 +9,8 @@ alias md='_makedir'
 alias deldir='_deldir'
 alias src='source $HOME/.zshrc'
 alias untar='tar -zxvf "$1"'
-alias vc='code .'
+alias vc.='code .'
+alias vc='code "$1"'
 
 # git
 alias gadd='git add .'
@@ -47,6 +48,7 @@ alias dpsa='docker ps -a'
 alias dsp='docker system prune --all'
 alias dv='docker volume ls'
 alias dvp='docker volume prune -f'
+alias dx='docker exec -it'
 alias dpostgresql='docker run -d --name postgresql \
   -p 5432:5432 \
   -v postgres_data:/bitnami/postgresql \
