@@ -1,0 +1,48 @@
+_deldir() {
+    rm -rf "$1" && echo "Directory $1 deleted.";
+}
+
+# File/Folder view switching list or grid based file count
+# Hardcode the limit to 10 file & folder
+# <=10 show as a list, >10 show as grid
+_dynamic_view() {
+    local dir_path=${1:-.}  #-- use the provided directory path, or default to the current directory
+    local item_count
+
+    #-- check if the directory exists
+    if [[ ! -d "$dir_path" ]]; then
+        echo "Error: '$dir_path' is not a valid directory."
+        return 1
+    fi
+
+    #-- get the first 11 items and count them
+    item_count=$(find "$dir_path" -maxdepth 1 -mindepth 1 | head -n 11 | wc -l)
+
+    if (( item_count < 10 )); then
+        eza -aahlom --icons --color=auto --sort=Name --group-directories-first --color-scale=all "$dir_path" # List
+    else
+        eza -aahloGm --icons --color=auto --sort=Name --group-directories-first --color-scale=all "$dir_path" # Grid
+    fi
+}
+
+_fzf_git_branch() {
+    git branch --all | fzf --preview="git log --oneline --graph {}";
+}
+
+_git_push_new() {
+  if [ -z "$1" ]; then
+    echo "Usage: gitpushnew <github-repo-url>";
+    return 1;
+  fi;
+  git init &&
+  git add . &&
+  git commit -m "Initial commit" &&
+  git branch -M main &&
+  git remote add origin "$1" &&
+  git pull origin main &&
+  git push -u origin main;
+}
+
+_makedir() {
+    mkdir -p "$1" && cd "$1";
+}
