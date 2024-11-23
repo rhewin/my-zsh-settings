@@ -1,5 +1,42 @@
+_clearfile() {
+    echo "Are you sure you want to clear $1? (y/n)"
+    read choice
+    if [[ "$choice" == "y" ]]; then
+        sudo truncate -s 0 "$1"
+        echo "File $1 cleared."
+    else
+        echo "Aborted."
+    fi
+}
+
 _deldir() {
-    rm -rf "$1" && echo "Directory $1 deleted.";
+    #-- check if a directory is provided
+    if [[ -z "$1" ]]; then
+        echo "Usage: deldir <directory>"
+        return 1
+    fi
+
+    #-- check if the directory exists
+    if [[ ! -d "$1" ]]; then
+        echo "Error: Directory '$1' does not exist."
+        return 1
+    fi
+
+    #-- confirm deletion
+    echo -n "Are you sure you want to delete the directory '$1'? (y/N): " 
+    read confirm
+    case "$confirm" in
+        [yY][eE][sS]|[yY])  # Accept 'yes', 'Yes', 'Y', 'y'
+            rm -r "$1" && echo "Directory '$1' has been deleted."
+            ;;
+        *)
+            echo "Deletion canceled."
+            ;;
+    esac
+}
+
+_delfile() {
+    rm -i "$1" && echo "File $1 deleted.";
 }
 
 # File/Folder view switching list or grid based file count
@@ -43,6 +80,26 @@ _git_push_new() {
   git push -u origin main;
 }
 
+_init_vite() {
+  #-- set the folder name to the first parameter or the current directory if not provided
+  local folder=${1:-.}
+
+  #-- set the template to the second parameter or default to 'vue-ts'
+  local template=${2:-vue-ts}
+
+  npm create vite@latest "$folder" -- --template "$template"
+}
+
 _makedir() {
     mkdir -p "$1" && cd "$1";
+}
+
+_versions() {
+    echo "Bun: $(bun -v)"
+    echo "Go: $(go version)"
+    echo "NVM: $(nvm -v)"
+    echo "NPM: $(npm -v)"
+    echo "Node.js: $(node -v)"
+    echo "Python: $(python3 --version)"
+    echo "Redis: $(redis-cli --version)"
 }

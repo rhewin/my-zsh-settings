@@ -1,23 +1,29 @@
 alias ..='cd ..'
 alias c='clear && ll'
+alias clfile='_clearfile'
+alias deldir='_deldir'
+alias delfile='_delfile'
 alias h='history -20'
 alias hgrep='history | grep $1'
 alias home='clear && cd $HOME'
 alias proj='cd $HOME/projects'
 alias ll='_dynamic_view'
 alias md='_makedir'
-alias deldir='_deldir'
 alias src='source $HOME/.zshrc'
+alias t='tail -f'
+alias tsys='tail -f /var/log/syslog'
 alias untar='tar -zxvf "$1"'
+alias ver='_versions'
 alias vc.='code .'
 alias vc='code "$1"'
+alias wslupd='sudo apt update && sudo apt upgrade -y'
 
 # git
 alias gadd='git add .'
 alias gb='git branch'
 alias gba='_fzf_git_branch'
 alias gco='git checkout'
-alias gcb='git checkout -b "$1" "$2"'
+alias gcb='git checkout -b'
 alias gcm='git commit -m'
 alias gd='git diff'
 alias gl='git log --oneline'
@@ -120,3 +126,12 @@ alias pig='pi -g'
 alias pid='pnpm i -D'
 alias pigd='pi -gD'
 alias pcl='ncl'
+
+# redis
+alias rserver="redis-server"
+alias ron="brew services start redis"
+alias roff="brew services stop redis"
+alias rinfo="brew services info redis"
+
+# vite
+alias vinit='_init_vite'
