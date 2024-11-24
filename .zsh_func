@@ -102,4 +102,5 @@ _versions() {
     echo "Node.js: $(node -v)"
     echo "Python: $(python3 --version)"
     echo "Redis: $(redis-cli --version)"
+    echo "Ionic: $(ionic --version)"
 }
