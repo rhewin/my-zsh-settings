@@ -5,21 +5,27 @@ SAVEHIST=5000
 setopt APPEND_HISTORY INC_APPEND_HISTORY SHARE_HISTORY
 
 # Environment variables
-export CAPACITOR_ANDROID_STUDIO_PATH="/mnt/c/Program Files/Android/Android Studio/bin/studio64.exe"
+#export ANDROID_HOME="/mnt/c/Users/neohub/AppData/Local/Android/Sdk"
+#export CAPACITOR_ANDROID_STUDIO_PATH="/mnt/c/Program Files/Android/Android Studio/bin/studio64.exe"
 export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border"
 export FZF_DEFAULT_COMMAND="rg --files"
 export ENHANCD_FILTER="fzf --height=40% --layout=reverse --border --preview 'eza -aal --tree --level=2 {} 2>/dev/null || ls -l {}'"
 export ENHANCD_COMMAND="cd"
 export ENHANCD_HOOK_AFTER_CD="ll"
 export BREW_HOME="/home/linuxbrew/.linuxbrew"
-export ZPLUG_HOME="$BREW_HOME/opt/zplug"
+export JAVA_HOME="/usr/lib/jvm/java-21-openjdk-amd64"
+export ANDROID_SDK_ROOT="$HOME/android-sdk"
 export GOPATH="$HOME/go"
 export EZA_CONFIG_DIR="$HOME/.config/eza"
 export BUN_INSTALL="$HOME/.bun"
+export ZPLUG_HOME="$BREW_HOME/opt/zplug"
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 export PATH="$BREW_HOME/bin:$PATH"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="$BREW_HOME/opt/libpq/bin:$PATH"
+export PATH="$JAVA_HOME/bin:$PATH"
+#export PATH="$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$PATH"
+export PATH="$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$ANDROID_SDK_ROOT/platform-tools:$PATH"
 export NVM_DIR="$HOME/.nvm"
 
 [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
@@ -27,6 +33,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -f "$HOME/.zsh/.zsh_func" ] && source "$HOME/.zsh/.zsh_func"
 [ -f "$HOME/.zsh/.zsh_aliases" ] && source "$HOME/.zsh/.zsh_aliases"
 [ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
+[ -f "$HOME/.sdkman" ] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 [ -f "$BREW_HOME/etc/profile.d/autojump.sh" ] && source "$BREW_HOME/etc/profile.d/autojump.sh"
 
 # Autocompletion setup
@@ -65,3 +72,9 @@ if [[ ! -f ~/.zshrc.zwc || ~/.zshrc -nt ~/.zshrc.zwc ]]; then
 fi
 
 ll
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+export PATH="/home/neo/.config/herd-lite/bin:$PATH"
+export PHP_INI_SCAN_DIR="/home/neo/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"

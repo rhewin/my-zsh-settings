@@ -8,6 +8,7 @@ alias hgrep='history | grep $1'
 alias home='clear && cd $HOME'
 alias proj='cd $HOME/projects'
 alias ll='_dynamic_view'
+alias link='ln -s'
 alias md='_makedir'
 alias src='source $HOME/.zshrc'
 alias t='tail -f'
@@ -55,12 +56,8 @@ alias dsp='docker system prune --all'
 alias dv='docker volume ls'
 alias dvp='docker volume prune -f'
 alias dx='docker exec -it'
-alias dpostgresql='docker run -d --name postgresql \
-  -p 5432:5432 \
-  -v postgres_data:/bitnami/postgresql \
-  -e POSTGRESQL_USERNAME=postgres \
-  -e POSTGRESQL_PASSWORD=test1234 \
-  bitnami/postgresql:latest'
+alias dmysql='_docker_run_mysql'
+alias dpostgresql='_docker_run_postgresql'
 
 # npm
 alias n='npm'
@@ -135,3 +132,6 @@ alias rinfo="brew services info redis"
 
 # vite
 alias vinit='_init_vite'
+
+# laravel
+alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'

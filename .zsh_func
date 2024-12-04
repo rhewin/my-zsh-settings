@@ -10,9 +10,9 @@ _clearfile() {
 }
 
 _deldir() {
-    #-- check if a directory is provided
+    #-- check if param1 provided as a directory_name?
     if [[ -z "$1" ]]; then
-        echo "Usage: deldir <directory>"
+        echo "Usage: deldir <directory_name>"
         return 1
     fi
 
@@ -23,7 +23,7 @@ _deldir() {
     fi
 
     #-- confirm deletion
-    echo -n "Are you sure you want to delete the directory '$1'? (y/N): " 
+    echo -n "Are you sure you want to delete the directory '$1'? (y/N): "
     read confirm
     case "$confirm" in
         [yY][eE][sS]|[yY])  # Accept 'yes', 'Yes', 'Y', 'y'
@@ -39,7 +39,29 @@ _delfile() {
     rm -i "$1" && echo "File $1 deleted.";
 }
 
-# File/Folder view switching list or grid based file count
+_docker_run_mysql() {
+    #-- check if param1 provided as mysql_version?
+    if [[ -z "$1" ]]; then
+        echo "Usage: dmysql <mysql_version>"
+        echo "example: dmysql 8.0 | dmysql latest"
+        return 1
+    fi
+
+    docker run --name mysql-local -e MYSQL_ROOT_PASSWORD=root -e MYSQL_USER=localuser -e MYSQL_PASSWORD=test1234 -p 3306:3306 -d mysql:$1
+}
+
+_docker_run_postgresql() {
+    #-- check if param1 provided as postgresql_version?
+    if [[ -z "$1" ]]; then
+        echo "Usage: dpostgresql <postgresql_version>"
+        echo "example: dpostgresql 8.0 | dpostgresql latest"
+        return 1
+    fi
+
+    docker run --name postgresql-local -e POSTGRESQL_USERNAME=postgres -e POSTGRESQL_PASSWORD=test1234 -p 5432:5432 -v postgres_data:/bitnami/postgresql -d bitnami/postgresql:$1
+}
+
+# EZA: File/Folder view switching list or grid based file count
 # Hardcode the limit to 10 file & folder
 # <=10 show as a list, >10 show as grid
 _dynamic_view() {
@@ -96,11 +118,19 @@ _makedir() {
 
 _versions() {
     echo "Bun: $(bun -v)"
+    echo "Git: $(git -v)"
     echo "Go: $(go version)"
+    echo "Java: $(java --version)"
     echo "NVM: $(nvm -v)"
     echo "NPM: $(npm -v)"
     echo "Node.js: $(node -v)"
     echo "Python: $(python3 --version)"
     echo "Redis: $(redis-cli --version)"
+    echo "\n --- Tools needed for mobile development ---"
+    echo "Adb: $(adb --version) \n"
+    echo "Cocopods: $(pod --version)"
+    echo "Fastboot: $(fastboot --version) \n"
     echo "Ionic: $(ionic --version)"
+    echo "\n --- Tools needed for PHP ---"
+    echo "Composer: $(composer --version) \n"
 }
