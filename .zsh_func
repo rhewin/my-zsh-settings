@@ -1,3 +1,8 @@
+_alias_search() {
+    local selection=$(alias | fzf --preview "echo {}")
+    eval "$selection"
+}
+
 _clearfile() {
     echo "Are you sure you want to clear $1? (y/n)"
     read choice
@@ -134,3 +139,6 @@ _versions() {
     echo "\n --- Tools needed for PHP ---"
     echo "Composer: $(composer --version) \n"
 }
+
+zle -N _alias_search  # Register as a ZLE widget
+bindkey '^a' _alias_search  # Bind to Ctrl+A
