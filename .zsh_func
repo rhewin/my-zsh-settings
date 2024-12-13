@@ -93,6 +93,34 @@ _fzf_git_branch() {
     git branch --all | fzf --preview="git log --oneline --graph {}";
 }
 
+_gen() {
+    if [ $# -ne 2 ]; then
+        echo "Usage: gen <laravel|vite> <folder_name>";
+        return 1;
+    fi;
+
+    # Read parameters
+    TECH_TYPE=$1
+    FOLDER_NAME=$2
+
+    # Main logic using case statement
+    case "$TECH_TYPE" in
+    laravel)
+        echo "Initializing Laravel project in folder: $FOLDER_NAME"
+        laravel new "$FOLDER_NAME"
+        ;;
+    vite)
+        echo "Initializing Vite project in folder: $FOLDER_NAME"
+        npm create vite@latest "$FOLDER_NAME"
+        ;;
+    *)
+        echo "Error: Unsupported tech type '$TECH_TYPE'"
+        echo "Supported types are: laravel, vite"
+        return 1
+        ;;
+    esac
+}
+
 _git_push_new() {
   if [ -z "$1" ]; then
     echo "Usage: gitpushnew <github-repo-url>";
@@ -123,6 +151,7 @@ _makedir() {
 
 _versions() {
     echo "Bun: $(bun -v)"
+    echo "Express: $(express --version)"
     echo "Git: $(git -v)"
     echo "Go: $(go version)"
     echo "Java: $(java --version)"
@@ -131,6 +160,7 @@ _versions() {
     echo "Node.js: $(node -v)"
     echo "Python: $(python3 --version)"
     echo "Redis: $(redis-cli --version)"
+    echo "Rust: $(rustc --version)"
     echo "\n --- Tools needed for mobile development ---"
     echo "Adb: $(adb --version) \n"
     echo "Cocopods: $(pod --version)"
