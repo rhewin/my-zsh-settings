@@ -95,7 +95,7 @@ _fzf_git_branch() {
 
 _gen() {
     if [ $# -ne 2 ]; then
-        echo "Usage: gen <laravel|vite> <folder_name>";
+        echo "Usage: gen <laravel|vite|react> <folder_name>";
         return 1;
     fi;
 
@@ -112,6 +112,11 @@ _gen() {
     vite)
         echo "Initializing Vite project in folder: $FOLDER_NAME"
         npm create vite@latest "$FOLDER_NAME"
+        ;;
+    react)
+        echo "Initializing React Native project in folder: $FOLDER_NAME"
+        mkdir -p "$FOLDER_NAME" && cd "$FOLDER_NAME" || return 1
+        npx create-expo-app@latest .
         ;;
     *)
         echo "Error: Unsupported tech type '$TECH_TYPE'"
@@ -164,8 +169,8 @@ _versions() {
     echo "\n --- Tools needed for mobile development ---"
     echo "Adb: $(adb --version) \n"
     echo "Cocopods: $(pod --version)"
-    echo "Fastboot: $(fastboot --version) \n"
     echo "Ionic: $(ionic --version)"
+    echo "React Native: $(npm view react-native version)"
     echo "\n --- Tools needed for PHP ---"
     echo "Composer: $(composer --version) \n"
 }

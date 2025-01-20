@@ -14,11 +14,11 @@ alias md='_makedir'
 alias src='source $HOME/.zshrc'
 alias t='tail -f'
 alias tsys='tail -f /var/log/syslog'
-alias untar='tar -zxvf "$1"'
+alias untar='tar -zxvf'
 alias ver='_versions'
 alias vc.='code .'
 alias vc='code "$1"'
-alias wslupd='sudo apt update && sudo apt upgrade -y'
+alias wslupd='sudo apt update && sudo apt upgrade -y && brew update && brew upgrade'
 
 # git
 alias gadd='git add .'

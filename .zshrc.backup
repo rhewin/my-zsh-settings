@@ -5,7 +5,7 @@ SAVEHIST=5000
 setopt APPEND_HISTORY INC_APPEND_HISTORY SHARE_HISTORY
 
 # Environment variables
-#export ANDROID_HOME="/mnt/c/Users/neohub/AppData/Local/Android/Sdk"
+export ANDROID_HOME="/mnt/c/Users/neohub/AppData/Local/Android/Sdk"
 #export CAPACITOR_ANDROID_STUDIO_PATH="/mnt/c/Program Files/Android/Android Studio/bin/studio64.exe"
 export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border"
 export FZF_DEFAULT_COMMAND="rg --files"
@@ -20,7 +20,7 @@ export GONOSUMDB="bitbucket.org/*"
 export GOPRIVATE="bitbucket.org/*"
 export GOINSECURE="bitbucket.org/*"
 export GOPATH="$HOME/go"
-export ANDROID_SDK_ROOT="$HOME/android-sdk"
+# export ANDROID_SDK_ROOT="$HOME/android-sdk"
 export EZA_CONFIG_DIR="$HOME/.config/eza"
 export BUN_INSTALL="$HOME/.bun"
 export ZPLUG_HOME="$BREW_HOME/opt/zplug"
@@ -30,8 +30,8 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="$BREW_HOME/opt/libpq/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$JAVA_HOME/bin:$PATH"
-#export PATH="$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$PATH"
-export PATH="$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$ANDROID_SDK_ROOT/platform-tools:$PATH"
+export PATH="$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$PATH"
+# export PATH="$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$ANDROID_SDK_ROOT/platform-tools:$PATH"
 export NVM_DIR="$HOME/.nvm"
 
 [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
