@@ -15,10 +15,10 @@ export ENHANCD_HOOK_AFTER_CD="ll"
 export BREW_HOME="/home/linuxbrew/.linuxbrew"
 export JAVA_HOME="/usr/lib/jvm/java-21-openjdk-amd64"
 export GIT_SSH_COMMAND="ssh"
-export GONOPROXY="bitbucket.org/*"
-export GONOSUMDB="bitbucket.org/*"
-export GOPRIVATE="bitbucket.org/*"
 export GOINSECURE="bitbucket.org/*"
+export GOPRIVATE="github.com/*"
+export GONOSUMDB="github.com/*"
+export GONOPROXY="github.com/*"
 export GOPATH="$HOME/go"
 # export ANDROID_SDK_ROOT="$HOME/android-sdk"
 export EZA_CONFIG_DIR="$HOME/.config/eza"
@@ -84,8 +84,5 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 export PATH="/home/neo/.config/herd-lite/bin:$PATH"
 export PHP_INI_SCAN_DIR="/home/neo/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
-
-# bun completions
-[ -s "/home/neo/.bun/_bun" ] && source "/home/neo/.bun/_bun"
 
 PATH=~/.console-ninja/.bin:$PATH

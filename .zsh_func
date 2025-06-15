@@ -1,6 +1,6 @@
 _alias_search() {
     local selection=$(alias | fzf --preview "echo {}")
-    eval "$selection"
+    (eval "$selection")
 }
 
 _clearfile() {
@@ -137,7 +137,7 @@ _git_push_new() {
   git branch -M main &&
   git remote add origin "$1" &&
   git pull origin main &&
-  git push -u origin main;
+  git push -u origin main || echo "Push failed. Possibly due to conflicts or no upstream branch.";
 }
 
 _init_vite() {
@@ -155,24 +155,42 @@ _makedir() {
 }
 
 _versions() {
-    echo "Bun: $(bun -v)"
-    echo "Express: $(express --version)"
-    echo "Git: $(git -v)"
-    echo "Go: $(go version)"
-    echo "Java: $(java --version)"
-    echo "NVM: $(nvm -v)"
-    echo "NPM: $(npm -v)"
-    echo "Node.js: $(node -v)"
-    echo "Python: $(python3 --version)"
-    echo "Redis: $(redis-cli --version)"
-    echo "Rust: $(rustc --version)"
-    echo "\n --- Tools needed for mobile development ---"
-    echo "Adb: $(adb --version) \n"
-    echo "Cocopods: $(pod --version)"
-    echo "Ionic: $(ionic --version)"
-    echo "React Native: $(npm view react-native version)"
-    echo "\n --- Tools needed for PHP ---"
-    echo "Composer: $(composer --version) \n"
+    print_version() {
+        local name=$1
+        local cmd=$2
+        local version_output
+
+        if command -v ${cmd%% *} >/dev/null 2>&1; then
+            version_output=$(eval "$cmd" 2>/dev/null)
+            version_output=$(echo "$version_output" | head -n 1)
+            printf "%-15s: %s\n" "$name" "$version_output"
+        else
+            printf "%-15s: %s\n" "$name" "Not installed"
+        fi
+    }
+
+    echo "=== System & Development Tools ==="
+    print_version "Bun" "bun -v"
+    print_version "Express" "express --version"
+    print_version "Git" "git --version"
+    print_version "Go" "go version"
+    print_version "NVM" "nvm -v"
+    print_version "NPM" "npm -v"
+    print_version "Node.js" "node -v"
+    print_version "Python" "python3 --version"
+    print_version "Redis CLI" "redis-cli --version"
+    print_version "Rust" "rustc --version"
+
+    echo
+    echo "=== Tools for Mobile Development ==="
+    print_version "ADB" "adb version"
+    print_version "Cocoapods" "pod --version"
+    print_version "Ionic" "ionic --version"
+    print_version "React Native" "npm view react-native version"
+
+    echo
+    echo "=== PHP Development Tools ==="
+    print_version "Composer" "composer --version"
 }
 
 zle -N _alias_search  # Register as a ZLE widget
