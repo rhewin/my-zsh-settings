@@ -1,3 +1,4 @@
+# History options
 COMMAND_TIMEOUT=500
 HISTFILE=~/.zsh/.zsh_history
 HISTSIZE=5000
@@ -6,7 +7,6 @@ setopt APPEND_HISTORY INC_APPEND_HISTORY SHARE_HISTORY
 
 # Environment variables
 export ANDROID_HOME="/mnt/c/Users/neohub/AppData/Local/Android/Sdk"
-#export CAPACITOR_ANDROID_STUDIO_PATH="/mnt/c/Program Files/Android/Android Studio/bin/studio64.exe"
 export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border"
 export FZF_DEFAULT_COMMAND="rg --files"
 export ENHANCD_FILTER="fzf --height=40% --layout=reverse --border --preview 'eza -aal --tree --level=2 {} 2>/dev/null || ls -l {}'"
@@ -20,35 +20,47 @@ export GOPRIVATE="github.com/*"
 export GONOSUMDB="github.com/*"
 export GONOPROXY="github.com/*"
 export GOPATH="$HOME/go"
-# export ANDROID_SDK_ROOT="$HOME/android-sdk"
 export EZA_CONFIG_DIR="$HOME/.config/eza"
 export BUN_INSTALL="$HOME/.bun"
 export ZPLUG_HOME="$BREW_HOME/opt/zplug"
-export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
-export PATH="$BREW_HOME/bin:$PATH"
-export PATH="$BUN_INSTALL/bin:$PATH"
-export PATH="$BREW_HOME/opt/libpq/bin:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="$JAVA_HOME/bin:$PATH"
-export PATH="$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$PATH"
-# export PATH="$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$ANDROID_SDK_ROOT/platform-tools:$PATH"
 export NVM_DIR="$HOME/.nvm"
+export SDKMAN_DIR="$HOME/.sdkman"
+export PHP_INI_SCAN_DIR="$HOME/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
 
+# PATH setup
+path+=(
+  "$BREW_HOME/bin"
+  "$BUN_INSTALL/bin"
+  "$BREW_HOME/opt/libpq/bin"
+  "$HOME/.cargo/bin"
+  "$JAVA_HOME/bin"
+  "$ANDROID_HOME/emulator"
+  "$ANDROID_HOME/tools"
+  "$ANDROID_HOME/tools/bin"
+  "$ANDROID_HOME/platform-tools"
+  "$HOME/.config/herd-lite/bin"
+  "$GOPATH/bin"
+  "/usr/local/go/bin"
+  "$HOME/.console-ninja/.bin"
+)
+export PATH
+
+# Source external scripts
 [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
-[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+[ -s "$BUN_INSTALL/_bun" ] && source "$BUN_INSTALL/_bun"
 [ -f "$HOME/.zsh/.zsh_func" ] && source "$HOME/.zsh/.zsh_func"
 [ -f "$HOME/.zsh/.zsh_aliases" ] && source "$HOME/.zsh/.zsh_aliases"
 [ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
-[ -f "$HOME/.sdkman" ] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
 [ -f "$BREW_HOME/etc/profile.d/autojump.sh" ] && source "$BREW_HOME/etc/profile.d/autojump.sh"
 
 # Autocompletion setup
 autoload -Uz compinit && compinit -i
+fpath=(~/.zsh/completions $fpath)
 
 # Zplug Initialization
 if [ -f "$ZPLUG_HOME/init.zsh" ]; then
     source "$ZPLUG_HOME/init.zsh"
-    # Plugins list
     zplug "zsh-users/zsh-history-substring-search", defer:3
     zplug "zsh-users/zsh-autosuggestions", defer:3
     zplug "none9632/zsh-sudo", defer:3
@@ -58,7 +70,6 @@ if [ -f "$ZPLUG_HOME/init.zsh" ]; then
     zplug "b4b4r07/enhancd"
     zplug "akash329d/zsh-alias-finder"
 
-    # Install missing plugins if any
     if ! zplug check --verbose; then
         printf "Install? [y/N]: "
         if read -q; then
@@ -69,20 +80,15 @@ if [ -f "$ZPLUG_HOME/init.zsh" ]; then
     zplug load
 fi
 
-fpath=(~/.zsh/completions $fpath)
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+# Initialize Homebrew and Starship
+eval "$($BREW_HOME/bin/brew shellenv)"
 eval "$(starship init zsh)"
 
-if [[ ! -f ~/.zshrc.zwc || ~/.zshrc -nt ~/.zshrc.zwc ]]; then
+# Compile zshrc if needed
+if command -v zcompile &>/dev/null && [[ ! -f ~/.zshrc.zwc || ~/.zshrc -nt ~/.zshrc.zwc ]]; then
     zcompile ~/.zshrc
 fi
 
 ll
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-export PATH="/home/neo/.config/herd-lite/bin:$PATH"
-export PHP_INI_SCAN_DIR="/home/neo/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
-
-PATH=~/.console-ninja/.bin:$PATH
+# export ANTHROPIC_API_KEY=your_key_here
+# export GEMINI_API_KEY=your_key_here
