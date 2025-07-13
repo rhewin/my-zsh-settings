@@ -1,8 +1,14 @@
+# Interactive alias search using fzf
+# Input: None (displays all aliases for selection)
+# Output: Executes the selected alias command
 _alias_search() {
     local selection=$(alias | fzf --preview "echo {}")
     (eval "$selection")
 }
 
+# Safely clear/truncate a file with confirmation prompt
+# Input: $1 - file path to clear
+# Output: Clears the file content or aborts based on user confirmation
 _clearfile() {
     echo "Are you sure you want to clear $1? (y/n)"
     read choice
@@ -14,6 +20,9 @@ _clearfile() {
     fi
 }
 
+# Safely delete a directory with confirmation prompt
+# Input: $1 - directory name/path to delete
+# Output: Removes directory recursively or aborts based on user confirmation
 _deldir() {
     #-- check if param1 provided as a directory_name?
     if [[ -z "$1" ]]; then
@@ -40,10 +49,16 @@ _deldir() {
     esac
 }
 
+# Delete a file with interactive confirmation
+# Input: $1 - file path to delete
+# Output: Removes file with confirmation prompt
 _delfile() {
     rm -i "$1" && echo "File $1 deleted.";
 }
 
+# Run a MySQL Docker container with predefined settings
+# Input: $1 - MySQL version (e.g., '8.0', 'latest')
+# Output: Starts MySQL container named 'mysql-local' on port 3306
 _docker_run_mysql() {
     #-- check if param1 provided as mysql_version?
     if [[ -z "$1" ]]; then
@@ -55,6 +70,9 @@ _docker_run_mysql() {
     docker run --name mysql-local -e MYSQL_ROOT_PASSWORD=root -e MYSQL_USER=localuser -e MYSQL_PASSWORD=test1234 -p 3306:3306 -d mysql:$1
 }
 
+# Run a PostgreSQL Docker container with predefined settings
+# Input: $1 - PostgreSQL version (e.g., '13', 'latest')
+# Output: Starts PostgreSQL container named 'postgresql-local' on port 5432
 _docker_run_postgresql() {
     #-- check if param1 provided as postgresql_version?
     if [[ -z "$1" ]]; then
@@ -66,9 +84,9 @@ _docker_run_postgresql() {
     docker run --name postgresql-local -e POSTGRESQL_USERNAME=postgres -e POSTGRESQL_PASSWORD=test1234 -p 5432:5432 -v postgres_data:/bitnami/postgresql -d bitnami/postgresql:$1
 }
 
-# EZA: File/Folder view switching list or grid based file count
-# Hardcode the limit to 10 file & folder
-# <=10 show as a list, >10 show as grid
+# Dynamic file/folder view using eza - switches between list and grid based on item count
+# Input: $1 - directory path (optional, defaults to current directory)
+# Output: List view for <=10 items, grid view for >10 items
 _dynamic_view() {
     local dir_path=${1:-.}  #-- use the provided directory path, or default to the current directory
     local item_count
@@ -89,10 +107,16 @@ _dynamic_view() {
     fi
 }
 
+# Interactive git branch selector with preview using fzf
+# Input: None (shows all git branches)
+# Output: Displays branch list with git log preview for selection
 _fzf_git_branch() {
     git branch --all | fzf --preview="git log --oneline --graph {}";
 }
 
+# Generate new project scaffolding for various technologies
+# Input: $1 - technology type (laravel|vite|react), $2 - folder name
+# Output: Creates new project in specified folder with chosen technology
 _gen() {
     if [ $# -ne 2 ]; then
         echo "Usage: gen <laravel|vite|react> <folder_name>";
@@ -126,6 +150,9 @@ _gen() {
     esac
 }
 
+# Initialize git repository and push to new remote repository
+# Input: $1 - GitHub repository URL
+# Output: Initializes git, commits all files, and pushes to remote repository
 _git_push_new() {
   if [ -z "$1" ]; then
     echo "Usage: gitpushnew <github-repo-url>";
@@ -140,6 +167,9 @@ _git_push_new() {
   git push -u origin main || echo "Push failed. Possibly due to conflicts or no upstream branch.";
 }
 
+# Initialize a new Vite project with customizable template
+# Input: $1 - folder name (optional, defaults to current directory), $2 - template (optional, defaults to 'vue-ts')
+# Output: Creates new Vite project with specified template
 _init_vite() {
   #-- set the folder name to the first parameter or the current directory if not provided
   local folder=${1:-.}
@@ -150,10 +180,16 @@ _init_vite() {
   npm create vite@latest "$folder" -- --template "$template"
 }
 
+# Create directory and navigate into it
+# Input: $1 - directory name/path to create
+# Output: Creates directory and changes current working directory to it
 _makedir() {
     mkdir -p "$1" && cd "$1";
 }
 
+# Display version information for installed development tools and languages
+# Input: None
+# Output: Formatted list of installed tools with their versions or 'Not installed' status
 _versions() {
     print_version() {
         local name=$1
@@ -195,3 +231,15 @@ _versions() {
 
 zle -N _alias_search  # Register as a ZLE widget
 bindkey '^a' _alias_search  # Bind to Ctrl+A
+
+
+### The beginning of Claude Custom Functions ###
+# Execute Claude AI with shell context and custom task
+# Input: $* - task description to pass to Claude
+# Output: Runs Claude with shell context file reference and specified task
+function claude_cmd() {
+  export TASK="$*"
+  SHELL_CONTEXT="~/.zsh/.claude_context/shell_context.md"
+
+  claude "Use file as reference: $SHELL_CONTEXT, do: '$TASK'"
+}
