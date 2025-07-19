@@ -233,13 +233,34 @@ zle -N _alias_search  # Register as a ZLE widget
 bindkey '^a' _alias_search  # Bind to Ctrl+A
 
 
-### The beginning of Claude Custom Functions ###
+### The beginning of AI Custom Functions ###
 # Execute Claude AI with shell context and custom task
 # Input: $* - task description to pass to Claude
 # Output: Runs Claude with shell context file reference and specified task
-function claude_cmd() {
+claude_cmd() {
   export TASK="$*"
-  SHELL_CONTEXT="~/.zsh/.claude_context/shell_context.md"
+  CONTEXT="~/.zsh/.ai_context/shell_context.md"
 
-  claude "Use file as reference: $SHELL_CONTEXT, do: '$TASK'"
+  claude "Use file as reference: $CONTEXT, do: '$TASK'"
+}
+
+
+# Execute Claude AI with task for summarizing an article
+# Input: $* - task description to pass to Claude
+# Output: Runs Claude with shell context file reference and specified task
+claude_sums() {
+  export TASK="$*"
+  CONTEXT="~/.zsh/.ai_context/article_context.md"
+
+  claude "Use file as reference: $CONTEXT, do: '$TASK'"
+}
+
+# Execute Gemini AI with shell context and custom task
+# Input: $* - task description to pass to Gemini
+# Output: Runs Gemini with shell context file reference and specified task
+gemini_cmd() {
+  export TASK="$*"
+  CONTEXT="~/.zsh/.ai_context/shell_context.md"
+
+  gemini -p "Use file as reference: $CONTEXT, do: '$TASK'"
 }
