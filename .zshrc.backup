@@ -26,6 +26,8 @@ export ZPLUG_HOME="$BREW_HOME/opt/zplug"
 export NVM_DIR="$HOME/.nvm"
 export SDKMAN_DIR="$HOME/.sdkman"
 export PHP_INI_SCAN_DIR="$HOME/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
+# export ANTHROPIC_API_KEY=your_key_here
+# export GEMINI_API_KEY=your_key_here
 
 # PATH setup
 path+=(
@@ -45,18 +47,23 @@ path+=(
 )
 export PATH
 
-# Source external scripts
+# Source external packages
 [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
 [ -s "$BUN_INSTALL/_bun" ] && source "$BUN_INSTALL/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 [ -f "$HOME/.zsh/.zsh_func" ] && source "$HOME/.zsh/.zsh_func"
 [ -f "$HOME/.zsh/.zsh_aliases" ] && source "$HOME/.zsh/.zsh_aliases"
 [ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
-[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
+[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ] && alias sdk='unalias sdk; source "$SDKMAN_DIR/bin/sdkman-init.sh"; sdk'
 [ -f "$BREW_HOME/etc/profile.d/autojump.sh" ] && source "$BREW_HOME/etc/profile.d/autojump.sh"
 
 # Autocompletion setup
-autoload -Uz compinit && compinit -i
-fpath=(~/.zsh/completions $fpath)
+autoload -Uz compinit
+if [[ -n ${ZDOTDIR:-$HOME}/.zcompdump(#qN.mh+24) ]]; then
+    compinit -i
+else
+    compinit -C -i
+fi
 
 # Zplug Initialization
 if [ -f "$ZPLUG_HOME/init.zsh" ]; then
@@ -90,5 +97,3 @@ if command -v zcompile &>/dev/null && [[ ! -f ~/.zshrc.zwc || ~/.zshrc -nt ~/.zs
 fi
 
 ll
-# export ANTHROPIC_API_KEY=your_key_here
-# export GEMINI_API_KEY=your_key_here
