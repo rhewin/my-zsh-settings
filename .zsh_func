@@ -237,7 +237,7 @@ bindkey '^a' _alias_search  # Bind to Ctrl+A
 # Execute Claude AI with shell context and custom task
 # Input: $* - task description to pass to Claude
 # Output: Runs Claude with shell context file reference and specified task
-claude_cmd() {
+claude_sh() {
   export TASK="$*"
   CONTEXT="~/.zsh/.ai_context/shell_context.md"
 
@@ -258,7 +258,7 @@ claude_sums() {
 # Execute Gemini AI with shell context and custom task
 # Input: $* - task description to pass to Gemini
 # Output: Runs Gemini with shell context file reference and specified task
-gemini_cmd() {
+gemini_sh() {
   export TASK="$*"
   CONTEXT="~/.zsh/.ai_context/shell_context.md"
 
