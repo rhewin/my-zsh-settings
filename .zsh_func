@@ -215,6 +215,7 @@ _versions() {
     print_version "Node.js" "node -v"
     print_version "Python" "python3 --version"
     print_version "Redis CLI" "redis-cli --version"
+    print_version "Ruby" "ruby -v"
     print_version "Rust" "rustc --version"
 
     echo
@@ -227,6 +228,11 @@ _versions() {
     echo
     echo "=== PHP Development Tools ==="
     print_version "Composer" "composer --version"
+
+    echo
+    echo "=== AI CLI ==="
+    print_version "Claude" "claude --version"
+    print_version "Gemini" "gemini --v"
 }
 
 zle -N _alias_search  # Register as a ZLE widget
