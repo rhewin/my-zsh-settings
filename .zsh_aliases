@@ -12,6 +12,7 @@ alias proj='cd $HOME/projects'                       # Go to projects directory
 alias ll='_dynamic_view'                             # List files with dynamic view (custom function)
 alias link='ln -s'                                   # Create symbolic link
 alias md='_makedir'                                  # Make directory (custom function)
+alias note='notepad.exe'                             # Open file in Notepad (app spesific OS)
 alias src='source $HOME/.zshrc'                      # Reload zsh configuration
 alias t='tail -f'                                    # Follow file contents (tail -f)
 alias tsys='tail -f /var/log/syslog'                 # Follow system log file
