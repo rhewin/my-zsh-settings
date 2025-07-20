@@ -8,6 +8,7 @@ alias gen='_gen'                                     # Generate files/templates 
 alias h='history -20'                                # Show last 20 commands from history
 alias hgrep='history | grep $1'                      # Search command history for pattern
 alias home='clear && cd $HOME'                       # Clear terminal and go to home directory
+alias dock='cd $HOME/.zsh/docker_local'              # Go to local docker directory
 alias proj='cd $HOME/projects'                       # Go to projects directory
 alias ll='_dynamic_view'                             # List files with dynamic view (custom function)
 alias link='ln -s'                                   # Create symbolic link
