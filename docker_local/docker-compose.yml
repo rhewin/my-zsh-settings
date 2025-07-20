@@ -29,7 +29,43 @@ services:
     volumes:
       - mongo_data:/data/db
 
+  rabbitmq:
+    image: rabbitmq:3.12-management
+    container_name: local-rabbitmq
+    env_file:
+      - ./services/rabbitmq/.env
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    volumes:
+      - rabbit_data:/var/lib/rabbitmq
+
+  adminer:
+    image: adminer:4.8.1
+    container_name: local-adminer
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./services/adminer/adminer.css:/var/www/html/adminer.css:ro
+    depends_on:
+      - mysql
+      - postgresql
+      - mongodb
+
+  mailpit:
+    image: axllent/mailpit:latest
+    container_name: local-mailpit
+    env_file:
+      - ./services/mailpit/.env
+    ports:
+      - "8025:8025"
+      - "1025:1025"
+    volumes:
+      - mailpit_data:/data
+
 volumes:
   mysql_data:
   pg_data:
   mongo_data:
+  rabbit_data:
+  mailpit_data:
