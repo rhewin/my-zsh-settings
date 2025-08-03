@@ -27,8 +27,8 @@ export MYSQL_PATH="$BREW_HOME/opt/mysql-client"
 export NVM_DIR="$HOME/.nvm"
 export SDKMAN_DIR="$HOME/.sdkman"
 export PHP_INI_SCAN_DIR="$HOME/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
-# export ANTHROPIC_API_KEY=your_key_here
-# export GEMINI_API_KEY=your_key_here
+# # export ANTHROPIC_API_KEY=your_key_here
+# # export GEMINI_API_KEY=your_key_here
 
 # PATH setup
 path+=(
