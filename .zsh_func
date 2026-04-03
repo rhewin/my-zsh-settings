@@ -370,9 +370,9 @@ _versions() {
         fi
     }
 
-    echo "=== System & Development Tools ==="
+    echo "=== Development Tools ==="
+    print_version "Angular" "ng --version"
     print_version "Bun" "bun -v"
-    print_version "Express" "express --version"
     print_version "Git" "git --version"
     print_version "Go" "go version"
     print_version "NVM" "nvm -v"
@@ -382,7 +382,6 @@ _versions() {
     print_version "Redis CLI" "redis-cli --version"
     print_version "Ruby" "ruby -v"
     print_version "Rust" "rustc --version"
-    print_version "UV" "uv --version"
 
     echo
     echo "=== Tools for Mobile Development ==="
@@ -399,7 +398,17 @@ _versions() {
     echo "=== AI CLI ==="
     print_version "Claude" "claude --version"
     print_version "Gemini" "gemini --v"
+    print_version "Ollama" "ollama --version"
     print_version "AI Chat" "aichat --version"
+
+    echo
+    echo "=== System & Others ==="
+    print_version "Starship" "starship --version"
+    print_version "Zinit" "zinit version"
+    print_version "Btop" "btop --version"
+    print_version "Fzf" "fzf --version"
+    print_version "Navi" "navi --version"
+    print_version "UV" "uv --version"
 }
 
 zle -N _alias_search  # Register as a ZLE widget
