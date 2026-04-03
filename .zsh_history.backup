@@ -1,0 +1,5767 @@
+go run ./app/.
+c
+go run ./app/.
+claude
+fg
+fg
+ll
+vc test-encrypt-pgp --profile="go"
+c
+go run .
+go run .
+c
+go run .
+c
+go run ./app/.
+fg
+gst
+git restore app/pkg/vcc/usecase/vcc_mle_billing_statement_generator_impl.go
+go run ./app/.
+c
+go run .
+go run .
+vc paper-mars --profile="go"
+go run .
+gco feature/sprint-2.38/cu-86czun005-disbursement-adjustment-settlement
+go mod tidy
+go mod vendor
+go run ./cmd/http/.
+cd ..
+vc doku_h2h
+node .
+node .
+node .
+node .
+node .
+node .
+node .
+cd paper
+vc paper-mars --profile="go"
+gpull
+go run ./cmd/http/.
+vc paper-mars --profile="go"
+cd paper
+vc paper-mars --profile="go"
+ll
+cd ..
+exp
+cd paper
+vc test-encrypt-pgp --profile="go"
+go run .
+go run .
+go run .
+vc paper-bank-account --profile="go"
+gco feature/fixing-get-balance-cimb
+git stash
+gco feature/fixing-get-balance-cimb
+c
+go mod tidy
+go mod vendor
+go run ./cmd/http/.
+go run ./cmd/http/.
+git stash
+gco feature/fs-2.38/CU-86czv7d9c-sub-account-balance
+go mod tidy
+go mod vendor
+go run ./app/.
+curl --location 'bank.stag-v2.paper.id/api/v1/otp/request' \\
+--header 'user_id: 0d71456c-936d-4a61-9f55-4cecc367745f' \\
+--header 'company_id: f3ed1703-d3e4-432a-8157-dd0770f9388d' \\
+--header 'Content-Type: application/json' \\
+--header 'Authorization: Basic cGFwZXJpZDpwNHAzcjFuZDBuM3MxNA==' \\
+--data '{\
+    "product": "phc_debit_withdrawal",\
+    "object_name": "corporate_card_configuration",\
+    "object_field_name": "lms_loan_account_id",\
+    "object_id": "019883cd-b107-79c0-8597-51cc957a64f1",\
+    "otp_delivery_method": "sms",\
+    "otp_recipient": "6287200090001"\
+}'
+curl --location 'bank.stag-v2.paper.id/api/v1/otp/verify' \\
+--header 'user_id: 0d71456c-936d-4a61-9f55-4cecc367745f' \\
+--header 'company_id: f3ed1703-d3e4-432a-8157-dd0770f9388d' \\
+--header 'Content-Type: application/json' \\
+--header 'Authorization: Basic cGFwZXJpZDpwNHAzcjFuZDBuM3MxNA==' \\
+--data '{\
+    "product": "phc_debit_withdrawal",\
+    "object_name": "corporate_card_configuration",\
+    "object_field_name": "lms_loan_account_id",\
+    "object_id": "019883cd-b107-79c0-8597-51cc957a64f1",\
+    "otp_code": "072017",\
+    "request_id": "08a7648f-ad28-4876-bfef-488b9025dc67"\
+}'
+ curl --location 'bank.stag-v2.paper.id/api/v1/otp/request' \\
+--header 'user_id: 0d71456c-936d-4a61-9f55-4cecc367745f' \\
+--header 'company_id: f3ed1703-d3e4-432a-8157-dd0770f9388d' \\
+--header 'Content-Type: application/json' \\
+--header 'Authorization: Basic cGFwZXJpZDpwNHAzcjFuZDBuM3MxNA==' \\
+--data '{\
+    "product": "phc_debit_withdrawal",\
+    "object_name": "corporate_card_configuration",\
+    "object_field_name": "lms_loan_account_id",\
+    "object_id": "019883cd-b107-79c0-8597-51cc957a64f1",\
+    "otp_delivery_method": "sms",\
+    "otp_recipient": "6288224740940"\
+}'
+curl --location 'bank.stag-v2.paper.id/api/v1/otp/verify' \\
+--header 'user_id: 0d71456c-936d-4a61-9f55-4cecc367745f' \\
+--header 'company_id: f3ed1703-d3e4-432a-8157-dd0770f9388d' \\
+--header 'Content-Type: application/json' \\
+--header 'Authorization: Basic cGFwZXJpZDpwNHAzcjFuZDBuM3MxNA==' \\
+--data '{\
+    "product": "phc_debit_withdrawal",\
+    "object_name": "corporate_card_configuration",\
+    "object_field_name": "lms_loan_account_id",\
+    "object_id": "019883cd-b107-79c0-8597-51cc957a64f1",\
+    "otp_code": "855438",\
+    "request_id": "08a7648f-ad28-4876-bfef-488b9025dc67"\
+}'
+curl --location 'bank.stag-v2.paper.id/api/v1/otp/verify' \\
+--header 'user_id: 0d71456c-936d-4a61-9f55-4cecc367745f' \\
+--header 'company_id: f3ed1703-d3e4-432a-8157-dd0770f9388d' \\
+--header 'Content-Type: application/json' \\
+--header 'Authorization: Basic cGFwZXJpZDpwNHAzcjFuZDBuM3MxNA==' \\
+--data '{\
+    "product": "phc_debit_withdrawal",\
+    "object_name": "corporate_card_configuration",\
+    "object_field_name": "lms_loan_account_id",\
+    "object_id": "019883cd-b107-79c0-8597-51cc957a64f1",\
+    "otp_code": "855438",\
+    "request_id": "08a7648f-ad28-4876-bfef-488b9025dc67"\
+}'
+go run ./app/.
+go run ./app/.
+go run ./app/.
+go run ./app/.
+c
+go run ./app/.
+ll
+cd paper
+vc paper-mars --profile="go"
+vc paper-bank-account --profile="go"
+curl --location 'https://bank.paper.id/api/v1/cards/summary' --header 'company_id: 10025d8f-c030-4c59-86b0-77753e37ffff' --header 'user_id: test' --header 'Authorization: Basic cllPRENPbkN0ak5SbUFrYkx3Y05LYXI4QmNHSWRNOjR4YXViMW5RekJYczl4cHBXdTh2WXN6c2x4cEFaag=='
+curl --location 'https://bank.paper.id/api/v1/cards/summary' --header 'company_id: 10025d8f-c030-4c59-86b0-77753e37ffff' --header 'user_id: test' --header 'Authorization: Basic cllPRENPbkN0ak5SbUFrYkx3Y05LYXI4QmNHSWRNOjR4YXViMW5RekJYczl4cHBXdTh2WXN6c2x4cEFaag=='
+curl --location 'https://bank.paper.id/api/v1/cards/summary' --header 'company_id: 1f2c7c7a-d2a1-4030-9fc3-548867099472' --header 'user_id: test' --header 'Authorization: Basic cllPRENPbkN0ak5SbUFrYkx3Y05LYXI4QmNHSWRNOjR4YXViMW5RekJYczl4cHBXdTh2WXN6c2x4cEFaag=='
+curl --location 'https://bank.paper.id/api/v1/cards/summary' --header 'company_id: 2a25a092-822d-45d4-8b25-b3a07bcc2487' --header 'user_id: test' --header 'Authorization: Basic cllPRENPbkN0ak5SbUFrYkx3Y05LYXI4QmNHSWRNOjR4YXViMW5RekJYczl4cHBXdTh2WXN6c2x4cEFaag=='
+curl --location 'https://bank.paper.id/api/v1/cards/summary' --header 'company_id: 2da0245b-c8e2-4423-a831-79c954b10e6d' --header 'user_id: test' --header 'Authorization: Basic cllPRENPbkN0ak5SbUFrYkx3Y05LYXI4QmNHSWRNOjR4YXViMW5RekJYczl4cHBXdTh2WXN6c2x4cEFaag=='
+curl --location 'https://bank.paper.id/api/v1/cards/summary' --header 'company_id: 31539d5c-d72d-4601-86d2-2eb7c5bb5752' --header 'user_id: test' --header 'Authorization: Basic cllPRENPbkN0ak5SbUFrYkx3Y05LYXI4QmNHSWRNOjR4YXViMW5RekJYczl4cHBXdTh2WXN6c2x4cEFaag=='
+curl --location 'https://bank.paper.id/api/v1/cards/summary' --header 'company_id: 33b9c29b-76f2-4be4-b363-6915d203fbc6' --header 'user_id: test' --header 'Authorization: Basic cllPRENPbkN0ak5SbUFrYkx3Y05LYXI4QmNHSWRNOjR4YXViMW5RekJYczl4cHBXdTh2WXN6c2x4cEFaag=='
+curl --location 'https://bank.paper.id/api/v1/cards/summary' --header 'company_id: 5154b0ad-e7d9-4f0e-97b7-a22f9d954224' --header 'user_id: test' --header 'Authorization: Basic cllPRENPbkN0ak5SbUFrYkx3Y05LYXI4QmNHSWRNOjR4YXViMW5RekJYczl4cHBXdTh2WXN6c2x4cEFaag=='
+curl --location 'https://bank.paper.id/api/v1/cards/summary' --header 'company_id: 51ee2ea0-e534-44b8-b607-aaaff4b89280' --header 'user_id: test' --header 'Authorization: Basic cllPRENPbkN0ak5SbUFrYkx3Y05LYXI4QmNHSWRNOjR4YXViMW5RekJYczl4cHBXdTh2WXN6c2x4cEFaag=='
+curl --location 'https://bank.paper.id/api/v1/cards/summary' --header 'company_id: 7f656e80-420e-11e9-b600-db7ee567357e' --header 'user_id: test' --header 'Authorization: Basic cllPRENPbkN0ak5SbUFrYkx3Y05LYXI4QmNHSWRNOjR4YXViMW5RekJYczl4cHBXdTh2WXN6c2x4cEFaag=='
+curl --location 'https://bank.paper.id/api/v1/cards/summary' --header 'company_id: 80d67a54-b666-4fac-a298-acb65c150bdd' --header 'user_id: test' --header 'Authorization: Basic cllPRENPbkN0ak5SbUFrYkx3Y05LYXI4QmNHSWRNOjR4YXViMW5RekJYczl4cHBXdTh2WXN6c2x4cEFaag=='
+curl --location 'https://bank.paper.id/api/v1/cards/summary' --header 'company_id: cb86c880-37ff-4dfb-aa6c-222c97b1314f' --header 'user_id: test' --header 'Authorization: Basic cllPRENPbkN0ak5SbUFrYkx3Y05LYXI4QmNHSWRNOjR4YXViMW5RekJYczl4cHBXdTh2WXN6c2x4cEFaag=='
+curl --location 'https://bank.paper.id/api/v1/cards/summary' --header 'company_id: d08a962a-6f68-475d-8172-e1a81798d9a5' --header 'user_id: test' --header 'Authorization: Basic cllPRENPbkN0ak5SbUFrYkx3Y05LYXI4QmNHSWRNOjR4YXViMW5RekJYczl4cHBXdTh2WXN6c2x4cEFaag=='
+	curl --location 'https://bank.paper.id/api/v1/cards/summary' --header 'company_id: e603bf25-457a-4f75-a648-463440b0c5fd' --header 'user_id: test' --header 'Authorization: Basic cllPRENPbkN0ak5SbUFrYkx3Y05LYXI4QmNHSWRNOjR4YXViMW5RekJYczl4cHBXdTh2WXN6c2x4cEFaag=='
+curl --location 'https://bank.paper.id/api/v1/cards/summary' --header 'company_id: fb90fbfb-3676-4e22-9780-c3ce327a6760' --header 'user_id: test' --header 'Authorization: Basic cllPRENPbkN0ak5SbUFrYkx3Y05LYXI4QmNHSWRNOjR4YXViMW5RekJYczl4cHBXdTh2WXN6c2x4cEFaag=='
+cd paper
+vc documentation
+gco main
+gpull
+c
+gcb feature/fs-core/sprint-2.39-phc-privy
+vc paper-bank-account --profile="go"
+go run ./app/.
+exp
+c
+go run ./app/.
+c
+vc paper-mars --profile="go"
+c
+vc paper-mars --profile="go"
+c
+go run ./app/.
+go run ./app/.
+c
+go run ./app/.
+gco main
+git branch -d feature/fs-core/sprint-2.39-phc-privy
+gcb feature/fs-core/sprint-2.39-phc-privy main
+c
+c
+exp
+curl --location 'https://bank.paper.id/api/v1/cards/summary' --header 'company_id: 10025d8f-c030-4c59-86b0-77753e37ffff' --header 'user_id: test' --header 'Authorization: Basic cllPRENPbkN0ak5SbUFrYkx3Y05LYXI4QmNHSWRNOjR4YXViMW5RekJYczl4cHBXdTh2WXN6c2x4cEFaag=='
+curl --location 'https://bank.paper.id/api/v1/cards/summary' --header 'company_id: 10025d8f-c030-4c59-86b0-77753e37ffff' --header 'user_id: test' --header 'Authorization: Basic cllPRENPbkN0ak5SbUFrYkx3Y05LYXI4QmNHSWRNOjR4YXViMW5RekJYczl4cHBXdTh2WXN6c2x4cEFaag=='
+curl --location 'https://api.pivot-payment.com/v1/transfers' --header 'Content-Type: application/json' --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJiYWNrZW5kLXBvcnRhbCIsInN1YiI6IjQ2YTkxYjdjLTJhMzctNDhmMy1iODZjLWFhMjUzMTRhY2VhYSIsImV4cCI6MTc1NTA4MjkzMSwiY2xpZW50SWQiOiI0NmE5MWI3Yy0yYTM3LTQ4ZjMtYjg2Yy1hYTI1MzE0YWNlYWEiLCJtZXJjaGFudElkIjoiNDZhOTFiN2MtMmEzNy00OGYzLWI4NmMtYWEyNTMxNGFjZWFhIn0.H41uj51PIvg1kos4BkxABvJ--WHweaZmyIEqvEKDUOo' --data '{"referenceId": "Transfer-de2048f8-798c-496b-a4ed-5ee21ac8aba6", "recipientId": "32b33db5-af2a-4475-92db-2423076d64b2", "transferType": "DIRECT", "amount": 62563520.96, "remarks": "Transfer to Infra Digital Nusantara"}'
+curl --location 'https://bank.paper.id/api/v1/cards/summary' --header 'company_id: 1f2c7c7a-d2a1-4030-9fc3-548867099472' --header 'user_id: test' --header 'Authorization: Basic cllPRENPbkN0ak5SbUFrYkx3Y05LYXI4QmNHSWRNOjR4YXViMW5RekJYczl4cHBXdTh2WXN6c2x4cEFaag=='
+curl --location 'https://api.pivot-payment.com/v1/transfers' --header 'Content-Type: application/json' --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJiYWNrZW5kLXBvcnRhbCIsInN1YiI6IjQ2YTkxYjdjLTJhMzctNDhmMy1iODZjLWFhMjUzMTRhY2VhYSIsImV4cCI6MTc1NTA4MjkzMSwiY2xpZW50SWQiOiI0NmE5MWI3Yy0yYTM3LTQ4ZjMtYjg2Yy1hYTI1MzE0YWNlYWEiLCJtZXJjaGFudElkIjoiNDZhOTFiN2MtMmEzNy00OGYzLWI4NmMtYWEyNTMxNGFjZWFhIn0.H41uj51PIvg1kos4BkxABvJ--WHweaZmyIEqvEKDUOo' --data '{"referenceId": "Transfer-61a54efe-3199-4a89-8c93-ec9dc412f1ab", "recipientId": "ef10eab5-d590-4986-ba9c-4369da75b249", "transferType": "DIRECT", "amount": 10780577, "remarks": "Transfer to PT WIBAWA KARYA NARADHIPTA"}'
+curl --location 'https://bank.paper.id/api/v1/cards/summary' --header 'company_id: 33b9c29b-76f2-4be4-b363-6915d203fbc6' --header 'user_id: test' --header 'Authorization: Basic cllPRENPbkN0ak5SbUFrYkx3Y05LYXI4QmNHSWRNOjR4YXViMW5RekJYczl4cHBXdTh2WXN6c2x4cEFaag=='
+curl --location 'https://api.pivot-payment.com/v1/transfers' --header 'Content-Type: application/json' --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJiYWNrZW5kLXBvcnRhbCIsInN1YiI6IjQ2YTkxYjdjLTJhMzctNDhmMy1iODZjLWFhMjUzMTRhY2VhYSIsImV4cCI6MTc1NTA4MjkzMSwiY2xpZW50SWQiOiI0NmE5MWI3Yy0yYTM3LTQ4ZjMtYjg2Yy1hYTI1MzE0YWNlYWEiLCJtZXJjaGFudElkIjoiNDZhOTFiN2MtMmEzNy00OGYzLWI4NmMtYWEyNTMxNGFjZWFhIn0.H41uj51PIvg1kos4BkxABvJ--WHweaZmyIEqvEKDUOo' --data '{"referenceId": "Transfer-89b83df9-4c43-4d62-8868-e565296a6b71", "recipientId": "52cae4b3-a8c8-400e-be7b-f345a86e939c", "transferType": "DIRECT", "amount": 1401919, "remarks": "Transfer to CV Tazkia Mulya Perkasa"}'
+curl --location 'https://bank.paper.id/api/v1/cards/summary' --header 'company_id: 5154b0ad-e7d9-4f0e-97b7-a22f9d954224' --header 'user_id: test' --header 'Authorization: Basic cllPRENPbkN0ak5SbUFrYkx3Y05LYXI4QmNHSWRNOjR4YXViMW5RekJYczl4cHBXdTh2WXN6c2x4cEFaag=='
+curl --location 'https://api.pivot-payment.com/v1/transfers' --header 'Content-Type: application/json' --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJiYWNrZW5kLXBvcnRhbCIsInN1YiI6IjQ2YTkxYjdjLTJhMzctNDhmMy1iODZjLWFhMjUzMTRhY2VhYSIsImV4cCI6MTc1NTA4MjkzMSwiY2xpZW50SWQiOiI0NmE5MWI3Yy0yYTM3LTQ4ZjMtYjg2Yy1hYTI1MzE0YWNlYWEiLCJtZXJjaGFudElkIjoiNDZhOTFiN2MtMmEzNy00OGYzLWI4NmMtYWEyNTMxNGFjZWFhIn0.H41uj51PIvg1kos4BkxABvJ--WHweaZmyIEqvEKDUOo' --data '{"referenceId": "Transfer-02bdbcf9-ed08-4a95-98ec-fd889886eb2f", "recipientId": "a038e3aa-f3ef-41c9-a623-170ba60b23fe", "transferType": "DIRECT", "amount": 5419423.78, "remarks": "Transfer to PT RAKIT TALENTA NUSANTARA"}'
+curl --location 'https://bank.paper.id/api/v1/cards/summary' --header 'company_id: 51ee2ea0-e534-44b8-b607-aaaff4b89280' --header 'user_id: test' --header 'Authorization: Basic cllPRENPbkN0ak5SbUFrYkx3Y05LYXI4QmNHSWRNOjR4YXViMW5RekJYczl4cHBXdTh2WXN6c2x4cEFaag=='
+curl --location 'https://bank.paper.id/api/v1/cards/summary' --header 'company_id: 51ee2ea0-e534-44b8-b607-aaaff4b89280' --header 'user_id: test' --header 'Authorization: Basic cllPRENPbkN0ak5SbUFrYkx3Y05LYXI4QmNHSWRNOjR4YXViMW5RekJYczl4cHBXdTh2WXN6c2x4cEFaag=='
+curl --location 'https://api.pivot-payment.com/v1/transfers' --header 'Content-Type: application/json' --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJiYWNrZW5kLXBvcnRhbCIsInN1YiI6IjQ2YTkxYjdjLTJhMzctNDhmMy1iODZjLWFhMjUzMTRhY2VhYSIsImV4cCI6MTc1NTA4MjkzMSwiY2xpZW50SWQiOiI0NmE5MWI3Yy0yYTM3LTQ4ZjMtYjg2Yy1hYTI1MzE0YWNlYWEiLCJtZXJjaGFudElkIjoiNDZhOTFiN2MtMmEzNy00OGYzLWI4NmMtYWEyNTMxNGFjZWFhIn0.H41uj51PIvg1kos4BkxABvJ--WHweaZmyIEqvEKDUOo' --data '{"referenceId": "Transfer-4daeb59f-6b08-4888-b326-e3e528b1c911", "recipientId": "c807b3da-0320-413d-9845-e9d990e23c44", "transferType": "DIRECT", "amount": 19140264.02, "remarks": "Transfer to Alliansi Segar Nusantara"}'
+curl --location 'https://bank.paper.id/api/v1/cards/summary' --header 'company_id: 7f656e80-420e-11e9-b600-db7ee567357e' --header 'user_id: test' --header 'Authorization: Basic cllPRENPbkN0ak5SbUFrYkx3Y05LYXI4QmNHSWRNOjR4YXViMW5RekJYczl4cHBXdTh2WXN6c2x4cEFaag=='
+curl --location 'https://api.pivot-payment.com/v1/transfers' --header 'Content-Type: application/json' --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJiYWNrZW5kLXBvcnRhbCIsInN1YiI6IjQ2YTkxYjdjLTJhMzctNDhmMy1iODZjLWFhMjUzMTRhY2VhYSIsImV4cCI6MTc1NTA4MjkzMSwiY2xpZW50SWQiOiI0NmE5MWI3Yy0yYTM3LTQ4ZjMtYjg2Yy1hYTI1MzE0YWNlYWEiLCJtZXJjaGFudElkIjoiNDZhOTFiN2MtMmEzNy00OGYzLWI4NmMtYWEyNTMxNGFjZWFhIn0.H41uj51PIvg1kos4BkxABvJ--WHweaZmyIEqvEKDUOo' --data '{"referenceId": "Transfer-566c0ed0-c03e-47a1-8044-5e724eefd4a1", "recipientId": "481d621d-df32-4f63-bb79-defc421b3159", "transferType": "DIRECT", "amount": 24837729, "remarks": "Transfer to PT GINIO DIGITAL KARYA"}'
+curl --location 'https://bank.paper.id/api/v1/cards/summary' --header 'company_id: d08a962a-6f68-475d-8172-e1a81798d9a5' --header 'user_id: test' --header 'Authorization: Basic cllPRENPbkN0ak5SbUFrYkx3Y05LYXI4QmNHSWRNOjR4YXViMW5RekJYczl4cHBXdTh2WXN6c2x4cEFaag=='
+curl --location 'https://api.pivot-payment.com/v1/transfers' --header 'Content-Type: application/json' --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJiYWNrZW5kLXBvcnRhbCIsInN1YiI6IjQ2YTkxYjdjLTJhMzctNDhmMy1iODZjLWFhMjUzMTRhY2VhYSIsImV4cCI6MTc1NTA4MjkzMSwiY2xpZW50SWQiOiI0NmE5MWI3Yy0yYTM3LTQ4ZjMtYjg2Yy1hYTI1MzE0YWNlYWEiLCJtZXJjaGFudElkIjoiNDZhOTFiN2MtMmEzNy00OGYzLWI4NmMtYWEyNTMxNGFjZWFhIn0.H41uj51PIvg1kos4BkxABvJ--WHweaZmyIEqvEKDUOo' --data '{"referenceId": "Transfer-299dda2a-93e2-4c9c-89ea-dcf8c2ff6bcc", "recipientId": "e8658d3a-fd71-4721-af2d-4abd1e5920ed", "transferType": "DIRECT", "amount": 492148, "remarks": "Transfer to CV Albanna Digital Sulaiman"}'
+curl --location 'https://bank.paper.id/api/v1/cards/summary' --header 'company_id: e603bf25-457a-4f75-a648-463440b0c5fd' --header 'user_id: test' --header 'Authorization: Basic cllPRENPbkN0ak5SbUFrYkx3Y05LYXI4QmNHSWRNOjR4YXViMW5RekJYczl4cHBXdTh2WXN6c2x4cEFaag=='
+curl --location 'https://api.pivot-payment.com/v1/transfers' --header 'Content-Type: application/json' --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJiYWNrZW5kLXBvcnRhbCIsInN1YiI6IjQ2YTkxYjdjLTJhMzctNDhmMy1iODZjLWFhMjUzMTRhY2VhYSIsImV4cCI6MTc1NTA4MjkzMSwiY2xpZW50SWQiOiI0NmE5MWI3Yy0yYTM3LTQ4ZjMtYjg2Yy1hYTI1MzE0YWNlYWEiLCJtZXJjaGFudElkIjoiNDZhOTFiN2MtMmEzNy00OGYzLWI4NmMtYWEyNTMxNGFjZWFhIn0.H41uj51PIvg1kos4BkxABvJ--WHweaZmyIEqvEKDUOo' --data '{"referenceId": "Transfer-7c2ffd3f-36b0-4c8b-aeff-c8fb3d59df7f", "recipientId": "79f2b20b-e81b-455a-8048-fa3c0439054f", "transferType": "DIRECT", "amount": 46915283.46, "remarks": "Transfer to PT XQUISITE ANALITIKA INDONESIA"}'
+curl --location 'https://bank.paper.id/api/v1/cards/summary' --header 'company_id: fb90fbfb-3676-4e22-9780-c3ce327a6760' --header 'user_id: test' --header 'Authorization: Basic cllPRENPbkN0ak5SbUFrYkx3Y05LYXI4QmNHSWRNOjR4YXViMW5RekJYczl4cHBXdTh2WXN6c2x4cEFaag=='
+curl --location 'https://api.pivot-payment.com/v1/transfers' --header 'Content-Type: application/json' --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJiYWNrZW5kLXBvcnRhbCIsInN1YiI6IjQ2YTkxYjdjLTJhMzctNDhmMy1iODZjLWFhMjUzMTRhY2VhYSIsImV4cCI6MTc1NTA4MjkzMSwiY2xpZW50SWQiOiI0NmE5MWI3Yy0yYTM3LTQ4ZjMtYjg2Yy1hYTI1MzE0YWNlYWEiLCJtZXJjaGFudElkIjoiNDZhOTFiN2MtMmEzNy00OGYzLWI4NmMtYWEyNTMxNGFjZWFhIn0.H41uj51PIvg1kos4BkxABvJ--WHweaZmyIEqvEKDUOo' --data '{"referenceId": "Transfer-745e447f-7162-4faa-bccb-02026f52c916", "recipientId": "44220830-b17c-4989-8d9f-38541da6fb3c", "transferType": "DIRECT", "amount": 80747554.45, "remarks": "Transfer to PT POHON BIRU JAYA"}'
+curl --location 'https://bank.paper.id/api/v1/cards/summary' --header 'company_id: cb86c880-37ff-4dfb-aa6c-222c97b1314f' --header 'user_id: test' --header 'Authorization: Basic cllPRENPbkN0ak5SbUFrYkx3Y05LYXI4QmNHSWRNOjR4YXViMW5RekJYczl4cHBXdTh2WXN6c2x4cEFaag=='
+curl --location 'https://api.pivot-payment.com/v1/transfers' --header 'Content-Type: application/json' --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJiYWNrZW5kLXBvcnRhbCIsInN1YiI6IjQ2YTkxYjdjLTJhMzctNDhmMy1iODZjLWFhMjUzMTRhY2VhYSIsImV4cCI6MTc1NTA4MjkzMSwiY2xpZW50SWQiOiI0NmE5MWI3Yy0yYTM3LTQ4ZjMtYjg2Yy1hYTI1MzE0YWNlYWEiLCJtZXJjaGFudElkIjoiNDZhOTFiN2MtMmEzNy00OGYzLWI4NmMtYWEyNTMxNGFjZWFhIn0.H41uj51PIvg1kos4BkxABvJ--WHweaZmyIEqvEKDUOo' --data '{"referenceId": "Transfer-c047885f-471a-4ddc-af2c-9ff719b03b5b", "recipientId": "ccbe150d-67e2-4d50-a1cf-dcafb016d1f9", "transferType": "DIRECT", "amount": 44970544.43, "remarks": "Transfer to PT REVOLUSI CITA EDUKASI"}'
+c
+curl --location 'https://bank.paper.id/api/v1/cards/summary' --header 'company_id: 10025d8f-c030-4c59-86b0-77753e37ffff' --header 'user_id: test' --header 'Authorization: Basic cllPRENPbkN0ak5SbUFrYkx3Y05LYXI4QmNHSWRNOjR4YXViMW5RekJYczl4cHBXdTh2WXN6c2x4cEFaag=='
+curl --location 'https://bank.paper.id/api/v1/cards/summary' --header 'company_id: 1f2c7c7a-d2a1-4030-9fc3-548867099472' --header 'user_id: test' --header 'Authorization: Basic cllPRENPbkN0ak5SbUFrYkx3Y05LYXI4QmNHSWRNOjR4YXViMW5RekJYczl4cHBXdTh2WXN6c2x4cEFaag=='
+cd paper
+vc documentation
+cd paper
+vc paper-bank-account --profile="go"
+vc creditcard-core-processor --profile="go"
+cd
+cd paper
+c
+curl --location 'https://paper-getcontact-proxy-service-740443181568.asia-southeast2.run.app/api/v1/getcontact/tags' \\
+--header 'Content-Type: application/json' \\
+--data '{\
+    "phone_number": "+628119591126"\
+}'
+gst
+git add .
+gst
+gcm "Documentation phc internal dashboard privy"
+gco main
+gpull
+gco feature/fs-core/sprint-2.39-phc-privy
+git merge main
+c
+c
+ll
+vc paper-mars --profile="go"
+gco main
+git stash
+gpull
+curl --location 'https://bank.paper.id/api/v1/cards/summary' --header 'company_id: 33b9c29b-76f2-4be4-b363-6915d203fbc6' --header 'user_id: test' --header 'Authorization: Basic cllPRENPbkN0ak5SbUFrYkx3Y05LYXI4QmNHSWRNOjR4YXViMW5RekJYczl4cHBXdTh2WXN6c2x4cEFaag=='
+curl --location 'https://api.pivot-payment.com/v1/transfers' --header 'Content-Type: application/json' --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJiYWNrZW5kLXBvcnRhbCIsInN1YiI6IjQ2YTkxYjdjLTJhMzctNDhmMy1iODZjLWFhMjUzMTRhY2VhYSIsImV4cCI6MTc1NTE0ODAxOCwiY2xpZW50SWQiOiI0NmE5MWI3Yy0yYTM3LTQ4ZjMtYjg2Yy1hYTI1MzE0YWNlYWEiLCJtZXJjaGFudElkIjoiNDZhOTFiN2MtMmEzNy00OGYzLWI4NmMtYWEyNTMxNGFjZWFhIn0.BJdfh-c85jFl4HVUjnCQUmn9Kyf2o5XUEhOD8T762l8' --data '{"referenceId": "Transfer-1b749849-5726-452f-8095-c33b7d46eb7f", "recipientId": "52cae4b3-a8c8-400e-be7b-f345a86e939c", "transferType": "DIRECT", "amount": 300000, "remarks": "Transfer to CV Tazkia Mulya Perkasa"}'
+curl --location 'https://bank.paper.id/api/v1/cards/summary' --header 'company_id: 33b9c29b-76f2-4be4-b363-6915d203fbc6' --header 'user_id: test' --header 'Authorization: Basic cllPRENPbkN0ak5SbUFrYkx3Y05LYXI4QmNHSWRNOjR4YXViMW5RekJYczl4cHBXdTh2WXN6c2x4cEFaag=='
+c
+c
+curl --location 'https://api-stg.pivot-payment.com/v1/merchants/rcns/b7f464f4-c8c6-46f3-9152-713faad2f3cd' \\
+--header 'X-Merchant-Id: 3366c78c-8143-49d3-8e7f-8a8972f91440' \\
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJiYWNrZW5kLXBvcnRhbCIsInN1YiI6ImI1NzMwMzllLTNkMjctNGVhNS1hNGNlLTBiOGIxY2U1ZjY1NCIsImV4cCI6MTc1NTE1NjI5NywiY2xpZW50SWQiOiJiNTczMDM5ZS0zZDI3LTRlYTUtYTRjZS0wYjhiMWNlNWY2NTQiLCJtZXJjaGFudElkIjoiYjU3MzAzOWUtM2QyNy00ZWE1LWE0Y2UtMGI4YjFjZTVmNjU0In0.408CegeCQ3fnvQWQBnMZO_KadrGsUZoDBaPRvY5-NYA'
+vc backend-portal --profile="go"
+vc pdk --profile="go"
+curl 'https://api.stag-v2.paper.id/api/v1/milky-way/users' \\
+  -H 'accept: application/json, text/plain, */*' \\
+  -H 'accept-language: en-US,en;q=0.9' \\
+  -H 'authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hcmlhLmZpbGluYUBwYXBlci5pZCIsImV4cCI6MTc1NTc0OTYxOSwiaXNfYmNhX29jZWFuX3VzZXIiOmZhbHNlLCJpc192Y2NfdXNlciI6ZmFsc2UsImp3dF9pZCI6ImU4MWEwYjU3LTQ1NmYtNDgxNS1iYTc0LTU4YWExMDgxM2FhMCJ9.r70pmNtem0FdX6YIDtfOd_olWmoM14Log3IDzHdyxH0' \\
+  -H 'cache-control: no-cache' \\
+  -H 'company_id: 0e73b5bf-56a6-403a-9c7e-25197b437150' \\
+  -H 'content-type: application/json' \\
+  -H 'origin: https://staging-v2.paper.id' \\
+  -H 'pragma: no-cache' \\
+  -H 'priority: u=1, i' \\
+  -H 'referer: https://staging-v2.paper.id/' \\
+  -H 'sec-ch-ua: "Not;A=Brand";v="99", "Google Chrome";v="139", "Chromium";v="139"' \\
+  -H 'sec-ch-ua-mobile: ?0' \\
+  -H 'sec-ch-ua-platform: "macOS"' \\
+  -H 'sec-fetch-dest: empty' \\
+  -H 'sec-fetch-mode: cors' \\
+  -H 'sec-fetch-site: same-site' \\
+  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36' \\
+  -H 'user_id: 0d71456c-936d-4a61-9f55-4cecc367745f'
+curl --location 'https://api.pivot-payment.com/v1/merchants/rcns/1d694ef5-727d-11f0-8e95-42010a9c01c8' \\
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJiYWNrZW5kLXBvcnRhbCIsInN1YiI6IjQ2YTkxYjdjLTJhMzctNDhmMy1iODZjLWFhMjUzMTRhY2VhYSIsImV4cCI6MTc1NTE2NzU5NCwiY2xpZW50SWQiOiI0NmE5MWI3Yy0yYTM3LTQ4ZjMtYjg2Yy1hYTI1MzE0YWNlYWEiLCJtZXJjaGFudElkIjoiNDZhOTFiN2MtMmEzNy00OGYzLWI4NmMtYWEyNTMxNGFjZWFhIn0.B46ulr8rQOFj0meR90Ut7pWXSBNy7smln4b5DHe9dZw'
+curl --location 'https://api.pivot-payment.com/v1/merchants/rcns/1d694ef5-727d-11f0-8e95-42010a9c01c8' \\
+--header 'X-Merchant-Id: a77a5442-7519-45ed-8243-e4de53bbbcc4' \\
+--header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJiYWNrZW5kLXBvcnRhbCIsInN1YiI6IjQ2YTkxYjdjLTJhMzctNDhmMy1iODZjLWFhMjUzMTRhY2VhYSIsImV4cCI6MTc1NTE2NzU5NCwiY2xpZW50SWQiOiI0NmE5MWI3Yy0yYTM3LTQ4ZjMtYjg2Yy1hYTI1MzE0YWNlYWEiLCJtZXJjaGFudElkIjoiNDZhOTFiN2MtMmEzNy00OGYzLWI4NmMtYWEyNTMxNGFjZWFhIn0.B46ulr8rQOFj0meR90Ut7pWXSBNy7smln4b5DHe9dZw'
+c
+ll
+vc test-encrypt-pgp --profile="go"
+exp
+go run .
+go run .
+cd paper
+vc paper-bank-account --profile="go"
+gco main
+git stash
+gco main
+gpull
+gpull
+gpull
+c
+vc paper-mars --profile="go"
+gco local
+go mod tidy
+go mod vendor
+vc pdk --profile="go"
+vc documentation
+gst
+git restore docs/financial-services/supporting_domains/loan_management_system.md
+gst
+git add .
+gst
+gcm "Documentation phc internal dashboard privy"
+gp
+git push --set-upstream origin feature/fs-core/sprint-2.39-phc-privy
+vc test-encrypt-pgp --profile="go"
+c
+exp
+c
+go run .
+gco feature/fs-core/sprint-2.38/cu-86czjqwv5-transfer-balance-from-pivot-to-paper
+go mod tidy
+go mod vendor
+go run .
+vc paper-mars --profile="go"
+gco main
+gco feature/sprint-2.38/cu-86czun005-disbursement-adjustment-settlement
+gpull
+go mod tidy
+go mod vendor
+c
+curl --location 'https://bank.paper.id/api/v1/cards/summary' --header 'company_id: 10025d8f-c030-4c59-86b0-77753e37ffff' --header 'user_id: test' --header 'Authorization: Basic cllPRENPbkN0ak5SbUFrYkx3Y05LYXI4QmNHSWRNOjR4YXViMW5RekJYczl4cHBXdTh2WXN6c2x4cEFaag=='
+go run ./app/.
+git stash
+gco main
+gpull
+go mod tidy
+go mod tidy
+go mod vendor
+c
+go run ./app/.
+go run ./app/.
+go run ./app/.
+cd paper
+vc paper-bank-account --profile="go"
+go run ./app/.
+go run ./app/.
+go run ./app/.
+go run ./app/.
+go run ./app/.
+c
+gst
+git add app/pkg/vcc/usecase/card_usecase_impl.go
+git stash
+gcb hotfix/withdraw-deduct-twice main
+vc paper-mars --profile="go"
+go mod tidy
+go mod vendor
+go run ./app/.
+gst
+git add app/pkg/vcc/usecase/card_usecase_impl.go
+gst
+gcm "Hotfix withdraw deduct twice"
+gp
+git push --set-upstream origin hotfix/withdraw-deduct-twice
+go run ./app/.
+go run ./app/.
+c
+gco hotfix/set-wallet-history-payment-trx
+c
+gst
+gst
+git stash
+gcb hotfix/withdraw-deduct-twice-revise hotfix/set-wallet-history-payment-trx
+gst
+gst
+git add app/pkg/vcc/usecase/card_usecase_impl.go
+gcm "Hotfix withdraw deduct twice"
+gp
+git push --set-upstream origin hotfix/withdraw-deduct-twice-revise
+git stash
+gco main
+git tag -l
+curl --location 'https://bank.paper.id/api/v1/cards/summary' --header 'company_id: 10025d8f-c030-4c59-86b0-77753e37ffff' --header 'user_id: test' --header 'Authorization: Basic cllPRENPbkN0ak5SbUFrYkx3Y05LYXI4QmNHSWRNOjR4YXViMW5RekJYczl4cHBXdTh2WXN6c2x4cEFaag=='
+c
+gpull
+c
+gst
+git stash
+gpull
+wslupd
+src
+cd paper
+vc paper-mars --profile="go"
+vc paper-bank-account --profile="go"
+cd paper
+vc paper-bank-account --profile="go"
+vc paper-bank-account --profile="go"
+vc paper-bank-account --profile="go"
+vc paper-bank-account --profile="go"
+chsh -s $(which zsh)
+which zsh
+sudo nano /etc/shells
+which zsh
+sudo nano /etc/shells
+chsh -s /home/linuxbrew/.linuxbrew/bin/zsh
+wsl --shutdown
+echo $SHELL
+cd paper
+vc paper-bank-account --profile="go"
+cd paper
+vc paper-bank-account --profile="go"
+c
+vc paper-mars --profile="go"
+vc paper-bank-account --profile="go"
+cd paper
+vc paper-bank-account --profile="go"
+gst
+gco feature/fs-2.38/CU-86czunkfg-immediately-access
+c
+vc paper-mars --profile="go"
+go mod tidy
+go mod vendor
+go install golang.org/x/tools/gopls@latest
+go install github.com/go-delve/delve/cmd/dlv@latest
+note .zshrc
+go env GOBIN GOPATH
+cd /usr/local/go/
+cd /use
+cd local
+which go
+ls -la /home/linuxbrew/.linuxbrew/bin
+cd /home/linuxbrew/.linuxbrew/bin
+cd go
+pwd
+which go
+cd go
+which gopls
+which go
+cd /home/linuxbrew/.linuxbrew/bin/go
+ls -l /home/linuxbrew/.linuxbrew/bin/go
+which gopls
+which linuxbrew
+which brew
+src
+go install golang.org/x/tools/gopls@latest
+which gopls
+which godlv
+go install github.com/go-delve/delve/cmd/dlv@latest
+which go
+which gopls
+which dlv
+note .zshrc
+echo $GOPATH
+cd paper
+vc paper-bank-account --profile="go"
+cd ~/.config/
+note starship.toml
+time /home/neo/.nvm/versions/node/v22.17.1/bin/node -v
+time node -v
+time node -v
+vi starship.toml
+src
+note package.json
+where starship.toml
+cd ~/.config/
+vi starship.toml
+src
+vi starship.toml
+vi starship.toml
+src
+vi starship.toml
+src
+proj
+cd paper
+proj
+cd paper
+c
+cd ..
+cd _test-vue
+cd ..
+cd _test-rust
+cd ..
+cd _test-laravel
+cd ..
+cd ~/.config/
+vi starship.toml
+vc starship.toml
+src
+cd paper
+cd paper-mars
+gpull
+eval "$(starship init zsh)"
+ls
+ll
+starship --version
+proj
+proj
+cd paper
+cd paper-mars
+gpull
+c
+proj
+cd paper
+proj
+cd paper
+proj
+cd paper
+cd paper-mars
+ll
+cd paper
+vc paper-bank-account --profile="go"
+vc paper-bank-account --profile="go"
+c
+cd papr
+vc paper-bank-account --profile="go"
+cd paper
+vc paper-bank-account --profile="go"
+vc paper-mars --profile="go"
+gco main
+gco feature/fs-2.38/CU-86czunkfg-immediately-access
+cd paper
+vc paper-bank-account --profile="go"
+vc paper-mars --profile="go"
+gst
+go run ./app/.
+vc paper-event-store --profile="go"
+go run ./app/.
+c
+gco feature/fs-core/sprint-2.38/cu-86czjqwv5-transfer-balance-from-pivot-to-paper
+go run ./app/.
+go run ./app/.
+go run ./app/cmd/cron/main.go -f scheduler-vcc-debit-fund-transfer-balance-processor
+cd paper
+vc paper-bank-account --profile="go"
+vc paperangularapp --profile="node"
+vc paperangularapp --profile="node"
+vc paperangularapp
+gco feature/fs-2.38/CU-86czunkfg-immediately-access
+git stash
+gco feature/fs-2.38/CU-86czunkfg-immediately-access
+gpull
+c
+ll
+vc paper-mars --profile="go"
+vc paperangularapp --profile="js"
+c
+go mod tidy
+go mod vendor
+c
+go mod tidy
+gpull
+gst
+git remote set-url origin git@github.com-rhewinpaper:paper-indonesia/paperangularapp.git
+gpull
+c
+c
+npm run serve-staging
+c
+gba
+gco staging
+gpull
+c
+gba
+c
+gco master
+c
+gba
+gpull
+gco angular19-webvitals
+c
+ni
+npm run serve-staging
+gpull
+git stash
+gpull
+go mod tidy
+go mod tidy
+go mod vendor
+vc paper-event-store --profile="go"
+go mod tidy
+go mod vendor
+go run ./app/.
+vc paper-event-store --profile="go"
+cd paper
+vc paper-event-store --profile="go"
+vc paper-bank-account --profile="go"
+go run ./app/.
+go run ./app/.
+go run ./app/.
+go run ./app/.
+go run ./app/.
+go run ./app/.
+go run ./app/.
+vc paper-mars --profile="go"
+go run ./app/.
+go run ./app/.
+go run ./app/.
+gst
+git restore app/pkg/corporatecard/submission/usecase/submit_submission.go
+c
+git stash
+gco feature/fs-core/sprint-2.38/cu-86czjqwv5-transfer-balance-from-pivot-to-paper
+gpull
+c
+go mod tidy
+go mod tidy
+gpull
+go mod tidy
+go mod vendor
+cd paper
+cd test-encrypt-pgp
+exp
+c
+cd ..
+vc test-encrypt-pgp --profile="go"
+exp
+go run .
+go run .
+go run .
+go run .
+go run .
+go run .
+go run .
+go run .
+go run .
+go run .
+go run .
+go run .
+go run .
+go run .
+cd paper
+vc paperangularapp --profile="js"
+npm run start
+vc paper-bank-account --profile="go"
+c
+gco main
+gst
+gpull
+git stash
+gpull
+gcb improve/fs-2.39/validate-param-subaccount-api main
+go mod tidy
+vc paper-mars --profile="go"
+exp
+go mod tidy
+go mod vendor
+c
+go run ./app/.
+c
+claude
+gst
+c
+go run ./app/.
+c
+go run ./app/.
+c
+go run ./app/.
+vc paper-event-store --profile="go"
+go run ./app/.
+c
+gst
+git add app/pkg/corporatecard/facilities/usecase/create_custodial_account.go
+git add app/pkg/corporatecard/facilities/usecase/create_custodial_account_test.go
+git add global/utils/helper/string_helper.go
+git add global/utils/helper/string_helper_test.go
+gst
+gcm "Add length validation into param request"
+gp
+git push --set-upstream origin improve/fs-2.39/validate-param-subaccount-api
+gst
+git add global/utils/helper/string_helper_test.go
+gcm "Fix unit test"
+gp
+gst
+git add app/pkg/corporatecard/facilities/usecase/create_custodial_account_test.go
+gcm "Fix unit test"
+gp
+c
+gco main
+gpull
+git stash
+gpull
+go mod tidy
+go mod vendor
+git stash
+gco main
+gpull
+curl --location 'https://api.paper.id/api/v1/harsya-core-mle/virtual-card/callback' \\
+--header 'Content-Type: application/json' \\
+--data '{\
+    "event": "VIRTUAL-CARD.NOTIFICATION",\
+    "data": {\
+        "trxTimestamp": "1755597499",\
+        "authorizationCode": "317360",\
+        "responseCode": "00",\
+        "transactionId": "14299adc-b8e0-4c51-9b0d-ec8d1ece1262",\
+        "externalId": "4YHGZZ7087360819095819",\
+        "userRefId": "f22d841d-31a6-43cb-aef2-f0769755bd7c",\
+        "cardId": "01981cfe-7f13-74f6-b185-ae8bf827f6d8",\
+        "cumulativeLimit": 0,\
+        "amount": 253631,\
+        "currencyCode": "IDR",\
+        "originAmount": 253631,\
+        "originCurrencyCode": "IDR",\
+        "type": "SPEND",\
+        "status": "SUCCESSFUL",\
+        "merchant": {\
+            "id": "70407184316    ",\
+            "categoryCode": "4722",\
+            "name": "TIKET.COM             ",\
+            "stateOrCountryCode": "IDN"\
+        }\
+    }\
+}'
+gco improve/fs-2.39/validate-param-subaccount-api
+git merge main
+gst
+gst
+gcm "Fix conflict"
+gp
+cd paper
+vc paper-mars --profile="go"
+git stash
+gpull
+go mod tidy
+go mod tidy
+go mod vendor
+gcb fix/fs-2.39/update-field-merchant-balance main
+gst
+go run ./cmd/http/.
+go run ./cmd/cron/main.go -f scheduler-virtual-card-merchant-balance-checker
+c
+go run ./cmd/cron/main.go -f scheduler-virtual-card-merchant-balance-checker
+go run ./cmd/cron/main.go -f scheduler-virtual-card-merchant-balance-checker
+go run ./cmd/cron/main.go -f scheduler-virtual-card-merchant-balance-checker
+go run ./cmd/cron/main.go -f scheduler-virtual-card-merchant-balance-checker
+go run ./cmd/cron/main.go -f scheduler-virtual-card-merchant-balance-checker
+go run ./cmd/cron/main.go -f scheduler-virtual-card-merchant-balance-checker
+go run ./cmd/cron/main.go -f scheduler-virtual-card-merchant-balance-checker
+go run ./cmd/cron/main.go -f scheduler-virtual-card-merchant-balance-checker
+go run ./cmd/cron/main.go -f scheduler-virtual-card-merchant-balance-checker
+go run ./cmd/cron/main.go -f scheduler-virtual-card-merchant-balance-checker
+go run ./cmd/cron/main.go -f scheduler-virtual-card-merchant-balance-checker
+go run ./cmd/cron/main.go -f scheduler-virtual-card-merchant-balance-checker
+claude
+go run ./cmd/cron/main.go -f scheduler-virtual-card-merchant-balance-checker
+claude
+c
+go test ./... -coverprofile=coverage.out -covermode=atomic
+go test ./... -coverprofile=coverage.out -covermode=atomic
+go test ./... -coverprofile=coverage.out -covermode=atomic
+go test ./... -coverprofile=coverage.out -covermode=atomic
+go test ./... -coverprofile=coverage.out -covermode=atomic
+go test ./... -coverprofile=coverage.out -covermode=atomic
+go test ./... -coverprofile=coverage.out -covermode=atomic
+go test ./... -coverprofile=coverage.out -covermode=atomic
+gst
+gst
+git add internal/pkg/virtualcardmerchant/model/dto/virtual_card_balance.go
+git add internal/pkg/virtualcardmerchant/model/dto/virtual_card_balance_test.go
+git add internal/pkg/virtualcardmerchant/usecase/virtual_card_merchant_usecase_impl.go
+git add internal/pkg/virtualcardmerchant/usecase/virtual_card_merchant_usecase_impl_test.go
+gst
+gst
+gcm "Fix cimb merchant balance using calculation"
+gp
+git push --set-upstream origin fix/fs-2.39/update-field-merchant-balance
+vc paper-bank-account --profile="go"
+gco feature/fs-core/sprint-2.38/cu-86czjqwv5-transfer-balance-from-pivot-to-paper
+go mod tidy
+go mod tidy
+go mod vendor
+go mod tidy
+c
+gco main
+gpull
+git stash
+gpull
+gco feature/fs-core/sprint-2.38/cu-86czjqwv5-transfer-balance-from-pivot-to-paper
+gpull
+gco main
+git stash
+gco main
+c
+gpull
+go mod tidy
+go mod vendor
+c
+go run ./app/.
+go run ./app/.
+go run ./app/.
+go run ./app/.
+go run ./app/.
+gpull
+git stash
+gpull
+go mod tidy
+go mod vendor
+cd paper
+vc documentation
+gst
+gst
+git add docs/financial-services/fs_line_of_credit/products/corporate-card/privy-document-assignment.md
+gst
+gcm "Add PHC Privy Assigment Documentation"
+gp
+vc paper-bank-account --profile="go"
+cd paper
+vc paper-bank-account --profile="go"
+curl --location 'https://api.paper.id/api/v1/harsya-core-mle/virtual-card/callback' \\
+--header 'Content-Type: application/json' \\
+--data '{\
+    "event": "VIRTUAL-CARD.NOTIFICATION",\
+    "data": {\
+        "trxTimestamp": "1755706107",\
+        "authorizationCode": "499981",\
+        "responseCode": "00",\
+        "transactionId": "7612b412-7905-41a4-9568-2b12eba8402a",\
+        "externalId": "BNI_20192200365WPGTID01_0602031126",\
+        "userRefId": "b8f0e4df-e508-4fed-a039-cfa100b46cfe",\
+        "cardId": "0197ed29-32c3-7326-8b71-f316ae29b61b",\
+        "cumulativeLimit": 0,\
+        "amount": 9748800,\
+        "currencyCode": "IDR",\
+        "originAmount": 9748800,\
+        "originCurrencyCode": "IDR",\
+        "type": "SPEND",\
+        "status": "SUCCESSFUL",\
+        "merchant": {\
+            "id": "71516509781    ",\
+            "categoryCode": "5999",\
+            "name": "Tokopedia",\
+            "stateOrCountryCode": "IDN"\
+        }\
+    }\
+}' 
+vc documentation
+vc paper-bank-account --profile="go"
+vc paper-mars --profile="go"
+gst
+git add docs/financial-services/fs_line_of_credit/products/corporate-card/privy-document-assignment.md
+gcm "Update PHC Privy Assigment Documentation"
+gp
+cd paper
+vc paper-mars --profile="go"
+cd paper
+vc paperangularapp --profile="js"
+gpull
+git stash
+gpull
+vc paper-mars --profile="go"
+gst
+go run ./cmd/http/.
+cd paper
+vc paperangularapp --profile="js"
+vc paper-mars --profile="go"
+gco main
+gpull
+git stash
+gpull
+go mod tidy
+go mod vendor
+c
+go run ./cmd/http/.
+go run ./cmd/http/.
+exp
+ll
+cd paper
+vc test-encrypt-pgp --profile="go"
+go run .
+go run ./cmd/http/.
+lsof -i 8016
+lsof -p 8016
+lsof -i :8016
+kill 12797
+lsof -i :8016
+c
+c
+go run ./cmd/http/.
+l
+vc paper-event-store --profile="go"
+go run ./app/.
+vc paper-bank-account --profile="go"
+go run ./app/.
+curl 'https://192.168.121.119:8000/api/v1/cards/transactions/download' \\
+  -H 'accept: application/json, text/plain, */*' \\
+  -H 'accept-language: en-US,en;q=0.9,id;q=0.8' \\
+  -H 'authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hcmlhLmZpbGluYUBwYXBlci5pZCIsImV4cCI6MTc1NTg1ODc3NywiaXNfYmNhX29jZWFuX3VzZXIiOmZhbHNlLCJpc192Y2NfdXNlciI6dHJ1ZSwiand0X2lkIjoiM2U3ZTBiNmUtMjliOC00MDk4LWJlNzQtMDQwNmVmMTYyNzc2In0.Ua-JwJAeCMnyq4HFvwVarRsXWQIjvltl2WTEBZFhBb0' \\
+  -H 'content-type: application/json' \\
+  -H 'dnt: 1' \\
+  -H 'origin: https://www.paper.id' \\
+  -H 'priority: u=1, i' \\
+  -H 'referer: https://www.paper.id/' \\
+  -H 'request-id: CRzPRE5ZgjMRhhk-C5Uir40NVq-gNTpE5XxRV-TnOws5K1vRvqI8W' \\
+  -H 'sec-ch-ua: "Not;A=Brand";v="99", "Microsoft Edge";v="139", "Chromium";v="139"' \\
+  -H 'sec-ch-ua-mobile: ?0' \\
+  -H 'sec-ch-ua-platform: "Windows"' \\
+  -H 'sec-fetch-dest: empty' \\
+  -H 'sec-fetch-mode: cors' \\
+  -H 'sec-fetch-site: same-site' \\
+  -H 'company_id: b25310d3-47de-4105-b0ba-5f2c08a5b7f0' \\
+  -H 'user_id: 195671e1-0992-445d-83c8-224290b29252' \\
+  -H 'url: https://www.paper.id/webappv1/#/financial/solution/paper-corporate-card/dashboard' \\
+  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36 Edg/139.0.0.0' \\
+  -H 'x-paper-user-agent: Jupiter/5.0.6 desktop (windows) Chrome 139' \\
+  --data-raw '{"room":"175584758150547765142","namespace":"horizon-card-transaction-download","start_date":"2025-08-11","end_date":"2025-08-22"}'\ 
+c
+wslupd
+src
+cd paper
+vc paper-mars --profile="go"
+vc paper-mars --profile="go"
+vc paper-mars --profile="go"
+which vc
+code --version
+which vc
+source ~/.zshrc
+vc paper-mars --profile="go"
+cd paper
+vc paper-mars --profile="go"
+cd paper
+c
+ll
+vc paper-bank-account --profile="go"
+git stash
+gpull
+go mod tidy
+gco feature/fs-core/sprint-2.39/cu-86czzyyn4-add-list-email-approver-phc-api
+go mod tidy
+go mod vendor
+c
+go run ./app/.
+go run ./app/.
+cd paper
+vc paper-mars --profile="go"
+vc paper-event-store --profile="go"
+go run ./cmd/http/.
+go run ./app/.
+go run ./cmd/consumer/.
+c
+go run ./cmd/http/.
+go run ./cmd/consumer/.
+go run ./cmd/consumer/.
+c
+go run ./cmd/http/.
+go run ./cmd/consumer/.
+go run ./cmd/http/.
+go run ./cmd/consumer/.
+go run ./cmd/http/.
+go run ./cmd/consumer/.
+go run ./cmd/consumer/.
+go run ./cmd/http/.
+go run ./cmd/http/.
+proj
+vc art2 --profile="vue"
+vc cad --profile="vue"
+vc syna --profile="vue"
+vc mag --profile="vue"
+go run ./cmd/http/.
+go run ./cmd/consumer/.
+c
+c
+go run ./cmd/http/.
+go run ./cmd/consumer/.
+c
+vc paper-bank-account --profile="go"
+gco main
+git stash
+gpull
+go mod tidy
+go mod vendor
+c
+go run ./app/.
+go run ./cmd/http/.
+proj
+vc _test-go profile="go"
+go run .
+go mod tidy
+go run .
+go run main.go
+c
+go run ./cmd/http/.
+c
+go run ./cmd/consumer/.
+go run ./cmd/http/.
+cd paper
+vc paper-mars --profile="go"
+cd paper
+c
+go run ./cmd/http/.
+c
+gco feature/fs-2.39/CU-86czzgh8b-single-reference-number-clik
+go mod tidy
+go mod vendor
+go run ./cmd/http/.
+go run ./cmd/http/.
+vc paper-event-store --profile="go"
+go run ./app/.
+vc paper-bank-account --profile="go"
+cd ..
+vc doku_h2h
+vc doku_gen_token3
+node .
+node .
+node .
+node .
+node .
+node .
+node .
+c
+node .
+node .
+node .
+node .
+node .
+c
+node .
+proj
+vc doku_h2h
+vc paper-mars --profile="go"
+cd paper
+vc paper-mars --profile="go"
+go run ./cmd/http/.
+c
+go run ./cmd/http/.
+go run ./cmd/http/.
+cd paper
+vc paper-bank-account --profile="go"
+vc test-encrypt-pgp --profile="go"
+c
+go run .
+go run .
+cd ..
+vc doku_h2h
+node .
+node .
+cd paper
+vc paper-mars --profile="go"
+cd ..
+vc doku_gen_token3
+c
+vc doku_gen_token3
+node .
+node .
+node .
+c
+node .
+node .
+node .
+node .
+c
+node .
+node .
+node .
+gco main
+gpull
+git stash
+gpull
+git tag -l
+c
+proj
+vc cad --profile="vue"
+cp cad onl
+cp -R cad onl
+ll
+vc onl --profile="vue"
+ll
+git remote -v
+rm -rf chart
+rm -rf fe_cms
+ll
+cd be
+cd paper
+vc paper-mars --profile="go"
+cd be
+c
+make build
+make build
+ls -la .env.docker
+c
+make build
+docker ps -a
+make up
+make up
+git remote -v
+git remote set-url origin git@github.com:rhewins/onl.git
+git remote -v
+gst
+git remote -v
+gadd .
+gst
+gcm "Init onl project"
+gst
+gadd .
+gst
+gcm "Init onl project"
+gp
+git remote -v
+claude
+cd ~/.ssh
+vi config
+vc id_rhewin
+ssh-keygen -t rhewins -C "rheza.sw@gmail.com"
+ssh-keygen -t ed25519 -C "rheza.sw@gmail.com"
+ll
+eval "$(ssh-agent -s)"
+ssh-add id_rhewins
+cat id_rhewins.pub
+ll
+vi config
+note config
+cd ..
+cd onl
+gst
+git remote -v
+git remote -v
+git remote set-url origin git@github.com-rhewins:rhewins/onl.git
+git remote -v
+gadd .
+gcm "Init onl project"
+gst
+gp
+gst
+gst
+npx prisma generate
+cd be
+cd ..
+cd be
+npx prisma generate
+proj
+vc onl --profile="vue"
+cd be
+cd src
+rm -rf .qodo
+cd ..
+cd ..
+rm -rf .qodo
+c
+cd ..
+cd onl
+gst
+gadd .
+gst
+gcm "Re-organized project files and folder"
+gp
+c
+claude
+bun update elysia @elysiajs/cors @elysiajs/jwt @elysiajs/swagger elysia-rate-limit
+claude
+c
+claude
+c
+bun --version
+which bun
+bun upgrade
+bun --version
+c
+cd be
+rm -rf node_modules
+rm package-lock.json
+c
+bun install
+bun pm ls elysia
+c
+bun run .
+bun dev
+c
+bun dev
+c
+lsof -i :3000
+bun dev
+claude
+c
+bun dev
+c
+bun dev
+c
+exp
+bun dev
+claude
+c
+bun dev
+c
+npx prisma migrate dev
+npx prisma migrate reset
+bun prisma seed
+npm prisma seed
+bun ./prisma/seed.ts
+c
+bun dev
+c
+gst
+gadd .
+gcm "Upgrade elysia version"
+gp
+cd paper
+vc paper-bank-account --profile="go"
+gpull
+git stash
+gpull
+gco feature/fs-2.39/CU-86czzywdp-privy-journey
+go mod tidy
+vc pdk --profile="go"
+gpull
+go mod tidy
+go mod vendor
+go run ./app/.
+go run ./app/.
+go run ./app/.
+go run ./app/.
+cd paper
+vc paper-mars --profile="go"
+vc paper-bank-account --profile="go"
+git stash
+gco feature/fs-core/sprint-2.38/cu-86czjqwv5-transfer-balance-from-pivot-to-paper
+c
+gco local
+go mod tidy
+go mod vendor
+c
+go mod tidy
+go mod vendor
+c
+go run ./app/cmd/cron/main.go -f scheduler-vcc-debit-fund-transfer-balance-processor
+vc paper-event-store --profile="go"
+go run ./app/.
+go run ./app/cmd/cron/main.go -f scheduler-vcc-debit-fund-transfer-balance-processor
+exp
+go run ./app/cmd/cron/main.go -f scheduler-vcc-debit-fund-transfer-balance-processor
+go run ./app/cmd/consumer/main.go
+go run ./app/cmd/consumer/consumer_main.go
+go run ./app/cmd/cron/main.go -f scheduler-vcc-debit-fund-transfer-balance-processor
+c
+go run ./app/.
+go run ./app/cmd/cron/main.go -f scheduler-vcc-debit-fund-transfer-balance-processor
+go run ./app/cmd/cron/main.go -f scheduler-vcc-debit-fund-transfer-balance-processor
+go run ./app/cmd/consumer/consumer_main.go
+go run ./app/cmd/consumer/main.go
+go run ./app/cmd/consumer/.
+go run ./app/cmd/cron/main.go -f scheduler-vcc-debit-fund-transfer-balance-processor
+go run ./app/cmd/consumer/.
+go run ./app/cmd/cron/main.go -f scheduler-vcc-debit-fund-transfer-balance-processor
+go run ./app/cmd/consumer/.
+go run ./app/cmd/cron/main.go -f scheduler-vcc-debit-fund-transfer-balance-processor
+go run ./app/cmd/consumer/.
+go run ./app/cmd/cron/main.go -f scheduler-vcc-debit-fund-transfer-balance-processor
+vc test-encrypt-pgp --profile="go"
+go run .
+go run .
+go run ./app/cmd/cron/main.go -f scheduler-vcc-debit-fund-transfer-balance-processor
+go run ./app/cmd/consumer/.
+proj
+vc onl --profile="vue"
+cd be
+claude
+c
+bun dev
+bun ./prisma/seed.ts
+bun dev
+claude
+bun dev
+cd 
+cd be
+c
+bun dev
+bun dev
+claude
+cd be
+bun dev
+bun ./prisma/seed.ts
+npx prisma migrate reset
+c
+npx prisma migrate reset
+npx prisma migrate reset
+bun dev
+c
+npx prisma migrate reset
+bun dev
+c
+gst
+gadd .
+gcm "Update comprehensive structure"
+gp
+cd paper
+vc paper-mars --profile="go"
+vc paper-bank-account --profile="go"
+vc documentation
+gco main
+gpull
+c
+c
+vc pulumi-monitoring --profile="go"
+gst
+gco main
+gpull
+go mod tidy
+go mod vendor
+go mod tidy
+cd paper
+vc paper-mars --profile="go"
+vc paper-bank-account --profile="go"
+proj
+vc onl --profile="vue"
+cd be
+c
+bun dev
+c
+bun dev
+c
+bun dev
+c
+bun dev
+c
+bun dev
+claude
+c
+bun dev
+proj
+vc onl --profile="vue"
+cd be
+c
+npx prisma status
+npx prisma version
+c
+bun dev
+wslupd
+src
+proj
+vc onl --profile="vue"
+cd be
+bun dev
+bun dev
+bun dev
+c
+bun dev
+c
+bun dev
+c
+bun dev
+claude
+bun dev
+claude
+bun dev
+c
+bun dev
+bun dev
+c
+gst
+gadd .
+gcm "Update comprehensive structure"
+gp
+c
+bun dev
+bun dev
+exp
+bun dev
+c
+gst
+gadd .
+gcm "standarized code"
+gp
+c
+gst
+which npm
+nvm list
+cd paper
+vc paper-bank-account --profile="go"
+gco feature/fs-2.39/CU-86czzg1w7-callback-privy-phc
+git stash
+gco feature/fs-2.39/CU-86czzg1w7-callback-privy-phc
+go mod tidy
+go mod vendor
+go mod tidy
+gco main
+git stash
+gco main
+gpull
+gco feature/fs-2.39/CU-86czzg1w7-callback-privy-phc
+vc paper-mars --profile="go"
+go mod tidy
+go mod vendor
+c
+proj
+vc onl --profile="vue"
+claude
+c
+cd be
+claude
+c
+claude
+bunx prettier --check .
+claude
+bun dev
+c
+bunx prettier --check ./src
+bunx prettier --check ./src
+bunx prettier --check ./src
+bunx prettier --check ./src
+bunx prettier --check ./src
+proj
+vc onl --profile="vue"
+bunx prettier --check ./src
+cd be
+bunx prettier --check ./src
+bunx prettier --check ./src
+bunx prettier --write .
+bunx prettier --write .
+bunx prettier --write .
+bunx prettier --write .
+cd ..
+gst
+c
+bunx prettier --write .
+cd be
+bunx prettier --write .
+bunx prettier --write .
+bunx prettier --write .
+bunx prettier --write .
+bunx prettier --write .
+bunx prettier --write .
+proj
+vc onl --profile="vue"
+cd be
+c
+bunx prettier --write .
+bunx prettier --version
+bunx prettier --version
+bunx prettier --write .
+claude
+c
+bun dev
+c
+bun dev
+c
+bun dev
+bun dev
+bun dev
+cd paper
+proj
+vc onl --profile="vue"
+cd be
+bun dev
+claude
+bun dev
+cd be
+c
+bun dev
+c
+bun dev
+c
+bun dev
+c
+bun dev
+c
+bun dev
+bun dev
+bun dev
+bun dev
+proj
+cd onl
+gst
+gadd .
+gst
+gcm "Add basic auth"
+gp
+gst
+cd ..
+vc onl --profile="vue"
+proj
+vc onl --profile="vue"
+cd be
+bun dev
+c
+bun dev
+vc paper-mars --profile="go"
+cd paper
+vc paper-mars --profile="go"
+c
+vc paper-bank-account --profile="go"
+gco main
+git stash
+gpull
+gco feature/fs-core/sprint-2.38/cu-86czjqwv5-transfer-balance-from-pivot-to-paper
+gpull
+go mod tidy
+go mod vendor
+vc paper-event-store --profile="go"
+c
+go mod tidy
+go run ./app/cmd/consumer/.
+go run ./app/cmd/consumer/.
+cd .zsh
+cd docker_local
+cd services
+cd rabbitmq
+vi .env
+go run ./app/cmd/consumer/.
+go run ./app/cmd/consumer/.
+go run ./app/.
+cd ..
+cd ..
+note docker-compose.yml
+cd ..
+docker exec -it rabbitmq rabbitmq-plugins list
+docker exec -it local-rabbitmq rabbitmq-plugins list
+docker compose down
+docker down
+docker --help
+docker stop
+docker compose stop
+ll
+cd docker_local
+docker compose down
+docker compose build
+docker compose up -d
+docker exec -it local-rabbitmq rabbitmq-plugins list\
+
+docker compose up -d
+vc paper-mars --profile="go"
+ll
+cd services
+cd rabbitmsq
+ll
+touch Dockerfile
+ll
+note Dockerfile
+cd ..
+note docker-compose.yml
+docker-compose down
+docker-compose up -d
+note docker-compose.yml
+docker-compose down
+docker-compose up -d
+ll
+cd services
+cd rabbitmq
+note Dockerfile
+cd ../..
+docker-compose up -d
+docker exec -it local-rabbitmq rabbitmq-plugins list\
+
+go run ./app/cmd/consumer/.
+claude
+go run ./app/cmd/consumer/.
+go run ./app/.
+go run ./app/cmd/consumer/.
+go run ./app/cmd/consumer/.
+c
+vc creditcard-core-processor --profile="go"
+go run ./app/cmd/cron/main.go -f scheduler-vcc-debit-fund-transfer-balance-processor
+go run ./app/cmd/cron/main.go -f scheduler-vcc-debit-fund-transfer-balance-processor
+go run ./app/cmd/consumer/.
+go run ./app/cmd/cron/main.go -f scheduler-vcc-debit-fund-transfer-balance-processor
+go run ./app/cmd/consumer/.
+go run ./app/cmd/cron/main.go -f scheduler-vcc-debit-fund-transfer-balance-processor
+go run ./app/cmd/consumer/.
+go run ./app/.
+go run ./app/cmd/consumer/.
+go run ./app/cmd/consumer/.
+go run ./app/cmd/cron/main.go -f scheduler-vcc-debit-fund-transfer-balance-processor
+go run ./app/cmd/consumer/.
+go run ./app/.
+go run ./app/cmd/cron/main.go -f scheduler-vcc-debit-fund-transfer-balance-processor
+git stash
+gco main
+gpull
+vc creditcard-core-processor --profile="go"
+go mod tidy
+gpull
+c
+go mod tidy
+go mod tidy
+go mod vendor
+proj
+vc onl --profile="vue"
+cd be
+bun dev
+make up
+bun de
+bun dev
+claude
+c
+bun dev
+c
+bun dev
+c
+bun dev
+cd paper
+proj
+vc onl --profile="vue"
+cd be
+bun dev
+cd be
+bun dev
+c
+c
+bun dev
+cd ..
+gst
+gadd .
+gst
+gcm "Update getAll query"
+gp
+cd be
+c
+bun dev
+cd ..
+gst
+gadd .
+gst
+gcm "clean up utils"
+gp
+gst
+gadd .
+gcm "clean up swagger"
+gp
+c
+c
+bun dev
+claude
+cd be
+bun dev
+c
+bun dev
+c
+bun dev
+c
+cd ..
+gst
+gadd .
+gst
+gcm "fix swagger plugins"
+gp
+c
+c
+bun dev
+c
+bunx prisma generate
+bunx prisma migrate reset
+npm i --save-dev prisma@latest 
+bun install --save-dev prisma@latest
+bun install @prisma/client@latest
+c
+cd ..
+gst
+gadd .
+gcm "update prisma version"
+gp
+cd be
+c
+bun dev
+c
+cd ..
+gst
+gadd .
+gcm "adjust member to have verified email and phone"
+gp
+claude
+gst
+gst
+proj
+vc onl --profile="vue"
+gst
+git stash
+gst
+c
+cd be
+claude
+bun test
+bun test
+claude
+bun test
+claude
+bun test --coverage
+cd ..
+gst
+gadd .
+gst
+gcm "Add unit test"
+gp
+claude
+cd be
+c
+claude
+bun test
+claude
+bun test
+bun test --coverage
+gst
+gadd .
+gcm "Increate coverage unit test"
+gp
+c
+bun test --coverage
+claude
+bun test
+bun test --coverage
+gst
+gadd .
+gcm "Increate coverage unit test"
+gp
+claude
+bun test
+bun test --coverage
+gst
+gadd .
+gcm "Increate coverage unit test"
+gp
+claude
+bun test
+bun test --coverage
+gst
+gadd .
+gcm "Increasee coverage unit test"
+gp
+gst
+gst
+c
+cd paper
+vc paper-bank-account --profile="go"
+vc paper-bank-account --profile="go"
+cd paper
+c
+gpull
+gpull
+git stash
+gpull
+gco feature/fs-core/sprint-2.38/cu-86czjqwv5-transfer-balance-from-pivot-to-paper
+git stash list
+git stash apply stash@{1}
+vc paper-event-store --profile="go"
+home
+ll
+cd .zsh
+cd docker_local
+dpsa
+docker-compose up -d
+go run ./app/.
+go mod tidy
+go mod vendor
+go run ./app/cmd/consumer/.
+go run ./app/cmd/consumer/.
+go run ./app/cmd/cron/main.go -f scheduler-vcc-debit-fund-transfer-balance-processor
+go run ./app/cmd/consumer/.
+go run ./app/cmd/cron/main.go -f scheduler-vcc-debit-fund-transfer-balance-processor
+go run ./app/cmd/consumer/.
+go run ./app/cmd/cron/main.go -f scheduler-vcc-debit-fund-transfer-balance-processor
+go run ./app/cmd/cron/main.go -f scheduler-vcc-debit-fund-transfer-balance-processor
+go run ./app/cmd/consumer/.
+go run ./app/cmd/cron/main.go -f scheduler-vcc-debit-fund-transfer-balance-processor
+go run ./app/cmd/cron/main.go -f scheduler-vcc-debit-fund-transfer-balance-processor
+go run ./app/cmd/cron/main.go -f scheduler-vcc-debit-fund-transfer-balance-processor
+go run ./app/cmd/consumer/.
+go run ./app/cmd/consumer/.
+go run ./app/cmd/consumer/.
+go run ./app/cmd/cron/main.go -f scheduler-vcc-debit-fund-transfer-balance-processor
+go run ./app/cmd/consumer/.
+go run ./app/cmd/consumer/.
+go run ./app/cmd/cron/main.go -f scheduler-vcc-debit-fund-transfer-balance-processor
+go run ./app/cmd/cron/main.go -f scheduler-vcc-debit-fund-transfer-balance-processor
+go run ./app/cmd/consumer/.
+go run ./app/cmd/cron/main.go -f scheduler-vcc-debit-fund-transfer-balance-processor
+go run ./app/cmd/cron/main.go -f scheduler-vcc-debit-fund-transfer-balance-processor
+go run ./app/cmd/consumer/.
+go run ./app/cmd/cron/main.go -f scheduler-vcc-debit-fund-transfer-balance-processor
+curl --location 'https://document.paper.id/v1/vcc-enterprise/3209308747' \\
+--header 'company_id: 8a6c3c9d-eb4a-40ba-ace6-2d99e8a047cc' \\
+--header 'user_id: 602e9f1e-2805-4162-9fb8-b9645ed3bef6' \\
+--header 'Authorization: basic cllPRENPbkN0ak5SbUFrYkx3Y05LYXI4QmNHSWRNOjR4YXViMW5RekJYczl4cHBXdTh2WXN6c2x4cEFaag=='
+cd paper
+vc creditcard-core-processor --profile="go"
+curl --location 'https://document.paper.id/v1/vcc-enterprise/3209308747' \\
+--header 'company_id: 8a6c3c9d-eb4a-40ba-ace6-2d99e8a047cc' \\
+--header 'user_id: 602e9f1e-2805-4162-9fb8-b9645ed3bef6' \\
+--header 'Authorization: basic cllPRENPbkN0ak5SbUFrYkx3Y05LYXI4QmNHSWRNOjR4YXViMW5RekJYczl4cHBXdTh2WXN6c2x4cEFaag=='
+curl --location 'https://document.paper.id/v1/vcc-enterprise/3209304725' \\
+--header 'company_id: 8a6c3c9d-eb4a-40ba-ace6-2d99e8a047cc' \\
+--header 'user_id: 602e9f1e-2805-4162-9fb8-b9645ed3bef6' \\
+--header 'Authorization: basic cllPRENPbkN0ak5SbUFrYkx3Y05LYXI4QmNHSWRNOjR4YXViMW5RekJYczl4cHBXdTh2WXN6c2x4cEFaag=='\
+
+exp
+cd paper
+vc test-encrypt-pgp --profile="go"
+go run .
+go run .
+c
+go run ./app/cmd/consumer/.
+go run ./app/cmd/cron/main.go -f scheduler-vcc-debit-fund-transfer-balance-processor
+proj
+vc onl --profile="vue"
+gst
+cd be
+gst
+bun test
+claude
+c
+bun test
+bun test --coverage
+bun test
+claude
+bun test
+bun test --coverage
+bun dev
+make up
+bun dev
+bunx prisma generate
+claude
+cd be
+bunx prisma generate
+bun dev
+claude
+cd be
+bun dev
+c
+bun dev
+c
+cd ..
+gst
+gadd .
+gcm "Clean up util and member profile fields"
+gp
+gst
+cd be
+claude
+gst
+c
+gst
+git stash
+gst
+c
+gst
+claude
+cd be
+c
+bun dev
+c
+claude
+c
+bun dev
+c
+bun dev
+bun test
+c
+gst
+bun dev
+c
+cd ..
+c
+gst
+gadd .
+gcm "Optimize server start"
+gp
+proj
+vc onl --profile="vue"
+cd be
+claude
+gst
+claude
+bunx run lint
+bunx eslint . --ignore-pattern dist/
+npm run lint
+claude
+npm run lin
+npm run lint
+bun test
+bun test --coverage
+cd ..
+gst
+gadd .
+gcm "Optimized aligned framework"
+gp
+gwt
+gst
+c
+claude
+bun test
+claude
+cd be
+bun test
+bun test --coverage
+bun test
+claude
+bun test
+claude
+bun test
+claude
+c
+bun test
+bun test --coverage
+gst
+gadd .
+gcm "Reorganized unit test"
+gp
+cd be
+c
+claude
+bun add resend
+cd
+c
+bun dev
+bun dev
+c
+bun dev
+c
+bun dev
+c
+gst
+cd ..
+gst
+gadd .
+gcm "Added mailer"
+gp
+cd paper
+vc paper-bank-account --profile="go"
+gst
+git stash
+gco main
+gpull
+c
+c
+vc paper-mars --profile="go"
+gcb feature/fs-2.40/86czzgkgr-exclude-owner-phone-validation main
+go mod tidy
+go mod vendor
+go run ./app/.
+go run ./app/.
+go run ./app/.
+curl 'https://192.168.121.119:8000/api/v1/corporate-cards/configurations' \\
+  -H 'accept: application/json, text/plain, */*' \\
+  -H 'accept-language: en-US,en;q=0.9,id;q=0.8' \\
+  -H 'authorization: Basic cGFwZXJpZDpwNHAzcjFuZDBuM3MxNA==' \\
+  -H 'content-type: application/json' \\
+  -H 'dnt: 1' \\
+  -H 'origin: https://internal-dashboard.stag-v2.paper.id' \\
+  -H 'priority: u=1, i' \\
+  -H 'referer: https://internal-dashboard.stag-v2.paper.id/' \\
+  -H 'sec-ch-ua: "Not;A=Brand";v="99", "Microsoft Edge";v="139", "Chromium";v="139"' \\
+  -H 'sec-ch-ua-mobile: ?0' \\
+  -H 'sec-ch-ua-platform: "Windows"' \\
+  -H 'sec-fetch-dest: empty' \\
+  -H 'sec-fetch-mode: cors' \\
+  -H 'sec-fetch-site: same-site' \\
+  -H 'token_id: EVHyVi2Fkuw8N9aWU9MKDA==' \\
+  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36 Edg/139.0.0.0' \\
+  -H 'user_id: 3855c386-3e7b-49ec-8d5f-51d8e5c9f932' \\
+  --data-raw '{"company_id":"A1234-5643-23495","company_name":"Stark Industries","company_address":"Jl. Lapangan Bola No.1, Kb. Jeruk, Kec. Kb. Jeruk, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta","owner_nik":"1234567890123456","owner_phone_number":"089611523978","amount":10000000,"deposit_amount":0,"cardholder_name":"Rheza Sindhuwinata","product_type":"CREDIT","card_provider":"HARSYA_CORE_MLE","trx_notif_mobile_recipients":["087199998887"],"approver_emails":["rheza.s@gmail.com"],"billing_statement_email_recipients":["rheza.s@gmail.com"]}'
+curl --location 'https://192.168.121.119:8000/api/v1/internal/corporate-cards/configurations' \\
+--header 'authorization: Basic cGFwZXJpZDpwNHAzcjFuZDBuM3MxNA==' \\
+--header 'token_id: EVHyVi2Fkuw8N9aWU9MKDA==' \\
+--header 'user_id: 3855c386-3e7b-49ec-8d5f-51d8e5c9f932' \\
+--header 'company_id: t69c5525-886c-4201-ba69-bb8476089936' \\
+--header 'Content-Type: application/json' \\
+--data-raw '{\
+  "amount": 10000000,\
+  "approver_emails": [\
+    "rheza.s@gmail.com"\
+  ],\
+  "billing_statement_email_recipients": [\
+    "rheza.s@gmail.com"\
+  ],\
+  "card_provider": "HARSYA_CORE_MLE",\
+  "cardholder_name": "Rheza Sindhuwinata",\
+  "company address": "Jl. Sunter Garden Raya No.5D, RT.6/RW.12, Sunter Agung, Kec. Tj. Priok, Jkt Utara, Daerah Khusus Ibukota Jakarta 14350",\
+  "company_id": "A1234-5643-23495",\
+  "company_name": "Jl. Lapangan Bola No.1, Kb. Jeruk, Kec. Kb. Jeruk, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta",\
+  "deposit_amount": 0,\
+  "owner_nik": "3175075705940001",\
+  "owner_phone_number": "089611523978",\
+  "product_type": "CREDIT",\
+  "trx_notif_mobile_recipients": [\
+    "089611523978"\
+  ]\
+}'
+curl --location 'http://192.168.121.119:8000/api/v1/internal/corporate-cards/configurations' \\
+--header 'authorization: Basic cGFwZXJpZDpwNHAzcjFuZDBuM3MxNA==' \\
+--header 'token_id: EVHyVi2Fkuw8N9aWU9MKDA==' \\
+--header 'user_id: 3855c386-3e7b-49ec-8d5f-51d8e5c9f932' \\
+--header 'Content-Type: application/json' \\
+--data-raw '{\
+  "amount": 10000000,\
+  "approver_emails": [\
+    "rheza.s@gmail.com"\
+  ],\
+  "billing_statement_email_recipients": [\
+    "rheza.s@gmail.com"\
+  ],\
+  "card_provider": "HARSYA_CORE_MLE",\
+  "cardholder_name": "Rheza Sindhuwinata",\
+  "company address": "Jl. Sunter Garden Raya No.5D, RT.6/RW.12, Sunter Agung, Kec. Tj. Priok, Jkt Utara, Daerah Khusus Ibukota Jakarta 14350",\
+  "company_id": "A1234-5643-23495",\
+  "company_name": "Jl. Lapangan Bola No.1, Kb. Jeruk, Kec. Kb. Jeruk, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta",\
+  "deposit_amount": 0,\
+  "owner_nik": "3175075705940001",\
+  "owner_phone_number": "089611523978",\
+  "product_type": "CREDIT",\
+  "trx_notif_mobile_recipients": [\
+    "089611523978"\
+  ]\
+}'
+curl --location 'http://192.168.121.119:8000/api/v1/internal/corporate-cards/configurations' \\
+--header 'authorization: Basic cGFwZXJpZDpwNHAzcjFuZDBuM3MxNA==' \\
+--header 'token_id: EVHyVi2Fkuw8N9aWU9MKDA==' \\
+--header 'user_id: 3855c386-3e7b-49ec-8d5f-51d8e5c9f932' \\
+--header 'Content-Type: application/json' \\
+--data-raw '{\
+  "amount": 10000000,\
+  "approver_emails": [\
+    "rheza.s@gmail.com"\
+  ],\
+  "billing_statement_email_recipients": [\
+    "rheza.s@gmail.com"\
+  ],\
+  "card_provider": "HARSYA_CORE_MLE",\
+  "cardholder_name": "Rheza Sindhuwinata",\
+  "company_address": "Jl. Sunter Garden Raya No.5D, RT.6/RW.12, Sunter Agung, Kec. Tj. Priok, Jkt Utara, Daerah Khusus Ibukota Jakarta 14350",\
+  "company_id": "A1234-5643-23495",\
+  "company_name": "Jl. Lapangan Bola No.1, Kb. Jeruk, Kec. Kb. Jeruk, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta",\
+  "deposit_amount": 0,\
+  "owner_nik": "3175075705940001",\
+  "owner_phone_number": "089611523978",\
+  "product_type": "CREDIT",\
+  "trx_notif_mobile_recipients": [\
+    "089611523978"\
+  ]\
+}'
+go run ./app/.
+curl --location 'http://192.168.121.119:8000/api/v1/internal/corporate-cards/configurations' \\
+--header 'authorization: Basic cGFwZXJpZDpwNHAzcjFuZDBuM3MxNA==' \\
+--header 'token_id: EVHyVi2Fkuw8N9aWU9MKDA==' \\
+--header 'user_id: 3855c386-3e7b-49ec-8d5f-51d8e5c9f932' \\
+--header 'Content-Type: application/json' \\
+--data-raw '{\
+  "amount": 10000000,\
+  "approver_emails": [\
+    "rheza.s@gmail.com"\
+  ],\
+  "billing_statement_email_recipients": [\
+    "rheza.s@gmail.com"\
+  ],\
+  "card_provider": "HARSYA_CORE_MLE",\
+  "cardholder_name": "Rheza Sindhuwinata",\
+  "company_address": "Jl. Sunter Garden Raya No.5D, RT.6/RW.12, Sunter Agung, Kec. Tj. Priok, Jkt Utara, Daerah Khusus Ibukota Jakarta 14350",\
+  "company_id": "A1234-5643-23495",\
+  "company_name": "Jl. Lapangan Bola No.1, Kb. Jeruk, Kec. Kb. Jeruk, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta",\
+  "deposit_amount": 0,\
+  "owner_nik": "3175075705940001",\
+  "owner_phone_number": "089611523978",\
+  "product_type": "CREDIT",\
+  "trx_notif_mobile_recipients": [\
+    "089611523978"\
+  ]\
+}'
+c
+go run ./app/.
+curl --location 'http://192.168.121.119:8000/api/v1/internal/corporate-cards/configurations' \\
+--header 'authorization: Basic cGFwZXJpZDpwNHAzcjFuZDBuM3MxNA==' \\
+--header 'token_id: EVHyVi2Fkuw8N9aWU9MKDA==' \\
+--header 'user_id: 3855c386-3e7b-49ec-8d5f-51d8e5c9f932' \\
+--header 'Content-Type: application/json' \\
+--data-raw '{\
+  "amount": 10000000,\
+  "approver_emails": [\
+    "rheza.s@gmail.com"\
+  ],\
+  "billing_statement_email_recipients": [\
+    "rheza.s@gmail.com"\
+  ],\
+  "card_provider": "HARSYA_CORE_MLE",\
+  "cardholder_name": "Rheza Sindhu",\
+  "company_address": "Jl. Lapangan Bola No.1, Kb. Jeruk, Kec. Kb. Jeruk, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta",\
+  "company_id": "45884104-8b36-4b99-8a79-242c3644d33d",\
+  "company_name": "PT Coba coba",\
+  "deposit_amount": 0,\
+  "owner_nik": "3175075705940001",\
+  "owner_phone_number": "089611521235",\
+  "product_type": "CREDIT",\
+  "trx_notif_mobile_recipients": [\
+    "089611521235"\
+  ]\
+}'
+curl --location 'http://192.168.121.119:8000/api/v1/internal/corporate-cards/configurations' \\
+--header 'authorization: Basic cGFwZXJpZDpwNHAzcjFuZDBuM3MxNA==' \\
+--header 'token_id: EVHyVi2Fkuw8N9aWU9MKDA==' \\
+--header 'user_id: 3855c386-3e7b-49ec-8d5f-51d8e5c9f932' \\
+--header 'company_id: 45884104-8b36-4b99-8a79-242c3644d33d' \\
+--header 'Content-Type: application/json' \\
+--data-raw '{\
+  "amount": 10000000,\
+  "approver_emails": [\
+    "rheza.s@gmail.com"\
+  ],\
+  "billing_statement_email_recipients": [\
+    "rheza.s@gmail.com"\
+  ],\
+  "card_provider": "HARSYA_CORE_MLE",\
+  "cardholder_name": "Rheza Sindhu",\
+  "company_address": "Jl. Lapangan Bola No.1, Kb. Jeruk, Kec. Kb. Jeruk, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta",\
+  "company_id": "45884104-8b36-4b99-8a79-242c3644d33d",\
+  "company_name": "PT Coba coba",\
+  "deposit_amount": 0,\
+  "owner_nik": "3175075705940001",\
+  "owner_phone_number": "089611521235",\
+  "product_type": "CREDIT",\
+  "trx_notif_mobile_recipients": [\
+    "089611521235"\
+  ]\
+}'
+c
+go run ./app/.
+curl --location 'http://192.168.121.119:8000/api/v1/internal/corporate-cards/configurations' \\
+--header 'authorization: Basic cGFwZXJpZDpwNHAzcjFuZDBuM3MxNA==' \\
+--header 'token_id: EVHyVi2Fkuw8N9aWU9MKDA==' \\
+--header 'user_id: 3855c386-3e7b-49ec-8d5f-51d8e5c9f932' \\
+--header 'company_id: 45884104-8b36-4b99-8a79-242c3644d33d' \\
+--header 'Content-Type: application/json' \\
+--data-raw '{\
+  "amount": 10000000,\
+  "approver_emails": [\
+    "rheza.s@gmail.com"\
+  ],\
+  "billing_statement_email_recipients": [\
+    "rheza.s@gmail.com"\
+  ],\
+  "card_provider": "HARSYA_CORE_MLE",\
+  "cardholder_name": "Rheza Sindhu",\
+  "company_address": "Jl. Lapangan Bola No.1, Kb. Jeruk, Kec. Kb. Jeruk, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta",\
+  "company_id": "45884104-8b36-4b99-8a79-242c3644d33d",\
+  "company_name": "PT Coba coba",\
+  "deposit_amount": 0,\
+  "owner_nik": "3175075705940001",\
+  "owner_phone_number": "089611521235",\
+  "product_type": "CREDIT",\
+  "trx_notif_mobile_recipients": [\
+    "089611521235"\
+  ]\
+}'
+curl --location 'http://192.168.121.119:8000/api/v1/internal/corporate-cards/configurations' \\
+--header 'authorization: Basic cGFwZXJpZDpwNHAzcjFuZDBuM3MxNA==' \\
+--header 'token_id: EVHyVi2Fkuw8N9aWU9MKDA==' \\
+--header 'user_id: 3855c386-3e7b-49ec-8d5f-51d8e5c9f932' \\
+--header 'company_id: 45884104-8b36-4b99-8a79-242c3644d33d' \\
+--header 'Content-Type: application/json' \\
+--data-raw '{\
+  "amount": 10000000,\
+  "approver_emails": [\
+    "rheza.s@gmail.com"\
+  ],\
+  "billing_statement_email_recipients": [\
+    "rheza.s@gmail.com"\
+  ],\
+  "card_provider": "HARSYA_CORE_MLE",\
+  "cardholder_name": "Rheza Sindhu",\
+  "company_address": "Jl. Lapangan Bola No.1, Kb. Jeruk, Kec. Kb. Jeruk, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta",\
+  "company_id": "45884104-8b36-4b99-8a79-242c3644d33d",\
+  "company_name": "PT Coba coba",\
+  "deposit_amount": 0,\
+  "owner_nik": "3175075705940001",\
+  "owner_phone_number": "089611523978",\
+  "product_type": "CREDIT",\
+  "trx_notif_mobile_recipients": [\
+    "089611521235"\
+  ]\
+}'
+go run ./app/.
+curl --location 'http://192.168.121.119:8000/api/v1/internal/corporate-cards/configurations' \\
+--header 'authorization: Basic cGFwZXJpZDpwNHAzcjFuZDBuM3MxNA==' \\
+--header 'token_id: EVHyVi2Fkuw8N9aWU9MKDA==' \\
+--header 'user_id: 3855c386-3e7b-49ec-8d5f-51d8e5c9f932' \\
+--header 'company_id: 45884104-8b36-4b99-8a79-242c3644d33d' \\
+--header 'Content-Type: application/json' \\
+--data-raw '{\
+  "amount": 10000000,\
+  "approver_emails": [\
+    "rheza.s@gmail.com"\
+  ],\
+  "billing_statement_email_recipients": [\
+    "rheza.s@gmail.com"\
+  ],\
+  "card_provider": "HARSYA_CORE_MLE",\
+  "cardholder_name": "Rheza Sindhu",\
+  "company_address": "Jl. Lapangan Bola No.1, Kb. Jeruk, Kec. Kb. Jeruk, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta",\
+  "company_id": "45884104-8b36-4b99-8a79-242c3644d33d",\
+  "company_name": "PT Coba coba",\
+  "deposit_amount": 0,\
+  "owner_nik": "3175075705940001",\
+  "owner_phone_number": "089611523978",\
+  "product_type": "CREDIT",\
+  "trx_notif_mobile_recipients": [\
+    "089611521235"\
+  ]\
+}'
+gst
+git add app/pkg/vcc/exception/error.go
+git add app/pkg/vcc/usecase/corporate_card_initializer_impl.go
+gst
+gcm "Exclude Owner Phone Number Validation on PHC"
+gst
+gp
+git push --set-upstream origin feature/fs-2.40/86czzgkgr-exclude-owner-phone-validation
+gst
+gst
+git add app/pkg/vcc/exception/error_test.go
+gst
+gcm "Fix unit test"
+gp
+gst
+gco feature/fs-core/sprint-2.38/cu-86czjqwv5-transfer-balance-from-pivot-to-paper
+git stash
+gco feature/fs-core/sprint-2.38/cu-86czjqwv5-transfer-balance-from-pivot-to-paper
+gst
+go mod tidy
+go mod vendor
+c
+go mod vendor
+cd ..
+vc doku_h2h
+node .
+node .
+node .
+node .
+curl --location 'https://api.paper.id/api/v1/harsya-core-mle/virtual-card/callback' --header 'Content-Type: application/json' --data '{"event": "VIRTUAL-CARD.NOTIFICATION","data": {"trxTimestamp": "1756906587","authorizationCode": "551940","responseCode": "00","transactionId": "85bb021d-a096-4c30-ac25-883e00f95892","externalId": "GUS58E1692930903063627","userRefId": "1e758c46-5ac4-435a-8dc8-d1f2d1a8a17e","cardId": "0197ed3c-97d3-775e-8144-3635bf35dd70","cumulativeLimit": 0,"amount": 10972150,"currencyCode": "IDR","originAmount": 10972150,"originCurrencyCode": "IDR","type": "SPEND","status": "SUCCESSFUL","merchant": {"id": "100812035624   ","categoryCode": "5999","name": "PAPER.ID              ","stateOrCountryCode": "IDN"}}}'
+curl --location 'https://api.paper.id/api/v1/harsya-core-mle/virtual-card/callback' --header 'Content-Type: application/json' --data '{"event": "VIRTUAL-CARD.NOTIFICATION","data": {"trxTimestamp": "1756906668","authorizationCode": "552164","responseCode": "00","transactionId": "e1cd4cae-7e83-4571-a7cb-5f02df53856d","externalId": "GCIMW74305890903063748","userRefId": "46e34b48-5ead-4505-a83f-9ba4556fa49e","cardId": "0198e07a-7b03-76fd-9456-30cb515b5be1","cumulativeLimit": 0,"amount": 19500,"currencyCode": "IDR","originAmount": 19500,"originCurrencyCode": "IDR","type": "SPEND","status": "SUCCESSFUL","merchant": {"id": "001999382942   ","categoryCode": "4121","name": "Grab* A-8APGF9TWXC9TAV","stateOrCountryCode": "IDN"}}}'
+curl --location 'https://api.paper.id/api/v1/harsya-core-mle/virtual-card/callback' --header 'Content-Type: application/json' --data '{"event": "VIRTUAL-CARD.NOTIFICATION","data": {"trxTimestamp": "1756906705","authorizationCode": "552269","responseCode": "00","transactionId": "ed04274f-dee9-4c12-8cbe-fdd5605493c7","externalId": "UBFGW84422430903063825","userRefId": "8db09def-48c3-4e9e-8522-a822cc0f5db4","cardId": "0197e846-430e-7991-93d2-42b2541c9b20","cumulativeLimit": 0,"amount": 43000,"currencyCode": "IDR","originAmount": 43000,"originCurrencyCode": "IDR","type": "SPEND","status": "SUCCESSFUL","merchant": {"id": "001999382942   ","categoryCode": "4121","name": "Grab* A-8APGDQWWX6IWAV","stateOrCountryCode": "IDN"}}}'
+curl --location 'https://api.paper.id/api/v1/harsya-core-mle/virtual-card/callback' --header 'Content-Type: application/json' --data '{"event": "VIRTUAL-CARD.NOTIFICATION","data": {"trxTimestamp": "1756906896","authorizationCode": "552800","responseCode": "00","transactionId": "564fa8dc-e57c-41e9-9ed3-bd300a87b1b3","externalId": "4JLWZZ3191990903064136","userRefId": "22627a97-bb4f-4df4-964e-de808cd5f6f3","cardId": "0197e87b-ee22-7745-8964-6865462ea7e8","cumulativeLimit": 0,"amount": 85000,"currencyCode": "IDR","originAmount": 85000,"originCurrencyCode": "IDR","type": "SPEND","status": "SUCCESSFUL","merchant": {"id": "70421869108    ","categoryCode": "4121","name": "BLUE BIRD GROUP       ","stateOrCountryCode": "IDN"}}}'
+curl --location 'https://api.paper.id/api/v1/harsya-core-mle/virtual-card/callback' --header 'Content-Type: application/json' --data '{"event": "VIRTUAL-CARD.NOTIFICATION","data": {"trxTimestamp": "1756907045","authorizationCode": "553227","responseCode": "00","transactionId": "d47e8236-b715-4f74-bfd4-1448806e5fb5","externalId": "CLKEX87280990903064405","userRefId": "d5c700b6-cf0e-4faa-8882-ebc0644b46cf","cardId": "0198ad43-2fcb-7ea2-9e9d-edd313980c5e","cumulativeLimit": 0,"amount": 141392,"currencyCode": "IDR","originAmount": 141392,"originCurrencyCode": "IDR","type": "SPEND","status": "SUCCESSFUL","merchant": {"id": "526567000011168","categoryCode": "7311","name": "FACEBK *397GTYU6E2    ","stateOrCountryCode": "IDN"}}}'
+curl --location 'https://api.paper.id/api/v1/harsya-core-mle/virtual-card/callback' --header 'Content-Type: application/json' --data '{"event": "VIRTUAL-CARD.NOTIFICATION","data": {"trxTimestamp": "1756907072","authorizationCode": "553312","responseCode": "00","transactionId": "d2e17733-fe23-41f9-b851-fd3a162b2a4e","externalId": "UKT8W85493520903064432","userRefId": "51ee2ea0-e534-44b8-b607-aaaff4b89280","cardId": "01981c40-2dae-7097-8dbc-d0185defd759","cumulativeLimit": 0,"amount": 26500,"currencyCode": "IDR","originAmount": 26500,"originCurrencyCode": "IDR","type": "SPEND","status": "SUCCESSFUL","merchant": {"id": "001999382942   ","categoryCode": "4121","name": "Grab* A-8APH32CW2KSNAV","stateOrCountryCode": "IDN"}}}'
+curl --location 'https://api.paper.id/api/v1/harsya-core-mle/virtual-card/callback' --header 'Content-Type: application/json' --data '{"event": "VIRTUAL-CARD.NOTIFICATION","data": {"trxTimestamp": "1756907091","authorizationCode": "553366","responseCode": "00","transactionId": "e7d6bda4-cc11-44d8-bcae-f781ea1fea3d","externalId": "W70Y7L2608560903064451","userRefId": "7cc7120f-d3f2-4ffd-8cf4-2fd3c2608bf9","cardId": "0198a343-d629-730c-8ee4-dcd9a1873d8c","cumulativeLimit": 0,"amount": 225827,"currencyCode": "IDR","originAmount": 225827,"originCurrencyCode": "IDR","type": "SPEND","status": "SUCCESSFUL","merchant": {"id": "181929000067204","categoryCode": "7311","name": "FACEBK *272BPYQNE2    ","stateOrCountryCode": "IDN"}}}'
+curl --location 'https://api.paper.id/api/v1/harsya-core-mle/virtual-card/callback' --header 'Content-Type: application/json' --data '{"event": "VIRTUAL-CARD.NOTIFICATION","data": {"trxTimestamp": "1756907097","authorizationCode": "553384","responseCode": "00","transactionId": "70f56471-4979-4d82-8365-241300d78ab9","externalId": "B4WF071088520903064457","userRefId": "7cc7120f-d3f2-4ffd-8cf4-2fd3c2608bf9","cardId": "0198a343-d629-730c-8ee4-dcd9a1873d8c","cumulativeLimit": 0,"amount": 451655,"currencyCode": "IDR","originAmount": 451655,"originCurrencyCode": "IDR","type": "SPEND","status": "SUCCESSFUL","merchant": {"id": "526567000011168","categoryCode": "7311","name": "FACEBK *K85BYX4PE2    ","stateOrCountryCode": "IRL"}}}'
+curl --location 'https://api.paper.id/api/v1/harsya-core-mle/virtual-card/callback' --header 'Content-Type: application/json' --data '{"event": "VIRTUAL-CARD.NOTIFICATION","data": {"trxTimestamp": "1756907103","authorizationCode": "553398","responseCode": "00","transactionId": "0659ee50-9aa8-4c57-adb0-9acaaee698be","externalId": "CMHGX87288830903064503","userRefId": "7cc7120f-d3f2-4ffd-8cf4-2fd3c2608bf9","cardId": "0198a343-d629-730c-8ee4-dcd9a1873d8c","cumulativeLimit": 0,"amount": 903309,"currencyCode": "IDR","originAmount": 903309,"originCurrencyCode": "IDR","type": "SPEND","status": "SUCCESSFUL","merchant": {"id": "526567000011168","categoryCode": "7311","name": "FACEBK *RN3PSYYNE2    ","stateOrCountryCode": "IRL"}}}'
+curl --location 'https://api.paper.id/api/v1/harsya-core-mle/virtual-card/callback' --header 'Content-Type: application/json' --data '{"event": "VIRTUAL-CARD.NOTIFICATION","data": {"trxTimestamp": "1756906896","authorizationCode": "535552","responseCode": "00","transactionId": "4961eef4-2cc8-4257-8a33-e6be3fae54e4","externalId": "4JLVZZ3191880903064136","userRefId": "22627a97-bb4f-4df4-964e-de808cd5f6f3","cardId": "0197e87b-ee22-7745-8964-6865462ea7e8","cumulativeLimit": 0,"amount": 105000,"currencyCode": "IDR","originAmount": 105000,"originCurrencyCode": "IDR","type": "FULL_REVERSAL","status": "SUCCESSFUL","merchant": {"id": "70421869108    ","categoryCode": "4121","name": "BLUE BIRD GROUP       ","stateOrCountryCode": "IDN"}}}'
+c
+node .
+c
+node .
+node .
+node .
+node .
+c
+node .
+c
+node .
+node .
+gst
+gst
+proj
+vc onl --profile="vue"
+cd onl
+exp
+c
+c
+ll
+cd be
+rm -rf node_modules
+ll
+cd be
+bun install
+bun test
+bun dev
+cd be
+bunx prisma migrate reset
+claude
+c
+bun dev
+proj
+vc onl --profile="vue"
+gst
+gadd .
+gcm "Fix prrisma config error"
+gp
+gp
+gst
+c
+cd be
+bun dev
+c
+claude
+bun dev
+claude
+c
+bun dev
+c
+bun dev
+bunx prisma migrate reset
+bun dev
+claude
+c
+bun dev
+bunx prisma migrate reset
+bun dev
+c
+claude
+bunx prisma migrate reset
+bun dev
+c
+cd ..
+gst
+gadd .
+gst
+gcm "Cleanup mail utility"
+gp
+proj
+vc onl --profile="vue"
+cd be
+c
+claude
+c
+bunx prisma migrate reset
+bun dev
+c
+bun dev
+bunx prisma migrate reset
+bunx prisma migrate reset
+c
+bun dev
+c
+claude
+c
+bunx prisma migrate reset
+c
+bun dev
+claude
+bun dev
+claude
+bunx prisma migrate reset
+bun dev
+bunx prisma migrate reset
+bun dev
+c
+bun dev
+bunx prisma migrate reset
+bun dev
+claude
+c
+bunx prisma migrate reset
+bun dev
+bunx prisma migrate reset
+bun dev
+bunx prisma migrate reset
+bun dev
+c
+claude
+bun dev
+bunx prisma migrate reset
+bunx prisma migrate reset
+bun dev
+bunx prisma migrate reset
+bun dev
+c
+cd
+cd ..
+gst
+gadd .
+gcm "Fix email functionality"
+gp
+cd be
+claude
+cd paper
+c
+ll
+vc paper-bank-account --profile="go"
+git stash
+gco feature/fs-2.40/CU-86d04ud08-phc-disable-enable-revolving-flag
+c
+go mod tidy
+go mod vendor
+vc paper-mars --profile="go"
+go run ./app/.
+gpull
+git stash
+gpull
+gco feature/sprint-2.40/cu-86d02h616-cumulative-debit-credit
+go mod tidy
+go mod vendor
+c
+go run ./cmd/http/.
+go run ./cmd/http/.
+k6
+home
+ll
+mkdir k6
+ll
+cd k6
+touch test.js
+ll
+note test.js
+note test.js
+mv test.js test_schedule.js
+ll
+k6 run test_schedule.js
+ll
+cp test_schedule.js test_billing.js
+ll
+note test_billing.js
+note test_schedule.js
+k6 run test_schedule.js
+note test_schedule.js
+k6 run test_schedule.js
+ll
+cd k6
+note test_schedule.js
+vi test_billing.js
+note test_billing.js
+k6 run test_billing.js
+k6 run test_schedule.js
+proj
+vc onl --profile="vue"
+bun test
+cd be
+bun dev
+make up
+gst
+bun dev
+c
+claude
+bun test --coverage
+claude
+bun test --coverage
+gst
+gadd .
+gcm "increase unit test coverage"
+gp
+vc onl --profile="vue"
+wslupd
+src
+ll
+proj
+vc onl --profile="vue"
+cd be
+c
+claude
+c
+bun dev
+c
+bun test --coverage
+gst
+gadd .
+gcm "fix new standard"
+gp
+c
+bun dev
+claude
+cd be
+cd public
+exp
+cd ..
+bun add @elysiajs/static
+bun dev
+be dev
+bun dev
+exp
+bun dev
+claude
+bun dev
+c
+bun dev
+bun dev
+claude
+bun dev
+claude
+cd paper
+proj
+vc onl --profile="vue"
+cd be
+bun dev
+c
+bun dev
+claude
+bun dev
+claude
+c
+bun dev
+claude
+claude
+bun dev
+claud
+claude
+bun dev
+claude
+bun dev
+c
+cd ..
+gs
+gst
+gadd .
+gcm "fix error rate limit"
+gp
+bun test --coverage
+claude
+bun test --coverage
+claude
+bun test --coverage
+claude
+bun test --coverage
+gst
+gadd .
+gcm "increase unit test coverage"
+gp
+bun test --coverage
+claude
+bun test --coverage
+claude
+bun test --coverage
+gst
+gadd .
+gcm "increase unit test coverage"
+gp
+proj
+vc onl --profile="vue"
+proj
+vc onl --profile="vue"
+cd be
+bun test
+bun test
+bun test
+bun test --coverage
+bun test --coverage
+bunx prisma migrate reset
+bun dev
+c
+claude
+c
+bun test
+cd be
+bun dev
+bunx prisma migrate reset
+bun dev
+claude
+bun dev
+bunx prisma migrate reset
+bun dev
+claude
+bun dev
+claude
+claude
+c
+bun dev
+bunx prisma migrate reset
+bun dev
+bunx prisma migrate reset
+bun dev
+bunx prisma migrate reset
+c
+bun dev
+claude
+cd paper
+vc paper-bank-account --profile="go"
+proj
+vc onl --profile="vue"
+cd be
+bun dev
+claude
+c
+bunx prisma migrate reset
+bun dev
+claude
+c
+bun dev
+bunx prisma migrate reset
+bun dev
+c
+bun dev
+c
+claude
+bunx prisma migrate reset
+bun dev
+claude
+bun dev
+claude
+bunx prisma migrate reset
+bun dev
+bunx prisma migrate reset
+bun dev
+c
+bun dev
+bunx prisma migrate reset
+bun dev
+c
+bun dev
+c
+bun test
+claude
+bun test
+bun test --coverage
+bunx prisma migrate reset
+bun dev
+c
+bun test --coverage
+cd ..
+gst
+gadd .
+gst
+gcm "Add email verification"
+gp
+cd be
+bun dev
+c
+claude
+cd paper
+vc paper-mars --profile="go"
+proj
+vc onl --profile="vue"
+cd be
+claude
+c
+bun dev
+c
+claude
+c
+bun dev
+bunx prisma migrate reset
+bun dev
+c
+cd ..
+gst
+gadd .
+gcm "Fixing race condition"
+gp
+c
+cd be
+c
+bun dev
+c
+claude
+c
+make up
+claude
+bun dev
+cd  be
+claude
+docker exec netdata cat /var/lib/netdata/netdata_random_session_id
+c
+bun dev
+c
+claude
+c
+bun dev
+c
+gst
+cd ..
+gst
+gadd.
+gadd .
+gcm "Add netdata for monitoring"
+gp
+cd paper
+vc backend-portal --profile="go"
+gpull
+git remote -v
+vc paper-mars --profile="go"
+gst
+git remote -v
+git remote set-url origin git@github.com-rhewinpaper:paper-indonesia/backend-portal.git
+gst
+gpull
+cd paper
+vc paper-mars --profile="go"
+proj
+vc onl --profile="vue"
+cd be
+c
+claude
+bun add twilio
+claude
+claud
+claude
+c
+claude
+c
+bun dev
+claude
+c
+bun dev
+claude
+bun dev
+claude
+bun dev
+cd paper
+cd ..
+vc doku_gen_token3
+cd paper
+vc paper-mars --profile="go"
+node .
+node .
+node .
+node .
+node .
+vc paper-bank-account --profile="go"
+cd paper
+vc paper-bank-account --profile="go"
+c
+curl --location 'https://api.paper.id/api/v1/harsya-core-mle/virtual-card/callback' \\
+--header 'Content-Type: application/json' \\
+--data '{\
+  "event": "MERCHANT-TOP-UP.SUCCESS",\
+  "data": {\
+    "merchantId": "79f2b20b-e81b-455a-8048-fa3c0439054f",\
+    "merchantName": "PT XQUISITE ANALITIKA INDONESIA",\
+    "accountName": "DISBURSEMENT",\
+    "amount": {\
+      "currency": "IDR",\
+      "value": "49993500.00"\
+    },\
+    "balanceBefore": {\
+      "currency": "IDR",\
+      "value": "96908783.46"\
+    },\
+    "balanceAfter": {\
+      "currency": "IDR",\
+      "value": "146902283.46"\
+    },\
+    "paymentMethod": {\
+      "type": "VIRTUAL_ACCOUNT"\
+    },\
+    "paymentMethodOptions": {\
+      "virtualAccount": {\
+        "channel": "PERMATA",\
+        "virtualAccountNumber": "7664004200000004",\
+        "virtualAccountName": "PT XQUISITE ANALITIKA IND"\
+      }\
+    },\
+    "transactionTime": "2025-08-28T13:49:04Z"\
+  }\
+}'
+curl --location 'https://api.paper.id/api/v1/pivot/topup-callback' \\
+--header 'Content-Type: application/json' \\
+--data '{\
+  "event": "MERCHANT-TOP-UP.SUCCESS",\
+  "data": {\
+    "merchantId": "79f2b20b-e81b-455a-8048-fa3c0439054f",\
+    "merchantName": "PT XQUISITE ANALITIKA INDONESIA",\
+    "accountName": "DISBURSEMENT",\
+    "amount": {\
+      "currency": "IDR",\
+      "value": "49993500.00"\
+    },\
+    "balanceBefore": {\
+      "currency": "IDR",\
+      "value": "96908783.46"\
+    },\
+    "balanceAfter": {\
+      "currency": "IDR",\
+      "value": "146902283.46"\
+    },\
+    "paymentMethod": {\
+      "type": "VIRTUAL_ACCOUNT"\
+    },\
+    "paymentMethodOptions": {\
+      "virtualAccount": {\
+        "channel": "PERMATA",\
+        "virtualAccountNumber": "7664004200000004",\
+        "virtualAccountName": "PT XQUISITE ANALITIKA IND"\
+      }\
+    },\
+    "transactionTime": "2025-08-28T13:49:04Z"\
+  }\
+}'
+vc documentation
+curl --location 'https://bank.paper.id/api/v1/pivot/topup-callback' \\
+--header 'Content-Type: application/json' \\
+--data '{\
+  "event": "MERCHANT-TOP-UP.SUCCESS",\
+  "data": {\
+    "merchantId": "79f2b20b-e81b-455a-8048-fa3c0439054f",\
+    "merchantName": "PT XQUISITE ANALITIKA INDONESIA",\
+    "accountName": "DISBURSEMENT",\
+    "amount": {\
+      "currency": "IDR",\
+      "value": "49993500.00"\
+    },\
+    "balanceBefore": {\
+      "currency": "IDR",\
+      "value": "96908783.46"\
+    },\
+    "balanceAfter": {\
+      "currency": "IDR",\
+      "value": "146902283.46"\
+    },\
+    "paymentMethod": {\
+      "type": "VIRTUAL_ACCOUNT"\
+    },\
+    "paymentMethodOptions": {\
+      "virtualAccount": {\
+        "channel": "PERMATA",\
+        "virtualAccountNumber": "7664004200000004",\
+        "virtualAccountName": "PT XQUISITE ANALITIKA IND"\
+      }\
+    },\
+    "transactionTime": "2025-08-28T13:49:04Z"\
+  }\
+}'
+c
+gco main
+gpull
+git stash
+gpull
+c
+wslupd
+wslupd
+proj
+cd paper
+vc paper-bank-account --profile="go"
+vc paper-mars --profile="go"
+go mod tidy
+go mod vendor
+go run ./app/.
+c
+go run ./app/.
+c
+go run ./app/.
+go run ./app/.
+c
+go run ./app/.
+proj
+vc onl --profile="vue"
+cd be
+c
+claude
+bun dev
+c
+bun dev
+claude
+bun dev
+claude
+proj
+vc onl --profile="vue"
+cd be
+gst
+c
+gst
+bun dev
+c
+bun dev
+bun dev
+claude
+claude
+bun dev
+c
+bun dev
+c
+bunx prisma migrate reset
+bun dev
+claude
+c
+bun dev
+c
+bun dev
+ver
+composer update
+which composer
+proj
+cd _test-laravel
+composer -v
+composer --version
+laravel --version
+ver
+php.new
+which composer
+cd /home/neo/.config/herd-lite
+cd bin
+which herd-lite
+claude
+composer self-update
+composer self-update
+composer --version
+ver
+proj
+cd _test-laravel
+laravel --version
+php artisan --version
+cd ..
+vc _test-laravel --profile="php"
+claude
+composer require laravel/framework:^12.0
+composer require laravel/framework:^12.0
+composer require laravel/framework:^12.0
+composer require laravel/framework:^12.0
+claude
+composer require laravel/framework:^12.0 --prefer-dist --no-dev
+composer require laravel/framework:^12.0
+c
+composer require laravel/framework:^12.0
+composer require laravel/framework:^12.0 W
+composer require laravel/framework:^12.0 -W
+composer -W require laravel/framework:^12.0 
+composer require nunomaduro/collision --dev
+composer -W require laravel/framework:^12.0 
+claude
+c
+cd ..
+composer global require laravel/installer
+laravel --version
+ll
+laravel new _test-laravel2
+cd _test-laravel2
+php artisan make:model Product -mcr --requests
+proj
+vc _test-laravel2 --profile="php"
+c
+php artisan serve
+vc onl --profile="vue"
+php artisan migrate
+php artisa serve
+php artisan serve
+php artisan route::all
+php artisan route
+php artisan route:list
+c
+php artisan migrate:fresh
+php artisan serve
+php artisan serve
+php artisan serve
+php artisan serve
+proj
+mkdir warehouse
+ll
+vc warehouse --profile="php"
+claude
+cd warehouse-management
+./setup.sh
+claude
+sudo apt update && sudo apt install mysql-server -y
+sudo systemctl start mysql\
+
+sudo systemctl enable mysql
+sudo mysql_secure_installation
+./setup.sh
+mysql --version
+ver
+./setup.sh
+claude
+c
+sudo mysql -u root\
+  ALTER USER 'root'@'localhost' IDENTIFIED BY 'your_password';\
+  FLUSH PRIVILEGES;\
+  exit;
+sudo mysql -u root;
+./setup.sh
+claude
+claude
+sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+mysql -u root -p
+mysql -u root -p
+which mysql
+claude
+cp .env.example .env
+docker-compose up -d
+./setup.sh
+claude
+docker-compose restart mysql
+docker-compose restart mysql
+claude
+sudo systemctl stop mysql
+docker-compose down
+docker-compose up -d
+claude
+proj
+cd warehouse
+exp
+git init
+gst
+ll
+proj
+vc onl --profile="vue"
+cd be
+bun dev
+bun dev
+proj
+vc onl --profile="vue"
+cd be
+bun dev
+claude
+bun dev
+cd be
+bun dev
+c
+bun dev
+bun dev
+c
+bun dev
+bun dev
+bun dev
+proj
+vc onl --profile="vue"
+cd be
+bun dev
+c
+claude
+claude
+proj
+vc onl --profile="vue"
+cd be
+claude
+cd be
+node test-console-otp.cjs
+claude
+claude
+c
+proj
+vc onl --profile="vue"
+cd be
+c
+claude
+cd paper
+vc milky-way --profile="go"
+proj
+vc onl --profile="vue"
+cd be
+c
+cd paper
+vc paper-mars --profile="go"
+vc paper-bank-account --profile="go"
+gco feature/fs-core/sprint-2.38/cu-86czjqwv5-transfer-balance-from-pivot-to-paper
+git stash
+gco feature/fs-core/sprint-2.38/cu-86czjqwv5-transfer-balance-from-pivot-to-paper
+c
+gco main
+gpull
+c
+gco main
+gpull
+git stash
+gpull
+c
+c
+cd pdk
+gpull
+c
+ll
+cd ..
+.
+..
+cd milky-way
+gpull
+git remote -v
+cd paper
+cd paper-mars
+git remote -v
+git remote set-url origin git@github.com-rhewinpaper:paper-indonesia/milky-way.git
+git remote -v
+gpull
+cd ..
+cd paper-event-store
+gpull
+gpull
+git stash
+gpull
+git remote -v
+git remote set-url origin git@github.com-rhewinpaper:paper-indonesia/paper-event-store.git
+gpull
+c
+ll
+..
+cd paper-sync
+gpull
+..
+cd paper_internal_vue
+gpull
+git stash
+gpull
+git remote -v
+git remote set-url origin git@github.com-rhewinpaper:paper-indonesia/paper_internal_vue.git
+gpull
+c
+..
+cd paperangularapp
+gco main
+gco master
+gpull
+proj
+vc onl --profile="vue"
+cd be
+bun dev
+cd be
+node test-whatsapp.cjs
+node test-whatsapp.cjs +6288224740940
+node test-whatsapp.cjs +6288224740940
+node test-whatsapp.cjs +6288224740940
+node test-whatsapp.cjs +6288224740940
+bun dev
+c
+bun dev
+bun dev
+c
+bun dev
+c
+bun dev
+wslupd
+src
+wslupd
+proj
+vc onl --profile="vue"
+proj
+vc onl --profile="vue"
+cd be
+nslookup google.com
+proj
+vc onl --profile="vue"
+gst
+gadd .
+gcm "Added Send OTP"
+gp
+c
+ll
+proj
+vc onl --profile="vue"
+cd be
+c
+bun dev
+c
+bun dev
+c
+bun dev
+proj
+vc onl --profile="vue"
+proj
+vc onl --profile="vue"
+cd be
+bun dev
+c
+bun dev
+c
+bun dev
+bun dev
+c
+bun dev
+c
+bun dev
+c
+gst
+cd ..
+gst
+gadd .
+gcm "Cleanup Config"
+gp
+gst
+cd be
+bun dev
+c
+cd ..
+gst
+gadd .
+gcm "Add redis healthy check"
+gp
+bun dev
+cd be
+bun dev
+bun dev
+bun dev
+c
+c
+bun dev
+c
+bun dev
+gst
+cd ..
+gadd .
+gcm "Add graceful shutdown"
+cd be
+cd ..
+gp
+cd be
+c
+exp
+c
+c
+c
+proj
+vc onl --profile="vue"
+proj
+vc onl --profile="vue"
+cd be
+exp
+cd D:\Works\Prixa\prixa-3a
+cd \mnt\d\Works\Prixa\prixa-3a
+ll
+vc onl --profile="vue"
+cd be
+bun dev
+c
+bun dev
+c
+bun dev
+c
+bun dev
+cp _test-nodejs justtest
+cp -r _test-nodejs justtest
+ll
+vc justtest --profile="js"
+node .
+proj
+vc justtest --profile="js"
+node .
+ni
+node .
+node app.js
+curl --location 'https://localhost:3000'
+curl --location 'http://localhost:3000'
+curl --location 'http://localhost:3000'
+node app.js
+curl --location 'http://localhost:3000'
+node app.js
+node app.js
+node app.js
+curl --location 'http://localhost:3000'
+node app.js
+curl --location 'http://localhost:3000'
+node app.js
+curl --location 'http://localhost:3000'
+node app.js
+curl --location 'http://localhost:3000'
+node app.js
+curl --location 'http://localhost:3000'
+node app.js
+curl --location 'http://localhost:3000'
+node app.js
+curl --location 'http://localhost:3000'
+node app.js
+curl --location 'http://localhost:3000'
+node app.js
+curl --location 'http://localhost:3000'
+node app.js
+curl --location 'http://localhost:3000'
+c
+node app.js
+c
+curl --location 'http://localhost:3000'
+c
+ll
+clear
+c
+wslupd
+wslupd
+wslupd
+wslupd
+ping www.google.com
+wslupd
+sudo apt autoremove
+src
+proj
+vc onl --profile="vue"
+proj
+vc onl --profile="vue"
+vc onl --profile="vue"
+vc onl --profile="vue"
+wslupd
+proj
+vc onl --profile="vue"
+vc onl --profile="vue"
+vc onl --profile="vue"
+proj
+vc onl --profile="vue"
+proj
+vc onl --profile="vue"
+wslupd
+wslupd
+proj
+wslupd
+src
+wslupd
+proj
+c
+ll
+proj
+vc onl --profile="vue"
+proj
+proj
+vc onl --profile="vue"
+cd be
+bun dev
+vc onl --profile="vue"
+cd be
+bun dev
+c
+proj
+vc onl --profile="vue"
+cd dev
+cd be
+bun dev
+bun dev
+proj
+vc onl --profile="vue"
+cd be
+proj
+vc onl --profile="vue"
+cd be
+bun dev
+bun dev
+c
+bun dev
+bun dev
+c
+proj
+vc onl --profile="vue"
+cd be
+bun dev
+c
+bun dev
+wslupd
+c
+proj
+ll
+src
+cd be
+bun dev
+cd be
+cd be
+c
+proj
+vc onl --profile="vue"
+cd be
+bun dev
+cd be
+bun dev
+c
+bun dev
+grep -R "import { log" src/
+bun dev
+c
+proj
+vc onl --profile="vue"
+proj
+vc onl --profile="vue"
+cd be
+bun dev
+wslupd
+brew outdated
+proj
+cd onl
+cd be
+vi Makefile
+make down
+cd ../..
+touch magento-docker
+ll
+rm magento-docker
+ll
+makedir magento-docker
+mkdir magento-docker
+ll
+cd magento-docker
+touch docker-compose.yml
+touch setup.sh
+mkdir src
+ll
+note docker-compose.yml
+note setup.sh
+ll
+chmod +x setup.sh
+./setup.sh
+setup.sh
+dos2unix setup.sh
+./setup.sh
+./setup.sh
+ll
+note docker-compose.yml
+c
+./setup.sh
+./setup.sh
+ll
+note setup.sh
+./setup.sh
+proj
+cd magento-docker
+./setup.sh
+note setup.sh
+./setup.sh
+note setup.sh
+proj
+vc onl --profile="vue"
+proj
+c
+c
+cd be
+c
+wslupd
+wslupd
+wslupd
+wslupd
+src
+proj
+vc onl --profile="vue"
+proj
+vc onl --profile="vue"
+proj
+vc onl --profile="vue"
+proj
+vc onl --profile="vue"
+c
+ll
+ver
+wslupd
+ver
+src
+ver
+wslupd
+wslupd
+wslupd
+proj
+vc onl --profile="vue"
+cd be
+c
+cd be
+c
+proj
+vc onl --profile="vue"
+cd be
+c
+curl -v https://api.github.com\
+
+openssl s_client -connect api.github.com:443 -tls1_3\
+
+curl -v --http1.1 https://api.github.com\
+
+sudo update-ca-certificates\
+
+curl -v https://api.github.com\
+
+vc onl --profile="vue"
+proj
+mkdir python_scrapper
+ll
+cd python_scrapper
+touch scraper.py
+ll
+vc scraper.py --profile="python"
+cd ..
+vc python_scrapper --profile="py"
+pip install requests beautifulsoup4 pandas openpyxl
+ls -d */ | grep -E 'venv|env'\
+
+find ~ -type d -name "*venv*" -o -name "*env*"\
+
+python3 -m venv ~/scraper-env\
+
+source ~/scraper-env/bin/activate
+which python
+which pip
+pip install requests beautifulsoup4 pandas openpyxl\
+
+python scraper.py
+python scraper.py
+c
+proj
+vc onl --profile="vue"
+cd be
+vc onl --profile="vue"
+cd be
+brew install glow
+proj
+cd paper
+cd paper-mars
+glow README.md
+src
+proj
+cd paper/paper-mars
+glow README.md
+cd ..
+cd paper-bank-account
+note README.md
+c
+ll
+ll
+note CLAUDE.md
+glow CLAUDE.md
+wslupd
+c
+proj
+wslupd
+src
+ver
+cd .zsh
+cd .zsh
+glow README.md
+proj
+proj
+vc onl --profile="vue"
+proj
+vc onl --profile="vue"
+cd be
+bun dev
+c
+bun dev
+c
+make up
+bun dev
+gst
+bun dev
+proj
+vc onl --profile="vue"
+proj
+vc onl --profile="vue"
+proj
+cd onl
+git rev-parse --show-toplevel
+git rev-parse --show-superproject-working-tree
+cat .git
+tail -f "C:\\Users\\neohub\\AppData\\Local\\warp\\Warp\\data\\logs
+proj
+vc onl --profile="vue"
+proj
+vc onl --profile="vue"
+proj
+vc onl --profile="vue"
+vc onl --profile="vue"
+npm i -g @continuedev/cli
+src
+cn
+proj
+vc onl --profile="vue"
+vc onl --profile="vue"
+wslupd
+wslupd
+wslupd
+wslupd
+wslupd
+wslupd
+src
+proj
+vc onl --profile="vue"
+proj
+vc _test-go profile="go"
+go run main.go
+go run main.go
+go run main.go
+go run main.go
+go run main.go
+go run main.go
+go run main.go
+go run main.go
+go run main.go
+go run main.go
+go run main.go
+go run main.go
+go run main.go
+go run main.go
+go run main.go
+go run main.go
+go run main.go
+go run main.go
+go run main.go
+go run main.go
+go run main.go
+go run main.go
+go run main.go
+go run main.go
+go run main.go
+proj
+vc onl --profile="vue"
+proj
+vc _test-go --profile="go"
+go run main.go
+c
+vc _test-nodejs --profile="js"
+vc _test-nodejs --profile="vue"
+proj
+vc _test-nodejs --profile="vue"
+vc _test-python --profile="py"
+vc _test-go --profile="go"
+src
+c
+ll
+vc _test-go --profile="go"
+go run main.go
+go run main.go
+go run main.go
+go run main.go
+go run main.go
+go run main.go
+c
+c
+go run main.go
+go run main.go
+go run main.go
+go run main.go
+go run main.go
+go run main.go
+go run main.go
+go run main.go
+go run main.go
+proj
+vc onl --profile="vue"
+proj
+vc onl --profile="vue"
+docker container prune
+proj
+cd onl
+docker container prune
+docker system df
+docker image prune -a
+docker ps -s
+docker system df
+docker system prune -a --volumes
+c
+proj
+c
+ll
+c
+ll
+proj
+git clone https://github.com/team99-exercise/99-backend-exercise.git
+git remote -v
+git clone https://github.com/team99-exercise/99-backend-exercise.git
+git clone https://github.com/team99-exercise/99-backend-exercise.git
+git clone git@github.com:team99-exercise/99-backend-exercise.git
+git remote 0v
+git remote -v
+cd ~/.ssh
+sudo vi config
+proj
+git clone git@github.com:rhewins/99-backend-exercise.git
+git clone https://github.com/rhewins/99-backend-exercise.git
+c
+proj
+git clone git@github.com:rhewins/99-backend-exercise.git
+git clone git@github.com:rhewins/99-backend-exercise.git
+git clone git@github.com-rhewins:rhewins/99-backend-exercise.git
+ll
+cd 99-backend-exercise
+cd ..
+vc 99-backend-exercise --profile="go"
+touch README.md
+touch .gitignore
+ll
+vc onl --profile="vue"
+mkdir .continue
+cd .continue
+mkdir rules
+cd rules
+touch project-guidelines.md
+gst
+gst
+proj
+vc 99-backend-exercise --profile="go"
+vc onl --profile="vue"
+c
+proj
+vc 99-backend-exercise --profile="go"
+vc 99-backend-exercise --profile="go"
+proj
+vc 99-backend-exercise --profile="go"
+cd 99-backend-exercise
+claude
+ll
+touch README.md
+gst
+cd ..
+mv ./99-backend-exercise/ ./99-backup-backend-exercise
+ll
+proj
+cd 99-backup-backend-exercise
+git remote -v
+cd ..
+git clone git@github.com-rhewins:rhewins/99-backend-exercise.git
+ll
+vc 99-backup-backend-exercise --profile="go"
+claude
+vc 99-backup-backend-exercise --profile="go"
+./scripts/dev-setup.sh
+claude
+c
+./scripts/dev-setup.sh
+claude
+cd ..
+cd 99-backend-exercise
+cd ..
+cp 99-backup-backend-exercise 99-backup2-backend-exercise
+cp -r 99-backup-backend-exercise 99-backup2-backend-exercise
+ll
+vc 99-backup2-backend-exercise --profile="go"
+gst
+proj
+vc 99-backup2-backend-exercise --profile="go"
+claude
+go install github.com/sqlc-dev/sqlc/cmd/sqlc@latest
+go install github.com/sqlc-dev/sqlc/cmd/sqlc@latest
+go install github.com/sqlc-dev/sqlc/cmd/sqlc@latest
+go install github.com/sqlc-dev/sqlc/cmd/sqlc@latest
+proj
+vc 99-backup2-backend-exercise --profile="go"
+go install github.com/sqlc-dev/sqlc/cmd/sqlc@latest
+c
+go install github.com/sqlc-dev/sqlc/cmd/sqlc@latest
+go env GOPROXY
+src
+ver
+pwd
+go env -w GOPROXY=https://proxy.golang.org,direct\
+
+go env
+go env GOPROXY
+go install github.com/sqlc-dev/sqlc/cmd/sqlc@latest
+cd 99-backup2-backend-exercise
+c
+ll
+go install github.com/sqlc-dev/sqlc/cmd/sqlc@latest
+sqlc version
+cd ..
+vc 99-backup2-backend-exercise --profile="go"
+go install -tags 'postgres' github.com/golang-migrate/migrate/v4/cmd/migrate@latest
+golang-migrate version
+which migrate
+migrate version
+migrate -version
+migrate -help
+go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
+claude
+go install github.com/swaggo/swag/cmd/swag@latest
+swag --version
+cd services/user-service
+sqlc generate
+cd ../..
+cd services/listing-service
+sqlc generate
+cd ../..
+c
+go mod download
+go mod tidy
+make build
+claude
+make dev
+claude
+make dev
+make dev
+ll
+vc onl --profile="vue"
+docker info
+make dev
+make dev
+ll
+proj
+cd 99-backup2-backend-exercise/
+make dev
+cd ..
+vc 99-backup2-backend-exercise --profile="go"
+vc onl --profile="vue"
+make dev
+claude
+make dev
+claude
+proj
+cd 99-backup2-backend-exercise
+make dev
+claude
+proj
+vc 99-backup2-backend-exercise
+make dev
+go mod tidy
+make dev
+claude
+docker system prune -a
+make dv
+make dev
+claude
+claude
+make dev
+proj
+vc 99-backup2-backend-exercise --profile="go"
+make dev
+claude
+make dev
+claude
+proj
+cd 99-backup2-backend-exercise
+make up
+make dev
+docker info
+docker-compose -f docker-compose.dev.yml up --build
+lsof -i :8011
+sudo systemctl restart docker
+docker run -p 8011:8001 user-service
+netstat -ano | findstr :8011
+lsof -i :8011
+cd ..
+vc 99-backup2-backend-exercise --profile="go"
+make build
+make dev
+proj
+cd 99-backup2-backend-exercise
+make dev
+cd ..
+vc 99-backup2-backend-exercise --profile="go"
+cd 99-backup2-backend-exercise
+make dev
+make migrate-up
+claude
+make migrate-up
+curl http://localhost:8001/health
+curl http://192.168.121.119:8001/health
+curl http://192.168.121.119:9001/health
+curl http://192.168.121.119:9002/health
+curl http://192.168.121.119:9003/health
+make dev-down
+make dev
+proj
+cd 99-backup2-backend-exercise
+make dev
+make dev
+proj
+vc 99-backup2-backend-exercise --profile="go"
+c
+make migrate-up
+curl http://localhost:9001/health
+curl http://localhost:9002/health
+curl http://localhost:9003/health
+c
+curl -X POST http://localhost:9003/api/users \\
+  -H "Content-Type: application/json" \\
+  -d '{"name": "John Doe"}'
+curl http://localhost:9003/health
+curl -X POST http://localhost:9003/api/users \\
+  -H "Content-Type: application/json" \\
+  -d '{"name": "John Doe"}'
+curl http://localhost:9002/health 
+curl -X POST http://localhost:9003/api/users \\
+  -H "Content-Type: application/json" \\
+  -d '{"name": "John Doe"}'
+claude
+curl -X POST http://localhost:9003/api/listings \\
+  -H "Content-Type: application/json" \\
+  -d '{"user_id": 1, "listing_type": "rent", "price": 5000}'
+curl "http://localhost:9003/api/listings?page_num=1&page_size=10"
+c
+vc 99-backend-exercise --profile="go"
+touch .gitignore
+touch README.md
+gstt
+proj
+vc 99-backup2-backend-exercise --profile="go"
+vc 99-backend-exercise --profile="go"
+gst
+gcm "Init exercise"
+gadd .
+gst
+gp
+git push --set-upstream origin main
+gcm "Init exercise"
+gp
+gst
+gst
+gst
+gadd .
+gcm "rename README.md into INSTRUCTIONS.md"
+gp
+proj
+vc 99-backup2-backend-exercise --profile="go"
+vc 99-backend-exercise --profile="go"
+proj
+vc 99-backup2-backend-exercise
+vc 99-backend-exercise --profile="go"
+gst
+gst
+proj
+vc 99-backend-exercise --profile="go"
+gst
+gadd .
+gcm "Added database docker & connection"
+gp
+go mod tidy
+gst
+gadd .
+gcm "Added user service and general json response"
+gp
+go mod tidy
+go get github.com/rhewins/99-backend-exercise/services/user-service/internal/repository
+gadd .
+gcm "Generate sqlc code"
+gp
+gst
+gadd .
+gcm 
+gcm "Add user service dockerfile"
+gp
+go get github.com/rhewins/99-backend-exercise/services/user-service/internal/repository
+gadd .
+gcm "Add listing service"
+gp
+gcm "Add docker for listing service"
+gadd .
+gcm "Add docker for listing service"
+gp
+go mod tidy
+gst
+gadd .
+gcm "Add public api service"
+gp
+gst
+gst
+gadd .
+gcm "Add script for easier setup"
+gp
+gst
+gadd .
+gcm "Add readme file"
+gp
+c
+gst
+gst
+gadd .
+gcm "Add .env file and make"
+gp
+cd services/user-service
+sqlc generate
+cd ../..
+cd servvices/listing-service
+ll
+sqlc generate
+cd ../..
+gst
+go mod download
+go mod tidy
+cd 99-backend-exercise
+c
+make build
+make dev
+make migrate-up
+curl http://localhost:9001/health
+curl http://localhost:9002/health
+curl http://localhost:9003/health
+curl -X POST http://localhost:9003/api/users \\
+  -H "Content-Type: application/json" \\
+  -d '{"name": "John Doe"}'
+curl -X POST http://localhost:9003/api/listings \\
+  -H "Content-Type: application/json" \\
+  -d '{"user_id": 1, "listing_type": "rent", "price": 5000}'
+curl "http://localhost:9003/api/listings?page_num=1&page_size=10"
+curl "http://localhost:9003/api/listings?user_id=1"
+curl -X POST http://localhost:9003/api/users \\
+  -H "Content-Type: application/json" \\
+  -d '{"name": "Bryan Adams"}'
+curl "http://localhost:9003/api/listings?page_num=1&page_size=10"
+curl -X POST http://localhost:9003/api/listings \\
+  -H "Content-Type: application/json" \\
+  -d '{"user_id": 2, "listing_type": "buy", "price": 12000}'
+curl -X POST http://localhost:9003/api/listings \\
+  -H "Content-Type: application/json" \\
+  -d '{"user_id": 2, "listing_type": "rent", "price": 12000}'
+curl "http://localhost:9003/api/listings?page_num=1&page_size=10"
+curl "http://localhost:9003/api/listings?user_id=1"
+curl "http://localhost:9003/api/listings?user_id=2"
+gst
+claude
+proj
+cd 99-backend-exercise
+docker-compose -f docker-compose.dev.yml logs -f
+curl "http://localhost:9003/api/listings?user_id=2"
+curl "http://localhost:9003/api/listings?user_id=1"
+curl "http://localhost:9003/api/users
+curl "http://localhost:9003/api/users"
+curl "http://localhost:9003/api/listings"
+make install-hooks
+gst
+claude
+cd .git
+cd hooks
+vi pre-commit
+make swagger
+claude
+c
+gst
+gst
+gadd .
+gcm "Add swagger docs"
+gp
+gst
+gadd .
+gcm "Fix swagger docs error"
+gp
+claude
+make dev-down
+make dev
+make dev
+proj
+cd 99-backend-exercise
+make dev
+make dev
+proj
+cd 99-backend-exercise
+make dev
+make dev
+make dev
+claude
+make dev
+claude
+proj
+cd 99-backend-exercise
+make dev
+proj
+cd 99-backend-exercise
+gst
+make dev
+make dev
+claude
+proj
+vc 99-backend-exercise --profile="go"
+go mod tidy
+go mod download
+go mod tidy
+c
+make dev
+claude
+make dev
+make dev
+claude
+make dev
+make dev
+cd 99-backend-exercise
+make migrate-up
+curl -X POST http://localhost:9003/api/users \\
+  -H "Content-Type: application/json" \\
+  -d '{"name": "John Doe"}'
+curl -X POST http://localhost:9003/api/listings \\
+  -H "Content-Type: application/json" \\
+  -d '{"user_id": 1, "listing_type": "rent", "price": 5000}'
+curl "http://localhost:9003/api/listings?page_num=1&page_size=10"
+curl "http://localhost:9003/api/listings?user_id=1"
+curl "http://localhost:9003/api/listings?user_id=2"
+curl "http://localhost:9003/api/listings?user_id=-1"
+curl "http://localhost:9003/api/listings?user_id=-4"
+gst
+curl http://localhost:9003/health
+curl http://localhost:9001/health
+curl http://localhost:9002/health
+gst
+claude
+claude
+gst
+gadd .
+gcm "Resolve go version package mismatch"
+gp
+claude
+curl -X POST http://localhost:9003/api/listings \\
+  -H "Content-Type: application/json" \\
+  -d '{"user_id": 1, "listing_type": "rent", "price": 0}'
+curl -X POST http://localhost:9003/api/listings \\
+  -H "Content-Type: application/json" \\
+  -d '{"user_id": 1, "listing_type": "invalid", "price": 5000}'
+curl -X POST http://localhost:9003/api/listings \\
+  -H "Content-Type: application/json" \\
+  -d '{"user_id": 999, "listing_type": "rent", "price": 5000}'
+curl "http://localhost:9003/api/listings?user_id=1"
+curl "http://localhost:9003/api/listings?user_id=2"
+claude
+make dev
+make dev
+proj
+cd 99-backend-exercise
+make migrate-up
+curl -X POST http://localhost:9003/api/users \\
+  -H "Content-Type: application/json" \\
+  -d '{"name": "John Doe"}'
+curl -X POST http://localhost:9003/api/users \\
+  -H "Content-Type: application/json" \\
+  -d '{"name": "Bryan Adams"}'
+curl -X POST http://localhost:9003/api/listings \\
+  -H "Content-Type: application/json" \\
+  -d '{"user_id": 1, "listing_type": "rent", "price": 5000}'
+curl -X POST http://localhost:9003/api/listings \\
+  -H "Content-Type: application/json" \\
+  -d '{"user_id": 1, "listing_type": "sell", "price": 1234567890}'
+curl -X POST http://localhost:9003/api/listings \\
+  -H "Content-Type: application/json" \\
+  -d '{"user_id": 1, "listing_type": "sale", "price": 1234567890}'
+curl "http://localhost:9003/api/listings?page_num=1&page_size=10"
+ curl -X POST http://localhost:9003/api/listings \\
+  -H "Content-Type: application/json" \\
+  -d '{"user_id": 2, "listing_type": "rent", "price": 11000}'
+curl "http://localhost:9003/api/listings?page_num=1&page_size=10"
+curl "http://localhost:9003/api/listings?user_id=1"
+curl "http://localhost:9003/api/listings?user_id=2"
+curl "http://localhost:9003/api/listings?user_id=-9"
+curl "http://localhost:9003/api/listings?user_id=0"
+curl "http://localhost:9003/api/listings?user_id=abc"
+gst
+gadd .
+gcm "Fix validation for get listing filter by user"
+gp
+claude
+c
+make test
+make test
+gst
+gadd .
+gcm "Add unit test"
+gp
+gst
+gadd .
+gcm "Add more unit test"
+gp
+make test
+make build
+gst
+make dev-down
+c
+proj
+proj
+cd 99-backend-exercise
+make dev
+make dev
+docker --version
+proj
+cd 99-backend-exercise
+make dev
+make dev
+make dev
+proj
+vc onl --profile="vue"
+cd be
+make up
+wslupd
+proj
+mkdir numi
+cd numi
+ver
+cd ..
+npx create-next-app@latest numi
+c
+cd numi
+mkdir apps
+mkdir services
+mkdir .docker
+ll
+cd services
+touch README.md
+vi README.md
+cd ..
+npx create-next-app@latest apps/web
+cd apps/web
+npm run dev
+cd ..
+cd ..
+vc numi --profile ="js"
+vc numi --profile="js"
+cd apps/web
+nrd
+proj
+vc numi --profile="js"
+cd apps/web
+mkdir src
+nrd
+c
+nrd
+c
+nrd
+c
+ll
+rm -rf .next
+ll
+npm run dev
+proj
+vc numi --profile="js"
+cd apps/web
+rm -rf .next
+ll
+nrd
+git init
+ll
+touch .gitignore
+git remote add origin git@github.com-rhewins:rhewins/numi.git
+git branch -M main
+git push --set-upstream origin main
+git push -u origin main
+gst
+gadd .
+cd apps/web
+proj
+vc numi --profile="js"
+ll
+c
+touch README.md
+git status
+git remote -v
+git remote set-url origin git@github.com-rhewins:rhewins/numi-platform.git
+git remote -v
+cd apps/web
+git remote -v
+git remote add origin git@github.com-rhewins:rhewins/numi-web.git
+git remote -v
+git push -u origin main
+cd ../..
+git submodule add git@github.com-rhewins:rhewins/numi-web.git apps/web
+git rm -r --cached apps/web
+git rm -r -f --cached apps/web
+git commit -m "chore: prepare apps/web for submodule"
+git submodule add git@github.com-rhewins:rhewins/numi-web.git apps/web
+git commit -m "chore: add numi-web as submodule"
+git status
+git submodule status
+git add README.md
+gst
+git commit -m "docs: add platform README"
+gst
+cd apps/web
+gst
+git add .
+git commit -m "chore: finalize frontend setup"
+git push
+gst
+cd ..
+cd ..
+gst
+git add apps/web
+git commit -m "chore: update numi-web submodule reference"
+gp
+git push --set-upstream origin main
+gst
+cd apps/web
+gst
+gst
+cd ../..
+gst
+cd apps/web
+touch tailwind.config.ts
+nrd
+c
+npx shadcn@latest init
+gst
+gadd .
+gcm "Init shadcdn ui"
+gp
+npx shadcn@latest add button
+npx shadcn@latest add card input
+nrd
+cd apps/web
+npm install tw-animate-css
+c
+nrd
+cd src/app
+cd ..
+cd components
+mkdir layout
+cd layout
+touch header.tsx
+touch footer.tsx
+cd ../..
+cd ..
+gst
+proj
+vc numi --profile="js"
+proj
+cd numi
+cd apps
+cp -R web/ ../../boo
+cd ../..
+cd boo
+nrd
+c
+ll
+rm -rf .next
+ll
+nrd
+c
+nrd
+c
+cd ..
+vc boo --profile="js"
+nrd
+c
+ll
+rm -rf .next
+rm -rf .node_modules
+ll
+c
+ll
+cd src/components/layout
+touch cd ../..
+c
+cd ..
+cd ..
+mkdir mock
+touch question.ts
+c
+mkdir styles
+nrd
+cd pages
+touch _document.tsx
+nrd
+cd ..
+cd components
+mkdir question
+touch QuestionHeader.tsc
+touch QuestionHeader.tsx
+cd ..
+mkdir types
+cd types
+touch question.ts
+cd ..
+cd components/question
+touch QuestionOptions.tsx
+touch OptionCard.tsx
+c
+nrd
+c
+cd ..
+c
+nrd
+nrd
+c
+nrd
+proj
+vc boo --profile="js"
+nrd
+nrd
+c
+nrd
+c
+nrd
+ll
+rm -rf .next
+ll
+nrd
+c
+nrd
+proj
+vc boo --profile="js"
+nrd
+c
+nrd
+c
+nrd
+nrd
+c
+nrd
+npm install clsx tailwind-merge
+vc boo --profile="js"
+nrd
+proj
+vc boo --profile="js"
+vc boo --profile="js"
+nrd
+vc numi --profile="js"
+c
+nrd
+nrd
+vc boo --profile="js"
+vc boo --profile="js"
+nrd
+proj
+vc boo --profile="js"
+nrd
+ll
+mv boo boo2
+ll
+mkdir boo
+ll
+vc boo --profile="js"
+cd ..
+git clone git@github.com-rhewins:rhewins/boo-exercise.git
+ll
+cd boo-exercise
+vc boo-exercise --profile="js"
+gst
+cd boo-exercise
+rm -rf node_modules
+ll
+cd ..
+npx create-next-app@latest _test-nextjs
+npx create-next-app@latest test-nextjs
+cd ..
+cd test-nextjs
+cd app
+vi layout.tsx
+vi page.tsx
+gst
+gadd .
+gcm "Init next js project"
+gp
+proj
+vc boo-exercise --profile="js"
+npm i
+gst
+c
+nrd
+c
+gst
+gadd .
+gcm "restructure default page & layout into src"
+gp
+vc boo2 --profile="js"
+nrd
+c
+nrd
+c
+ll
+rm -rf .next
+nrd
+npm install clsx tailwind-merge
+c
+nrd
+nrd
+gst
+gadd .
+gcm "set basic page & layout"
+gp
+gst
+gst
+gadd .
+gcm "prepare some asset"
+gp
+nrd
+c
+gst
+gadd .
+gcm "Styling header & sidebar"
+gp
+gst
+gadd .
+gcm "Preparing data dummy for question"
+gp
+nrd
+c
+gst
+gadd .
+gcm "Add Features Question"
+gp
+nrd
+c
+gst
+gadd .
+gcm "Add tags categories on left column"
+gp
+nrd
+c
+gst
+gadd .
+gcm "Create related post features"
+gp
+nrd
+gst
+gadd .
+gcm "create dummy comment"
+gp
+nrd
+c
+gst
+gadd .
+gcm "Add input component"
+gp
+nrd
+c
+nrd
+gst
+gadd .
+gcm "Fixing header position attribute"
+gp
+gst
+nrd
+vc numi --profile="js"
+c
+claude
+c
+gst
+gadd.
+gadd .
+gcm "Add final documentation"
+gp
+gst
+gadd .
+gcm "Added addditional readme"
+gp
+proj
+git clone git@github.com-rhewins:medifyid/test.git
+ll
+cd test
+vi README.md
+php artisan serve
+./rekrutmen.sh
+sudo chmod u+x rekrutment.sh
+sudo chmod u+x rekrutmen.sh
+ll
+./rekrutmen.sh
+./rekrutmen.sh
+note rekrutmen.sh
+php artisan migrate
+claude
+proj
+cd test
+note .env
+note .env
+proj
+cd 99-backend-exercise
+note .env
+c
+ll
+cd ..
+vc test --profile="php"
+proj
+mv -R test medify 
+mv test medify 
+ll
+vc medify --profile="php"
+php artisan serve
+php artisan status
+php artisan version
+proj
+vc medify --profile="php"
+php artisan serve
+php artisan serve
+vc onl --profile="vue"
+proj
+rm -rf boo
+rm -rf boo2
+cd boo-exercise
+cd ..
+ll
+ng -version
+npm i -g pnpm
+npm i -g pnpm
+pnpm add -g @angular/cli
+src
+pnpm --version
+pnpm add -g @angular/cli
+pnpm setup
+src
+pnpm -v
+pnpm bin -g
+pnpm add -g @angular/cli
+ng --version
+ng new ng-pulse \\
+  --standalone \\
+  --routing \\
+  --style=scss
+cd ng-pulse
+ng serve
+cd ..
+vc ng-pulse
+proj
+vc ng-pulse
+nrs
+npm run start
+proj
+vc ng-pulse
+npm run start
+c
+ng serve
+c
+ng serve
+ng serve
+wslupd
+proj
+vc ng-pulse
+ng serve
+proj
+vc ng-pulse
+ng serve
+c
+ng serve
+c
+ng serve
+c
+ng serve
+ng serve
+ng serve
+c
+vc _test-nodejs --profile="vue"
+cd ..
+mkdir test-node
+cd test-node
+npm install express
+ll
+vc.
+touch server.ts
+proj
+c
+vc test-node --profile='js'
+vc ng-pulse --profile='js'
+npm init -y
+rm -rf package.json
+npm init -y
+npm install express
+npm i --save-dev @types/node
+vc _test-nodejs --profile="vue"
+node server.ts
+node server.ts
+vc onl --profile="js"
+node server.ts
+curl "http://localhost:6000/"
+node server.ts
+c
+npm i --save-dev @types/express
+node server.ts
+node server.ts
+node server
+node server.ts
+node server.ts
+node server.ts
+wslupd
+wslupd
+c
+proj
+vc numi --profile="js"
+vc ng-pulse --profile='js'
+cd apps
+ll
+mv -r web web-next
+mv web web-next
+cd ..
+mv apps frontends
+cd frontends
+ng new web
+cd frontends
+rm -rf web
+ll
+ng new web
+ll
+cd web
+proj
+vc numi --profile="js"
+cd frontends
+cd web
+ng serve
+cd ..
+rm -rf web-next
+c
+ng serve
+cd web
+ng serve
+c
+ng serve
+c
+ng serve
+claude
+cd frontends/web
+ng serve
+ng serve
+c
+ng serve
+c
+ng serve
+claude
+proj
+vc numi --profile="js"
+ng serve
+cd frontends/web
+ng serve
+proj
+vc numi --profile="js"
+cd frontends/web
+git remote -v
+gst
+gadd .
+gcm "Switch to angular"
+gp
+gst
+gadd .
+git remote -v
+cd ..
+git remote -v
+gst
+cd frontends/web
+git status
+git remote set-url origin git@github.com-rhewins:rhewins/numi-web.git
+git remote -v
+gst
+gadd .
+gcm "Switch to angular"
+gadd .
+gst
+git add .
+gst
+gcm "switch to angular"
+gp
+git pull
+git stash
+git pull
+git stash apply
+gst
+gadd .
+gst
+gcm "switch to angular"
+gp
+git stash apply
+git stash list
+git stash apply stash@{0}
+c
+cd ..
+cd ..
+gst
+vc numi --profile="js"
+git remote -v
+git remote set-url origin git@github.com-rhewins:rhewins/numi-platform.git
+git remote -status
+git remote -v
+git pull
+git stash
+git pull
+cd frontends/web
+git remote -v
+git submodule status
+git submodule add git@github.com-rhewins:rhewins/numi-web.git frontend/web
+c
+git status
+git init
+ll
+git remote -v
+git remote -v
+git remote set-url origin git@github.com-rhewins:rhewins/numi-web.git
+git remote set-url git@github.com-rhewins:rhewins/numi-web.git
+git remote set-url origin git@github.com-rhewins:rhewins/numi-web.git
+git remote set-url --add numi-web git@github.com-rhewins:rhewins/numi-web.git
+git status
+claude
+c
+cd ..
+git status
+git add .
+gcm 
+gcm "update .gitmoudles"
+gp
+git submodule update
+gst
+git pull
+git stash
+git pull
+git remote -v
+cd frontends/web
+git status
+cd ..
+rm -rf frontends
+ll
+git clone git@github.com-rhewins:rhewins/numi-web.git
+git status
+cd numi-web
+git branch
+git branch master
+git branch -r
+git branch -m master main
+git branch master
+git checkout master
+git pull
+git pull origin master
+cd ..
+rm -rf numi-web
+ll
+mkdir frontends
+ll
+cd frontends
+git clone git@github.com-rhewins:rhewins/numi-web.git
+git checkout master
+ll
+cd numi-web
+git checkout master
+git branch -m master main
+git push origin main --force
+git branch -r
+git checkout main
+git checkout master
+git stash
+git checkout master
+git fetch origin
+git rebase --root
+git push origin main --force
+git branch -r
+git checkout main
+gst
+git checkout master
+git stash
+git checkout master
+git branch
+git branch -f main master
+git push origin main --force-with-lease
+git branch
+git checkout main
+git branch
+git branch -d master
+git branch
+git push origin --delete master
+git branch
+git branch -r
+cd ..
+git status
+git remote -v
+git add frontends/
+git rm --cached frontends/numi-web -f
+rm -rf frontends/numi-web
+git submodule add https://github.com/rhewins/numi-web.git frontends/web
+git submodule add git@github.com-rhewins:rhewins/numi-web.git frontends/web
+git submodule add git@github.com-rhewins:rhewins/numi-web.git frontends/web
+git submodule add git@github.com-rhewins:rhewins/numi-web.git frontends/web
+cd frontends/web
+git init
+ll
+cd ..
+cd ..
+git submodule add git@github.com-rhewins:rhewins/numi-web.git frontends/web
+rm -rf frontends/web
+rm -rf .git/modules/frontends/web
+cat .gitmodules
+rm .gitmodules
+git submodule sync
+git submodule add https://github.com/rhewins/numi-web.git frontends/web
+git remote -v
+git submodule add git@github.com-rhewins:rhewins/numi-web.git frontends/web
+ll
+rm -rf frontends/web
+rm -rf .git/modules/frontends/web
+rm -f .gitmodules
+git reset
+git submodule add https://github.com/rhewins/numi-web.git frontends/web
+cd frontends
+mkdir web
+ll
+cd ..
+git submodule add https://github.com/rhewins/numi-web.git frontends/web
+cd .git
+cd ..
+gpull
+gst
+git restore.gitmodules
+git restore .gitmodules
+git submodule status
+git submodule status
+git submodule add https://github.com/rhewins/numi-web.git frontends/web
+rm -rf frontends
+ll
+git submodule add https://github.com/rhewins/numi-web.git frontends/web
+gst
+git add .
+git commit -m "add numi-web frontend as submodule"
+git push
+git submodule status
+git status
+git rm --cached apps/web
+git add .gitmodules
+git rm --cached apps/web
+rm -rf .git/modules/apps/web
+rm -rf apps/web
+git commit -m "remove apps/web submodule"
+gp
+ll
+rm -rf apps
+ll
+gst
+git pull
+git submodule update --init --recursive
+git submodule update
+gst
+ll
+cd numi
+cd frontends/web
+gst
+cd ..
+vc web --profile="js"
+ng serve
+ni
+ng serve
+ng serve
+cd ../..
+cd boo-exercise
+cd public
+gst
+cd /mnt/d
+cd Downloads
+cd 'FontBase Awesome 2.23.1 [pesktop.com]'
+py fontbase-crack.py
+py --version
+c
+ng serve
+proj
+cd numi
+cd frontends/web
+cd ..
+vc web --profile="js"
+ng serve
+ng serve
+ng serve
+c
+ng serve
+c
+ng serve
+c
+ng serve
+c
+ng serve
+c
+ng serve
+ng serve
+mkdir .vscode
+cd .vscode
+touch settings.json
+gst
+gadd .
+cd ..
+gst
+gadd .
+gst
+gcm "restucturize folder"
+gp
+gst
+c
+ng serve
+c
+ng serve
+c
+ng serve
+ng serve
+c
+ng serve
+c
+ng serve
+c
+ng serve
+ng serve
+c
+ng serve
+c
+ng serve
+gst
+gadd .
+gcm "add deep styling"
+gp
+ng serve
+c
+ng serve
+ng serve
+proj
+cd numi
+cd frontends
+vc web --profile="js"
+ng serve
+c
+ng serve
+proj
+cd numi
+cd frontends
+vc web --profile="js"
+ng serve
+c
+ng serve
+ng serve
+gst
+gadd .
+gcm "add banner"
+gp
+c
+ng serve
+c
+ng serve
+ng serve
+gst
+gadd .
+gcm "Add featured product"
+gp
+proj
+cd numi
+cd frontneds
+vc web --profile="js"
+ng serve
+gst
+c
+ng serve
+proj
+cd numi/frontends
+vc web --profile="js"
+ng serve
+ng serve
+c
+ng serve
+proj
+cd numi/frontends
+vc web --profile="ng"
+c
+npm install -D prettier prettier-plugin-tailwindcss
+vc web --profile="ng"
+cd ..
+vc cad --profile="vue"
+gst
+gadd .
+gcm "Add prettier"
+gp
+gst
+st
+gst
+c
+ng serve
+brew install woff2
+cd /mnt/d
+cd Downloads
+woff2_compress YesevaOne-Regular.ttf
+c
+ng seve
+c
+ng serve
+proj
+cd numi/frontends
+vc web --profile="ng"
+ng serve
+proj
+cd numi/frontends
+vc web --profile="ng"
+ng serv
+ng serve
+cd /mnt/d
+cd Downloads
+woff2_compress Neuton-Regular.ttf
+woff2_compress Neuton-Italic.ttf
+c
+ng serve
+ng serve
+proj
+cd numi/frontends
+vc web --profile="ng"
+ng serve
+c
+ng serve
+proj
+cd numi/frontends
+vc web --profile="ng"
+ng serve
+c
+ng serve
+c
+ng serve
+pip install fonttools
+c
+ng serve
+c
+ng serve
+c
+gst
+gadd .
+gcm "Styling product grid"
+gp
+ng serve
+gp
+gst
+gadd .
+gcm "add money pipe"
+gp
+proj
+cd numi/frontends
+vc web --profile="ng"
+ng serve
+gst
+c
+ng serve
+brew install webp
+cd webs
+cd public
+cd images
+cwebp -q 80 banner1.png -o banner1.webp
+cwebp -q 80 banner2.png -o banner2.webp
+cwebp -q 80 banner3.png -o banner3.webp
+c
+gst
+gadd .
+gcm "optimize asset"
+gp
+npm install -g vercel
+vercel login
+ll
+touch vercel.json
+npm run build
+node dist/web/server/main.server.mjs
+node dist/web/server/server.mjs
+vercel --prod
+vercel --prod
+proj
+cd numi/frontends
+vc web --profile="ng"
+cd src
+touch server.vercel.ts
+cd ..
+ng serve
+c
+gst
+git stash
+gst
+gst
+rm -rf .vercel
+gst
+rm -rf vercel.json
+gst
+c
+vercel
+vercel
+vercel
+c
+vercel
+vercel --prod
+gst
+gadd .
+gcm "deployed to vercel"
+gp
+proj
+cd numi/frontends
+vc web --profile="ng"
+ng serve
+c
+ng serve
+c
+ng serve
+ng serve
+c
+ng serve
+c
+ng serve
+proj
+cd numi/frontends
+vc web --profile="ng"
+ng serve
+c
+gst
+gadd .
+vercel --prod
+gst
+gadd .
+gcm "Fix product grid styling"
+gp
+proj
+cd numi/frontends
+vc web --profile="ng"
+ng serve
+gst
+gadd .
+gcm "Add product overlay"
+gp
+vercel --prod
+proj
+cd numi/frontends
+vc web --profile="ng"
+vc onl --profile="js"
+proj
+vc onl --profile="js"
+c
+ng serve
+claude
+gst
+gst
+gst
+c
+gst
+gadd .
+gcm "Fix readme"
+gp
+c
+ng serve
+c
+gst
+ll
+mkdir .github
+gst
+gadd .
+gcm "Add vercel auto deployment"
+gp
+gst
+gadd .
+gcm "Change node version"
+gp
+gst
+gadd .
+gcm "Fix deploy github actions"
+gp
+vercel link
+vercel project ls
+vercel link
+gst
+gadd .
+gcm "Fix deploy details"
+gp
+proj
+cd numi/frontends
+vc web --profile="ng"
+ng serve
+c
+ng serve
+gst
+gadd /
+gadd .
+gcm "Add background effect"
+gp
+gst
+c
+cd ../..
+cd onl
+cd be
+proj
+cd numi
+cd frontends
+cd web
+gst
+cd ..
+gst
+git submodule update --init --recursive
+gst
+gadd .
+gcm "chore: numi-web submodule"
+git add .
+gst
+git add frontends/web
+gst
+git add frontends/web
+git commit -m "chore: bump numi-web submodule"
+cd frontends/web
+gst
+gst
+git pull
+git status
+git remote -v
+git stash
+gsts
+gst
+git pull origin main
+ng serve
+c
+c
+ng serve
+c
+cd ../..
+gst
+git add .
+gst
+git commit -m "chore: bump numi-web submodule"
+gp
+gst
+ll
+rm -rf services
+ll
+git submodule list
+git submodule status
+cd frontends/web
+gst
+git remote -v
+cd ..
+git submodule add https://github.com/rhewins/numi-api.git services
+gst
+git add .
+gcm "remove services folder"
+gp
+gst
+git submodule add https://github.com/rhewins/numi-api.git services
+ll
+cd services
+git remote -v
+cd ..
+git submodule status
+gst
+git add .
+cd services
+bun init
+ll
+gst
+gadd .
+gcm "Init backend"
+gp
+gst
+cd ..
+cd numi
+gst
+git add .
+gst
+git submodule status
+git rm --cached services
+rm -rf .git/modules/services
+cat .gitmodules
+rm -rf services
+ll
+git submodule add https://github.com/rhewins/numi-api.git services
+gst
+cat .gitmodules
+gadd .
+gcm "Add submodule services"
+gp
+git submodule status
+ll
+cd services
+cd ..
+vc services --profile="js"
+bun --version
+bun upgrade
+bun version
+bun --version
+ver
+bun --version
+c
+which bun
+git status
+bun index.ts
+bun add elysia
+bun add @elysiajs/swagger
+bun add prisma @prisma/client
+c
+bun remove prisma
+bun add -d prisma
+bun add pg
+bun add ioredis
+gst
+gadd .
+gcm "Add dependency package"
+gp
+gst
+mkdir infrastructure
+mkdir -p src/infrastructure/prisma
+ll
+rm -rf infrastructure
+ll
+touch .env
+bunx prisma init
+proj
+cd numi
+vc services --profile="js"
+bunx prisma generate
+bunx prisma generate
+bun pm ls prisma @prisma/client
+bunx prisma validate
+vc services --profile="js"
+bun install
+proj
+vc onl --profile="js"
+bunx prisma generate
+bunx prisma generate
+cd numi
+vc services --profile="js"
+claude
+bunx prisma generate
+bunx prisma generate
+vc services --profile="js"
+proj
+cd numi
+vc services --profile="js"
+cd frontends
+vc web --profile="ng"
+proj
+vc onl --profile="js"
+bunx prisma generate
+bunx prisma validate
+c
+mkdir .docker
+ll
+gst
+gadd .
+gcm "Add docker layer"
+gp
+make up
+gst
+make up
+make up
+ping registry-1.docker.io
+curl -v https://registry-1.docker.io/v2/
+ping registry-1.docker.io
+proj
+cd numi
+cd services
+make up
+make up
+proj
+cd numi
+vc services --profile="js"
+cd services
+make up
+make up
+make up
+make up
+ECHO DOCKER_CLIENT_TIMEOUT
+echo DOCKER_CLIENT_TIMEOUT
+bun start
+bun start
+proj
+vc onl --profile="js"
+c
+cd numi/services
+make down
+make up
+bun start
+c
+bun add @prisma/client faker
+bun prisma init
+c
+bun prisma migrate dev --name init
+echo $DATABASE_URL
+echo $DATABASE_URL
+bun prisma migrate dev --name init
+bun prisma migrate dev --name init
+bun remove faker
+bun add @faker-js/faker
+bun prisma db seed --preview-feature
+bun prisma db seed
+bun prisma db seed
+bun prisma db seed
+bunx prisma db seed
+bun prisma db seed
+claude
+bun prisma db seed
+claude
+proj
+cd numi
+vc services --profile="js"
+bun prisma db seed
+proj
+vc onl --profile="js"
+bun ./prisma/seed.ts
+bun --version
+bun upgrade
+bun version
+bun --version
+which bun
+bunx prisma generate
+bun prisma db seed
+proj
+cd numi
+vc services --profile="js"
+gst
+bun prisma db seed
+claude
+bun prisma db seed
+bunx prisma db seed
+c
+bun run seed
+bun run seed
+bun prisma db seed
+bun run seed
+c
+gst
+gadd .
+gcm "Add prisma seeder"
+gp
+bun run seed
+bun run seed
+proj
+cd numi
+vc services --profile="js"
+proj
+vc onl --profile="js"
+bun run seed
+bun run seed
+bun start
+bun start
+c
+bun start
+c
+bun start
+cd numi
+cd frontends
+vc web --profile="ng"
+proj
+cd numi
+vc services --profile="js"
+bun start
+bun start
+gst
+gadd .
+gcm "Add service layer"
+gp
+proj
+cd numi
+vc ser
+vc services --profile="js"
+proj
+cd numi
+vc services --profile="js"
+proj
+vc onl --profile="js"
+bun start
+c
+bun start
+bun start
+c
+bun start
+bun start
+curl http://localhost:3000/
+curl http://localhost:3000/health
+bun start
+curl http://localhost:3000/health
+c
+gst
+gadd .
+gcm "Add health check route"
+gp
+proj
+cd numi
+vc services --profile="js"
+proj
+vc onl --profile="js"
+proj
+cd numi
+vc services --profile="js"
+bun add @elysiajs/cors
+proj
+vc onl --profile="js"
+bun start
+c
+bun start
+c
+bun start
+bun start
+c
+bun start
+c
+bun start
+c
+gst
+gadd .
+gcm "Add readiness health check"
+gp
+proj
+cd numi
+vc services --profile="js"
+gst
+wslupd
+proj
+cd numi
+vc services --profile="js"
+claude
+bun start
+c
+bun start
+c
+bun add pino
+bun add -d pino-pretty
+c
+c
+bun start
+c
+gst
+gadd .
+gcm "Refactor infra"
+gp
+proj
+cd numi
+cd ..
+vc onl --profile="js"
+proj
+cd numi
+vc services --profile="js"
+proj
+vc onl --profile="js"
+bun start
+c
+bun start
+c
+bun start
+bun start
+c
+bun start
+c
+bun start
+c
+gst
+gadd .
+gcm "Clean up some code"
+gp
+gst
+c
+gst
+bun add -d prettier eslint eslint-config-prettier eslint-plugin-prettier \\
+  husky lint-staged
+gst
+touch .prettierrc
+touch .prettierignore
+c
+touch eslint.config.js
+bun run prepare
+bunx husky add .husky/pre-commit "bunx lint-staged"
+bunx husky .husky/pre-commit "bunx lint-staged"
+bunx husky .husky/pre-push "bun run lint"
+mkdir .vscode
+gst
+gadd .
+gcm "Add prettier and linter"
+gp
+proj
+cd numi
+vc services --profile="js"
+proj
+vc onl --profile="js"
+cd numi
+vc services --profile="js"
+gst
+c
+ls -la .husky
+ls -l .husky/pre-commit .husky/pre-push
+gadd .
+gcm "test commit"
+git config --get core.hooksPath
+git config --unset core.hooksPath
+git config --unset core.hooksPath
+bun run prepare
+ls .git/hooks
+cat .git
+proj
+cd numi
+vc services --profile="js"
+git rev-parse --git-path hooks
+c
+ls $(git rev-parse --git-path hooks)
+gst
+gadd.
+gadd .
+gcm "test pre-commit"
+git push
+bun run format
+: 1767712306:0;gst
+: 1767712444:0;gp
+: 1767712461:0;gadd .
+: 1767712463:0;gst
+: 1767712475:0;gcm "test pre-push"
+: 1767712481:0;gp
+: 1767731905:0;proj
+: 1767731911:0;cd numi
+: 1767731914:0;vc services --profile="js"
+: 1767731981:0;gst
+: 1767731984:0;claude
+: 1767732239:0;gst
+: 1767732245:0;gpull
+: 1767732256:0;gst
+: 1767732281:0;gst
+: 1767732294:0;gadd .
+: 1767732297:0;gst
+: 1767732308:0;gcm "Fix husky"
+: 1767732336:0;proj
+: 1767732339:0;vc onl --profile="js"
+: 1767732648:0;bun add -d @typescript-eslint/parser @typescript-eslint/eslint-plugin\
+
+: 1767732831:0;bun run lint
+: 1767733009:0;c
+: 1767733010:0;gst
+: 1767733017:0;gadd .
+: 1767733022:0;gcm "Fix linter"
+: 1767733039:0;gst
+: 1767733042:0;gadd .
+: 1767733044:0;gcm "Fix linter"
+: 1767733378:0;c
+: 1767733378:0;gst
+: 1767733380:0;gadd .
+: 1767733382:0;gcm "Fix linter"
+: 1767733782:0;gst
+: 1767733786:0;gadd .
+: 1767733802:0;gcm "Fix bugs"
+: 1767733809:0;gp
+: 1767733939:0;gst
+: 1767733945:0;gadd .
+: 1767733960:0;gcm "remove require unit test on git push"
+: 1767733962:0;gst
+: 1767733963:0;gp
+: 1767733970:0;gst
+: 1767734262:0;c
+: 1767734263:0;gst
+: 1767734266:0;gadd .
+: 1767734276:0;gcm "remove duplicate prisma config file"
+: 1767734280:0;gp
+: 1767734336:0;gst
+: 1767734491:0;c
+: 1767734766:0;gst
+: 1767734770:0;bun start
+: 1767734869:0;cd numi
+: 1767734875:0;cd frontends/web
+: 1767734877:0;ng serve
+: 1767735089:0;c
+: 1767735093:0;bun start
+: 1767735154:0;c
+: 1767735158:0;gst
+: 1767735160:0;gadd .
+: 1767735215:0;gst
+: 1767735217:0;gadd .
+: 1767735229:0;gcm "Add generate file products.json"
+: 1767735234:0;gp
+: 1767735577:0;c
+: 1767747386:0;proj
+: 1767747390:0;cd numi
+: 1767747394:0;vc services --profile="js"
+: 1767752518:0;claude
+: 1767753344:0;proj
+: 1767753348:0;cd numi
+: 1767759650:0;bun run lint
+: 1767759727:0;bun run lint
+: 1767759734:0;bun start
+: 1767759765:0;bun start
+: 1767759796:0;bun run lint
+: 1767759813:0;bun start
+: 1767760016:0;bun start
+: 1767769643:0;proj
+: 1767769645:0;cd numi
+: 1767769648:0;vc services --profile="js"
+: 1767769722:0;claude
+: 1767771695:0;bun start
+: 1767772232:0;c
+: 1767772235:0;bun start
+: 1767772342:0;proj
+: 1767772345:0;vc onl --profile="js"
+: 1767811685:0;proj
+: 1767811688:0;cd numi
+: 1767811690:0;vc services --profile="js"
+: 1767833153:0;proj
+: 1767833156:0;cd numi
+: 1767833159:0;vc services --profile="js"
+: 1767833475:0;bun start
+: 1767834945:0;c
+: 1767835503:0;cc
+: 1767835525:0;cc
+: 1767835526:0;c
+: 1767835530:0;bun start
+: 1767835629:0;c
+: 1767835631:0;claude
+: 1767835774:0;c
+: 1767835776:0;claude
+: 1767836386:0;bun start
+: 1767836474:0;c
+: 1767836476:0;bun start
+: 1767837027:0;c
+: 1767837030:0;bun start
+: 1767837149:0;c
+: 1767837151:0;bun start
+: 1767841172:0;proj
+: 1767841174:0;vc onl --profile="js"
+: 1767841265:0;bun start
+: 1767841518:0;c
+: 1767841525:0;c
+: 1767841526:0;c
+: 1767841694:0;claude
+: 1767861627:0;proj
+: 1767861631:0;cd numi
+: 1767861634:0;vc services --profile="js"
+: 1767861823:0;gst
+: 1767861826:0;gadd .
+: 1767861832:0;gcm "Add logger"
+: 1767861844:0;gp
+: 1767863062:0;c
+: 1767863063:0;gst
+: 1767863065:0;claude
+: 1767885868:0;proj
+: 1767885872:0;cd numi
+: 1767885875:0;vc services --profile="js"
+: 1767887499:0;claude
+: 1767887671:0;proj
+: 1767887673:0;vc onl --profile="js"
+: 1767888088:0;fg
+: 1767889279:0;bun start
+: 1767889640:0;c
+: 1767889642:0;bun start
+: 1767889668:0;c
+: 1767889672:0;gst
+: 1767889674:0;gadd .
+: 1767889683:0;gcm "Clean up code"
+: 1767889688:0;gp
+: 1767892479:0;proj
+: 1767892485:0;cd numi
+: 1767892488:0;vc services --profile="js"
+: 1767892603:0;c
+: 1767892710:0;claude
+: 1767952788:0;proj
+: 1767952793:0;cd numi
+: 1767996949:0;proj
+: 1767996952:0;cd numi
+: 1767996954:0;vc services --profile="js"
+: 1767997697:0;claude
+: 1767997907:0;bun start
+: 1768004458:0;c
+: 1768004477:0;c
+: 1768004481:0;bun start
+: 1768004798:0;c
+: 1768004807:0;bun start
+: 1768004830:0;c
+: 1768004832:0;bun start
+: 1768004905:0;c
+: 1768004907:0;bun start
+: 1768005414:0;claude
+: 1768005553:0;c
+: 1768005555:0;bun start
+: 1768005935:0;curl -X GET "http://localhost:3000/api/v1/products?page=1&limit=10"
+: 1768006157:0;curl -X GET "http://localhost:3000/api/v1/products?page=1&limit=10"
+: 1768006245:0;curl -X GET "http://localhost:3000/api/v1/products?page=1&limit=10"
+: 1768006405:0;c
+: 1768006438:0;c
+: 1768006440:0;bun start
+: 1768006446:0;curl -X GET "http://localhost:3000/api/v1/products?page=1&limit=10"
+: 1768006695:0;c
+: 1768006697:0;bun start
+: 1768006731:0;curl -X GET "http://localhost:3000/api/v1/products?page=1&limit=10"
+: 1768006751:0;bun start
+: 1768006757:0;curl -X GET "http://localhost:3000/api/v1/products?page=1&limit=10"
+: 1768006780:0;bun start
+: 1768006784:0;curl -X GET "http://localhost:3000/api/v1/products?page=1&limit=10"
+: 1768006820:0;bun start
+: 1768006829:0;curl -X GET "http://localhost:3000/api/v1/products?page=1&limit=10"
+: 1768006841:0;bun start
+: 1768006844:0;curl -X GET "http://localhost:3000/api/v1/products?page=1&limit=10"
+: 1768006882:0;bun start
+: 1768006885:0;curl -X GET "http://localhost:3000/api/v1/products?page=1&limit=10"
+: 1768006903:0;c
+: 1768006906:0;bun start
+: 1768006909:0;curl -X GET "http://localhost:3000/api/v1/products?page=1&limit=10"
+                                                                                                               : 1768034037:0;cd numi
+: 1768034065:0;cd numi
+: 1768034128:0;claude

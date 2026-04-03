@@ -1,3 +1,140 @@
+# ── AI Chat helpers ─────────────────────────────────────────────────────────
+AICHAT_SYSTEM_PROMPT_FILE="$HOME/.config/aichat/system_prompt.md"
+
+AI_CODE_PROMPT="You are a senior expert coding assistant.
+Focus: clean architecture, performance, concurrency safety.
+Return:
+- concise production-ready code
+- minimal comments
+- no long explanation unless asked
+- maximum 5 sentences
+Task:"
+
+AI_REFACTOR_PROMPT="Refactor for clean architecture and performance. Code:"
+AI_TEST_PROMPT="Write unit tests covering edge cases. Code:"
+AI_REVIEW_PROMPT="You are a senior software engineer doing strict code review.
+Find bugs, race conditions, performance issues, security risks, and bad practices.
+Give concise actionable feedback in bullet points. Code:"
+
+# ── internal helpers ─────────────────────────────────────────────────────────
+
+# Load system prompt once, warn if missing
+_ai_sys() {
+  if [[ -f "$AICHAT_SYSTEM_PROMPT_FILE" ]]; then
+    cat "$AICHAT_SYSTEM_PROMPT_FILE"
+  else
+    echo "# No system prompt file found" >&2
+    echo ""
+  fi
+}
+
+# Run aichat with fallback model; prints which model is active
+# Usage: _ai_run <primary_model> <fallback_model> [--sys] <prompt>
+_ai_run() {
+  local primary="$1" fallback="$2" use_sys=0
+  shift 2
+  [[ "$1" == "--sys" ]] && { use_sys=1; shift; }
+  local prompt="$*"
+
+  local sys=""
+  (( use_sys )) && sys="$(_ai_sys)"
+
+  echo "  [ai] using $primary" >&2
+  if (( use_sys )); then
+    AICHAT_SYSTEM_PROMPT="$sys" aichat -m "$primary" "$prompt" && return
+  else
+    aichat -m "$primary" "$prompt" && return
+  fi
+
+  echo "  [ai] fallback → $fallback" >&2
+  if (( use_sys )); then
+    AICHAT_SYSTEM_PROMPT="$sys" aichat -m "$fallback" "$prompt"
+  else
+    aichat -m "$fallback" "$prompt"
+  fi
+}
+
+# ── stdin pipe support helper ────────────────────────────────────────────────
+# Reads piped input and appends to args if stdin is not a tty
+_ai_input() {
+  local user_args="$*"
+  if [[ ! -t 0 ]]; then
+    local piped
+    piped="$(cat)"
+    echo "${user_args}"$'\n'"${piped}"
+  else
+    echo "$user_args"
+  fi
+}
+
+# ── public functions ─────────────────────────────────────────────────────────
+
+aicode() {
+  local input; input="$(_ai_input "$@")"
+  _ai_run \
+    groq:llama-3.3-70b-versatile \
+    ollama:phi3:mini \
+    "${AI_CODE_PROMPT}"$'\n'"${input}"
+}
+
+airefactor() {
+  local input; input="$(_ai_input "$@")"
+  _ai_run \
+    groq:llama-3.3-70b-versatile \
+    ollama:deepseek-coder:6.7b \
+    "${AI_REFACTOR_PROMPT}"$'\n'"${input}"
+}
+
+aitest() {
+  local input; input="$(_ai_input "$@")"
+  _ai_run \
+    groq:llama-3.3-70b-versatile \
+    ollama:deepseek-coder:6.7b \
+    "${AI_TEST_PROMPT}"$'\n'"${input}"
+}
+
+aireview() {
+  local input; input="$(_ai_input "$@")"
+  _ai_run \
+    groq:qwen/qwen3-32b \
+    ollama:deepseek-coder:6.7b \
+    --sys \
+    "${AI_REVIEW_PROMPT}"$'\n'"${input}"
+}
+
+aiplan() {
+  local input; input="$(_ai_input "$@")"
+  _ai_run \
+    gemini:gemini-2.5-flash \
+    ollama:phi3:mini \
+    --sys \
+    "$input"
+}
+
+aithink() {
+  local input; input="$(_ai_input "$@")"
+  _ai_run \
+    groq:qwen/qwen3-32b \
+    ollama:llama3 \
+    --sys \
+    "$input"
+}
+
+aioffline() {
+  local input; input="$(_ai_input "$@")"
+  aichat -m ollama:phi3:mini "${AI_CODE_PROMPT}"$'\n'"${input}"
+}
+
+# ── file shortcuts ────────────────────────────────────────────────────────────
+# Usage: aireview_file path/to/file.go
+aicode_file()    { aicode    "$(cat "$1")"; }
+aireview_file()  { aireview  "$(cat "$1")"; }
+airefactor_file(){ airefactor "$(cat "$1")"; }
+aitest_file()    { aitest    "$(cat "$1")"; }
+# ── End of AI Chat helpers ──────────────────────────────────────────────────────
+
+
+
 # Interactive alias search using fzf
 # Input: None (displays all aliases for selection)
 # Output: Executes the selected alias command
@@ -119,7 +256,7 @@ _fzf_git_branch() {
 # Output: Creates new project in specified folder with chosen technology
 _gen() {
     if [ $# -ne 2 ]; then
-        echo "Usage: gen <laravel|vite|react> <folder_name>";
+        echo "Usage: gen <laravel|vite|react|golang> <folder_name>";
         return 1;
     fi;
 
@@ -142,6 +279,34 @@ _gen() {
         mkdir -p "$FOLDER_NAME" && cd "$FOLDER_NAME" || return 1
         npx create-expo-app@latest .
         ;;
+    golang)
+        echo "Initializing Golang project in folder: $FOLDER_NAME"
+        mkdir -p "$FOLDER_NAME" && cd "$FOLDER_NAME" || return 1
+
+        go mod init "github.com/rhewin/$FOLDER_NAME"
+
+	mkdir -p cmd/api
+cat <<EOF > cmd/api/main.go
+package main
+
+import (
+	"log"
+	"net/http"
+
+	"github.com/go-chi/chi/v5"
+)
+func main() {
+	r := chi.NewRouter()
+	r.Get("/health", func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte("ok"))
+	})
+	log.Fatal(http.ListenAndServe(":8080", r))
+}
+EOF
+
+    	go mod tidy
+        ;;
+	
     *)
         echo "Error: Unsupported tech type '$TECH_TYPE'"
         echo "Supported types are: laravel, vite"
@@ -217,6 +382,7 @@ _versions() {
     print_version "Redis CLI" "redis-cli --version"
     print_version "Ruby" "ruby -v"
     print_version "Rust" "rustc --version"
+    print_version "UV" "uv --version"
 
     echo
     echo "=== Tools for Mobile Development ==="
@@ -233,11 +399,26 @@ _versions() {
     echo "=== AI CLI ==="
     print_version "Claude" "claude --version"
     print_version "Gemini" "gemini --v"
+    print_version "AI Chat" "aichat --version"
 }
 
 zle -N _alias_search  # Register as a ZLE widget
 bindkey '^a' _alias_search  # Bind to Ctrl+A
 
+
+# Startup benchmarking for zsh shell
+_zbench() {
+  local total=0
+  local runs=5
+
+  for i in {1..5}; do
+    local t=$(/usr/bin/time -f "%e" zsh -i -c exit 2>&1)
+    echo "Run $i: ${t}s"
+    total=$(awk "BEGIN {print $total + $t}")
+  done
+
+  echo "Average: $(awk "BEGIN {print $total / $runs}")s"
+}
 
 ### The beginning of AI Custom Functions ###
 # Execute Claude AI with shell context and custom task

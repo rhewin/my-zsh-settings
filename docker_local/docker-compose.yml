@@ -30,7 +30,8 @@ services:
       - mongo_data:/data/db
 
   rabbitmq:
-    image: rabbitmq:3.12-management
+    build:
+      context: ./services/rabbitmq
     container_name: local-rabbitmq
     env_file:
       - ./services/rabbitmq/.env
@@ -38,7 +39,7 @@ services:
       - "5672:5672"
       - "15672:15672"
     volumes:
-      - rabbit_data:/var/lib/rabbitmq
+      - rabbitmq_data:/var/lib/rabbitmq
 
   adminer:
     image: adminer:4.8.1
@@ -67,5 +68,5 @@ volumes:
   mysql_data:
   pg_data:
   mongo_data:
-  rabbit_data:
+  rabbitmq_data:
   mailpit_data:

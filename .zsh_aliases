@@ -23,6 +23,9 @@ alias ver='_versions'                                # Show version info (custom
 alias vc.='code .'                                   # Open current directory in VS Code
 alias vc='code "$1"'                                 # Open specific file/directory in VS Code
 alias wslupd='sudo apt update && sudo apt upgrade -y && brew update && brew upgrade'  # Update WSL system and brew packages
+alias zinitupd='zinit self-update && zinit update'   # Update Z-init
+alias fullupd='wslupd && zinitupd'		     # Combine update WSL & Z-init
+alias zbench='_zbench'				     # Zsh benchmarking
 
 # git
 alias gadd='git add .'                               # Stage all changes
