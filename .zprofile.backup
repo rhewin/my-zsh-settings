@@ -1,0 +1,64 @@
+# Base directories
+export LOCAL_HOME="$HOME/.local"
+export BREW_HOME="/home/linuxbrew/.linuxbrew"
+export JAVA_HOME="/usr/lib/jvm/java-21-openjdk-amd64"
+export ANDROID_HOME="/mnt/c/Users/neohub/AppData/Local/Android/Sdk"
+
+# Language environments
+export NVM_DIR="$HOME/.nvm"
+export SDKMAN_DIR="$HOME/.sdkman"
+export BUN_INSTALL="$HOME/.bun"
+
+# Go configuration
+export GOPATH="$HOME/go"
+export GOBIN="$BREW_HOME/bin"
+export GOINSECURE="bitbucket.org/*"
+export GOPRIVATE="github.com/*"
+export GONOSUMDB="github.com/*"
+export GONOPROXY="github.com/*"
+
+# Tools
+export MYSQL_PATH="$BREW_HOME/opt/mysql-client"
+export EZA_CONFIG_DIR="$HOME/.config/eza"
+export PHP_INI_SCAN_DIR="$HOME/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
+
+# FZF / Enhancd
+export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border"
+export FZF_DEFAULT_COMMAND="rg --files"
+export ENHANCD_FILTER="fzf --height=40% --layout=reverse --border --preview 'eza -aal --tree --level=2 {} 2>/dev/null || ls -l {}'"
+export ENHANCD_COMMAND="cd"
+export ENHANCD_HOOK_AFTER_CD="ll"
+
+# PATH
+path+=(
+  "$LOCAL_HOME/bin"
+  "$ANDROID_HOME/emulator"
+  "$ANDROID_HOME/tools"
+  "$ANDROID_HOME/tools/bin"
+  "$ANDROID_HOME/platform-tools"
+  "$BREW_HOME/bin"
+  "$BREW_HOME/opt/libpq/bin"
+  "$BUN_INSTALL/bin"
+  "$HOME/.cargo/bin"
+  "$JAVA_HOME/bin"
+  "$HOME/.config/herd-lite/bin"
+  "$GOPATH/bin"
+  "/usr/local/go/bin"
+  "$HOME/.console-ninja/.bin"
+  "$MYSQL_PATH/bin"
+  "$SDKMAN_DIR/bin"
+)
+
+export PATH
+
+# pnpm
+export PNPM_HOME="$LOCAL_HOME/share/pnpm"
+path+=("$PNPM_HOME")
+
+# Initialize runtime tools
+[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
+[ -s "$BUN_INSTALL/_bun" ] && source "$BUN_INSTALL/_bun"
+
+# Brew
+eval "$($BREW_HOME/bin/brew shellenv)"
+

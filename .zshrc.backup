@@ -1,101 +1,114 @@
-# History options
+# =========================
+# History
+# =========================
 COMMAND_TIMEOUT=500
 HISTFILE=~/.zsh/.zsh_history
 HISTSIZE=5000
 SAVEHIST=5000
 setopt APPEND_HISTORY INC_APPEND_HISTORY SHARE_HISTORY
 
-# Environment variables
-export ANDROID_HOME="/mnt/c/Users/neohub/AppData/Local/Android/Sdk"
-export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border"
-export FZF_DEFAULT_COMMAND="rg --files"
-export ENHANCD_FILTER="fzf --height=40% --layout=reverse --border --preview 'eza -aal --tree --level=2 {} 2>/dev/null || ls -l {}'"
-export ENHANCD_COMMAND="cd"
-export ENHANCD_HOOK_AFTER_CD="ll"
-export BREW_HOME="/home/linuxbrew/.linuxbrew"
-export JAVA_HOME="/usr/lib/jvm/java-21-openjdk-amd64"
-export GIT_SSH_COMMAND="ssh"
-export GOINSECURE="bitbucket.org/*"
-export GOPRIVATE="github.com/*"
-export GONOSUMDB="github.com/*"
-export GONOPROXY="github.com/*"
-export GOPATH="$HOME/go"
-export EZA_CONFIG_DIR="$HOME/.config/eza"
-export BUN_INSTALL="$HOME/.bun"
-export ZPLUG_HOME="$BREW_HOME/opt/zplug"
-export MYSQL_PATH="$BREW_HOME/opt/mysql-client"
-export NVM_DIR="$HOME/.nvm"
-export SDKMAN_DIR="$HOME/.sdkman"
-export PHP_INI_SCAN_DIR="$HOME/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
-# # export ANTHROPIC_API_KEY=your_key_here
-# # export GEMINI_API_KEY=your_key_here
-
-# PATH setup
-path+=(
-  "$ANDROID_HOME/emulator"
-  "$ANDROID_HOME/tools"
-  "$ANDROID_HOME/tools/bin"
-  "$ANDROID_HOME/platform-tools"
-  "$BREW_HOME/bin"
-  "$BREW_HOME/opt/libpq/bin"
-  "$BUN_INSTALL/bin"
-  "$HOME/.cargo/bin"
-  "$JAVA_HOME/bin"
-  "$HOME/.config/herd-lite/bin"
-  "$GOPATH/bin"
-  "/usr/local/go/bin"
-  "$HOME/.console-ninja/.bin"
-  "$MYSQL_PATH/bin"
-  "$SDKMAN_DIR/bin"
-)
-export PATH
-
-# Source external packages
-[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
-[ -s "$BUN_INSTALL/_bun" ] && source "$BUN_INSTALL/_bun"
+# =========================
+# External configs
+# =========================
 [ -f "$HOME/.zsh/.zsh_func" ] && source "$HOME/.zsh/.zsh_func"
 [ -f "$HOME/.zsh/.zsh_aliases" ] && source "$HOME/.zsh/.zsh_aliases"
-[ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
-[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ] && alias sdk='unalias sdk; source "$SDKMAN_DIR/bin/sdkman-init.sh"; sdk'
-[ -f "$BREW_HOME/etc/profile.d/autojump.sh" ] && source "$BREW_HOME/etc/profile.d/autojump.sh"
 
-# Autocompletion setup
+# =========================
+# Lazy FZF (faster startup)
+# =========================
+fzf() {
+  unset -f fzf
+  [ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
+  fzf "$@"
+}
+
+# =========================
+# Lazy Autojump
+# =========================
+j() {
+  unset -f j
+  [ -f "$BREW_HOME/etc/profile.d/autojump.sh" ] && source "$BREW_HOME/etc/profile.d/autojump.sh"
+  j "$@"
+}
+
+# =========================
+# Autocompletion (cached)
+# =========================
+ZSH_DISABLE_COMPFIX=true
 autoload -Uz compinit
-if [[ -n ${ZDOTDIR:-$HOME}/.zcompdump(#qN.mh+24) ]]; then
-    compinit -i
+if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
+  compinit
 else
-    compinit -C -i
+  compinit -C
 fi
 
-# Zplug Initialization
-if [ -f "$ZPLUG_HOME/init.zsh" ]; then
-    source "$ZPLUG_HOME/init.zsh"
-    zplug "zsh-users/zsh-history-substring-search", defer:3
-    zplug "zsh-users/zsh-autosuggestions", defer:3
-    zplug "none9632/zsh-sudo", defer:3
-    zplug "zdharma-continuum/fast-syntax-highlighting", defer:2
-    zplug "zsh-users/zsh-completions", defer:2
-    zplug "agkozak/zsh-z", defer:2
-    zplug "b4b4r07/enhancd"
-    zplug "akash329d/zsh-alias-finder"
+# =========================
+# ZINIT
+# =========================
+ZINIT_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/zinit/zinit.git"
 
-    if ! zplug check --verbose; then
-        printf "Install? [y/N]: "
-        if read -q; then
-            echo; zplug install
-        fi
-    fi
-
-    zplug load
+if [[ ! -f "$ZINIT_HOME/zinit.zsh" ]]; then
+  mkdir -p "$(dirname $ZINIT_HOME)"
+  git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 fi
 
-# Initialize Homebrew and Starship
-eval "$($BREW_HOME/bin/brew shellenv)"
+source "$ZINIT_HOME/zinit.zsh"
+
+# ---- light plugins (load immediately) ----
+zinit light agkozak/zsh-z
+zinit light b4b4r07/enhancd
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+
+# ---- heavy plugins (ordered turbo loading after prompt) ----
+zinit wait"1" lucid for zsh-users/zsh-history-substring-search
+zinit wait"2" lucid for zdharma-continuum/fast-syntax-highlighting
+zinit wait"2" lucid for none9632/zsh-sudo
+zinit wait"2" lucid for akash329d/zsh-alias-finder
+
+# history search keybind
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
+export LLM_FUNCTIONS_DIR="$HOME/llm-functions"
+
+# =========================
+# Starship (safe init)
+# =========================
+STARSHIP_LOG=error
 eval "$(starship init zsh)"
 
-# Compile zshrc if needed
-if command -v zcompile &>/dev/null && [[ ! -f ~/.zshrc.zwc || ~/.zshrc -nt ~/.zshrc.zwc ]]; then
-    zcompile ~/.zshrc
-fi
+# =========================
+# Navi lazy widget
+# =========================
+_navi_lazy_widget() {
+  eval "$(navi widget zsh)"
+  zle _navi_widget
+}
+zle -N _navi_lazy_widget
+bindkey '^G' _navi_lazy_widget
 
-ll
+# =========================
+# Angular CLI completion
+# =========================
+ng() {
+  unset -f ng
+  source <(command ng completion script)
+  ng "$@"
+}
+
+# =========================
+# bun completion
+# =========================
+bun() {
+  unset -f bun
+  source "$HOME/.bun/_bun"
+  bun "$@"
+}
+
+# =========================
+# Compile zshrc
+# =========================
+if command -v zcompile &>/dev/null && [[ ! -f ~/.zshrc.zwc || ~/.zshrc -nt ~/.zshrc.zwc ]]; then
+  zcompile ~/.zshrc
+fi
