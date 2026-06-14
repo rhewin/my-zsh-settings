@@ -1,13 +1,16 @@
 # Rust
 . "$HOME/.cargo/env"
 
+export STARSHIP_CONFIG="$HOME/.config/starship.toml"
+export EZA_CONFIG_DIR="$HOME/.config/eza"
+
 # =========================
 # API Keys
 # =========================
 export GROQ_API_KEY=""
 export ANTHROPIC_API_KEY=""
 export CLAUDE_API_KEY=""
-# export GEMINI_API_KEY="" #--- Personal
+# export GEMINI_API_KEY=""   #--- Personal
 export GEMINI_API_KEY=""   #--- Pro
 export OPENAI_API_KEY=""
 
