@@ -1,0 +1,28 @@
+# Rust
+. "$HOME/.cargo/env"
+
+# =========================
+# API Keys
+# =========================
+export GROQ_API_KEY=""
+export ANTHROPIC_API_KEY=""
+export CLAUDE_API_KEY=""
+# export GEMINI_API_KEY="" #--- Personal
+export GEMINI_API_KEY=""   #--- Pro
+export OPENAI_API_KEY=""
+
+# =========================
+# Plugin performance tuning
+# =========================
+ZSH_AUTOSUGGEST_USE_ASYNC=true
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+ZSH_HIGHLIGHT_MAXLENGTH=120
+
+# =========================
+# Ollama performance tuning
+# =========================
+export OLLAMA_NUM_PARALLEL=8
+export OLLAMA_MAX_LOADED_MODELS=1
+export OLLAMA_FLASH_ATTENTION=1
+export OLLAMA_KEEP_ALIVE=3m
+export OLLAMA_CONTEXT_LENGTH=8192
