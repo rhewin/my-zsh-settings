@@ -14,21 +14,35 @@ setopt APPEND_HISTORY INC_APPEND_HISTORY SHARE_HISTORY
 [ -f "$HOME/.zsh/.zsh_aliases" ] && source "$HOME/.zsh/.zsh_aliases"
 
 # =========================
+# NVM
+# =========================
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# =========================
+# BUN
+# =========================
+export BUN_INSTALL="$HOME/.bun"
+[ -s "$BUN_INSTALL/_bun" ] && source "$BUN_INSTALL/_bun"
+
+# =========================
+# Zoxide
+# =========================
+eval "$(zoxide init zsh)"
+
+# =========================
+# Direnv
+# =========================
+eval "$(direnv hook zsh)"
+
+# =========================
 # Lazy FZF (faster startup)
 # =========================
 fzf() {
   unset -f fzf
   [ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
   fzf "$@"
-}
-
-# =========================
-# Lazy Autojump
-# =========================
-j() {
-  unset -f j
-  [ -f "$BREW_HOME/etc/profile.d/autojump.sh" ] && source "$BREW_HOME/etc/profile.d/autojump.sh"
-  j "$@"
 }
 
 # =========================
@@ -55,8 +69,6 @@ fi
 source "$ZINIT_HOME/zinit.zsh"
 
 # ---- light plugins (load immediately) ----
-zinit light agkozak/zsh-z
-zinit light b4b4r07/enhancd
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 
@@ -65,6 +77,14 @@ zinit wait"1" lucid for zsh-users/zsh-history-substring-search
 zinit wait"2" lucid for zdharma-continuum/fast-syntax-highlighting
 zinit wait"2" lucid for none9632/zsh-sudo
 zinit wait"2" lucid for akash329d/zsh-alias-finder
+
+# Load a few important annexes, without Turbo
+# (this is currently required for annexes)
+zinit light-mode for \
+    zdharma-continuum/zinit-annex-as-monitor \
+    zdharma-continuum/zinit-annex-bin-gem-node \
+    zdharma-continuum/zinit-annex-patch-dl \
+    zdharma-continuum/zinit-annex-rust
 
 # history search keybind
 bindkey '^[[A' history-substring-search-up
@@ -80,7 +100,7 @@ eval "$(starship init zsh)"
 
 # =========================
 # Navi lazy widget
-# =========================
+#  =========================
 _navi_lazy_widget() {
   eval "$(navi widget zsh)"
   zle _navi_widget
@@ -98,12 +118,21 @@ ng() {
 }
 
 # =========================
-# bun completion
+# zoxide + fzf integration
 # =========================
-bun() {
-  unset -f bun
-  source "$HOME/.bun/_bun"
-  bun "$@"
+z() {
+  if [[ $# -eq 0 ]]; then
+    local dir
+    dir=$(zoxide query -l | fzf --height 40% --layout=reverse --border) && cd "$dir"
+    return
+  fi
+
+  if zoxide query "$@" >/dev/null 2>&1; then
+    __zoxide_z "$@"
+  else
+    local dir
+    dir=$(zoxide query -l | fzf --height 40% --layout=reverse --border) && cd "$dir"
+  fi
 }
 
 # =========================
@@ -112,3 +141,20 @@ bun() {
 if command -v zcompile &>/dev/null && [[ ! -f ~/.zshrc.zwc || ~/.zshrc -nt ~/.zshrc.zwc ]]; then
   zcompile ~/.zshrc
 fi
+ 
+
+# Added by Antigravity
+export PATH="/Users/neomac/.antigravity/antigravity/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/Users/neomac/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
+# pnpm end
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/neomac/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions

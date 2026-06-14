@@ -1,5 +1,26 @@
-# ── AI Chat helpers ─────────────────────────────────────────────────────────
+# ─────────────────────────────────────────────────────────────
+# AI CONFIG
+# ─────────────────────────────────────────────────────────────
+
 AICHAT_SYSTEM_PROMPT_FILE="$HOME/.config/aichat/system_prompt.md"
+
+# ===== CLOUD MODELS =====
+AI_CLOUD_FAST="groq:qwen/qwen3-32b"
+AI_CLOUD_SMART="groq:llama-3.3-70b-versatile"
+AI_CLOUD_PLAN="gemini:gemini-2.5-flash"
+
+# ===== LOCAL MODELS =====
+AI_LOCAL_GENERAL="ollama:qwen3.5:9b"
+AI_LOCAL_CODE="ollama:qwen2.5-coder:7b"
+AI_LOCAL_LIGHT="ollama:gemma4:e4b"
+
+# ===== DEFAULTS =====
+AI_DEFAULT_TIMEOUT=120
+AI_MAX_RETRIES=1
+
+# ─────────────────────────────────────────────────────────────
+# PROMPTS
+# ─────────────────────────────────────────────────────────────
 
 AI_CODE_PROMPT="You are a senior expert coding assistant.
 Focus: clean architecture, performance, concurrency safety.
@@ -11,129 +32,214 @@ Return:
 Task:"
 
 AI_REFACTOR_PROMPT="Refactor for clean architecture and performance. Code:"
+
 AI_TEST_PROMPT="Write unit tests covering edge cases. Code:"
+
 AI_REVIEW_PROMPT="You are a senior software engineer doing strict code review.
 Find bugs, race conditions, performance issues, security risks, and bad practices.
 Give concise actionable feedback in bullet points. Code:"
 
-# ── internal helpers ─────────────────────────────────────────────────────────
+# ─────────────────────────────────────────────────────────────
+# TASK REGISTRY
+# ─────────────────────────────────────────────────────────────
+#
+# format:
+# TASK|PRIMARY|FALLBACK|PROMPT_VAR|USE_SYS
+#
 
-# Load system prompt once, warn if missing
+_AI_TASKS=$(cat <<EOF
+code|$AI_CLOUD_SMART|$AI_LOCAL_CODE|AI_CODE_PROMPT|0
+refactor|$AI_CLOUD_SMART|$AI_LOCAL_CODE|AI_REFACTOR_PROMPT|0
+test|$AI_CLOUD_FAST|$AI_LOCAL_CODE|AI_TEST_PROMPT|0
+review|$AI_CLOUD_FAST|$AI_LOCAL_CODE|AI_REVIEW_PROMPT|1
+plan|$AI_CLOUD_PLAN|$AI_LOCAL_GENERAL||1
+think|$AI_CLOUD_FAST|$AI_LOCAL_GENERAL||1
+offline|$AI_LOCAL_CODE|$AI_LOCAL_LIGHT|AI_CODE_PROMPT|0
+EOF
+)
+
+# ─────────────────────────────────────────────────────────────
+# INTERNAL HELPERS
+# ─────────────────────────────────────────────────────────────
+
 _ai_sys() {
-  if [[ -f "$AICHAT_SYSTEM_PROMPT_FILE" ]]; then
-    cat "$AICHAT_SYSTEM_PROMPT_FILE"
-  else
-    echo "# No system prompt file found" >&2
-    echo ""
-  fi
+  [[ -f "$AICHAT_SYSTEM_PROMPT_FILE" ]] \
+    && cat "$AICHAT_SYSTEM_PROMPT_FILE"
 }
 
-# Run aichat with fallback model; prints which model is active
-# Usage: _ai_run <primary_model> <fallback_model> [--sys] <prompt>
-_ai_run() {
-  local primary="$1" fallback="$2" use_sys=0
-  shift 2
-  [[ "$1" == "--sys" ]] && { use_sys=1; shift; }
-  local prompt="$*"
-
-  local sys=""
-  (( use_sys )) && sys="$(_ai_sys)"
-
-  echo "  [ai] using $primary" >&2
-  if (( use_sys )); then
-    AICHAT_SYSTEM_PROMPT="$sys" aichat -m "$primary" "$prompt" && return
-  else
-    aichat -m "$primary" "$prompt" && return
-  fi
-
-  echo "  [ai] fallback → $fallback" >&2
-  if (( use_sys )); then
-    AICHAT_SYSTEM_PROMPT="$sys" aichat -m "$fallback" "$prompt"
-  else
-    aichat -m "$fallback" "$prompt"
-  fi
-}
-
-# ── stdin pipe support helper ────────────────────────────────────────────────
-# Reads piped input and appends to args if stdin is not a tty
 _ai_input() {
-  local user_args="$*"
+  local args="$*"
+
   if [[ ! -t 0 ]]; then
     local piped
     piped="$(cat)"
-    echo "${user_args}"$'\n'"${piped}"
+    printf "%s\n%s" "$args" "$piped"
   else
-    echo "$user_args"
+    printf "%s" "$args"
   fi
 }
 
-# ── public functions ─────────────────────────────────────────────────────────
+_ai_lookup_task() {
+  local task="$1"
+  echo "$_AI_TASKS" | grep "^${task}|"
+}
 
-aicode() {
-  local input; input="$(_ai_input "$@")"
+_ai_extract_field() {
+  local line="$1"
+  local field="$2"
+
+  echo "$line" | cut -d'|' -f"$field"
+}
+
+# ─────────────────────────────────────────────────────────────
+# CORE RUNNER
+# ─────────────────────────────────────────────────────────────
+
+_ai_run() {
+  local primary="$1"
+  local fallback="$2"
+  local use_sys="$3"
+
+  shift 3
+
+  local prompt="$*"
+
+  local sys_prompt=""
+  (( use_sys )) && sys_prompt="$(_ai_sys)"
+
+  local cmd=(
+    aichat
+    -m "$primary"
+    "$prompt"
+  )
+
+  echo "  [ai] primary: $primary" >&2
+
+  if (( use_sys )); then
+    AICHAT_SYSTEM_PROMPT="$sys_prompt" "${cmd[@]}" \
+      && return 0
+  else
+    "${cmd[@]}" \
+      && return 0
+  fi
+
+  echo "  [ai] fallback: $fallback" >&2
+
+  cmd=(
+    aichat
+    -m "$fallback"
+    "$prompt"
+  )
+
+  if (( use_sys )); then
+    AICHAT_SYSTEM_PROMPT="$sys_prompt" "${cmd[@]}"
+  else
+    "${cmd[@]}"
+  fi
+}
+
+# ─────────────────────────────────────────────────────────────
+# TASK EXECUTOR
+# ─────────────────────────────────────────────────────────────
+
+_ai_task() {
+  local task="$1"
+  shift
+
+  local line
+  line="$(_ai_lookup_task "$task")"
+
+  [[ -z "$line" ]] && {
+    echo "Unknown AI task: $task" >&2
+    return 1
+  }
+
+  local primary fallback prompt_var use_sys
+
+  primary="$(_ai_extract_field "$line" 2)"
+  fallback="$(_ai_extract_field "$line" 3)"
+  prompt_var="$(_ai_extract_field "$line" 4)"
+  use_sys="$(_ai_extract_field "$line" 5)"
+
+  local input
+  input="$(_ai_input "$@")"
+
+  local prompt=""
+  [[ -n "$prompt_var" ]] && prompt="${(P)prompt_var}"$'\n'
+
   _ai_run \
-    groq:llama-3.3-70b-versatile \
-    ollama:phi3:mini \
-    "${AI_CODE_PROMPT}"$'\n'"${input}"
+    "$primary" \
+    "$fallback" \
+    "$use_sys" \
+    "${prompt}${input}"
 }
 
-airefactor() {
-  local input; input="$(_ai_input "$@")"
-  _ai_run \
-    groq:llama-3.3-70b-versatile \
-    ollama:deepseek-coder:6.7b \
-    "${AI_REFACTOR_PROMPT}"$'\n'"${input}"
+# ─────────────────────────────────────────────────────────────
+# PUBLIC COMMANDS
+# ─────────────────────────────────────────────────────────────
+
+aicode()      { _ai_task code "$@"; }
+airefactor()  { _ai_task refactor "$@"; }
+aitest()      { _ai_task test "$@"; }
+aireview()    { _ai_task review "$@"; }
+aiplan()      { _ai_task plan "$@"; }
+aithink()     { _ai_task think "$@"; }
+aioffline()   { _ai_task offline "$@"; }
+
+# ─────────────────────────────────────────────────────────────
+# FILE SHORTCUTS
+# ─────────────────────────────────────────────────────────────
+
+_ai_file_task() {
+  local task="$1"
+  local file="$2"
+
+  [[ ! -f "$file" ]] && {
+    echo "File not found: $file" >&2
+    return 1
+  }
+
+  _ai_task "$task" "$(cat "$file")"
 }
 
-aitest() {
-  local input; input="$(_ai_input "$@")"
-  _ai_run \
-    groq:llama-3.3-70b-versatile \
-    ollama:deepseek-coder:6.7b \
-    "${AI_TEST_PROMPT}"$'\n'"${input}"
+aicode_file()      { _ai_file_task code "$1"; }
+aireview_file()    { _ai_file_task review "$1"; }
+airefactor_file()  { _ai_file_task refactor "$1"; }
+aitest_file()      { _ai_file_task test "$1"; }
+
+# ─────────────────────────────────────────────────────────────
+# END
+# ─────────────────────────────────────────────────────────────
+
+# Dynamic file/folder view using eza - switches between list and grid based on item count
+# Input: $1 - directory path (optional, defaults to current directory)
+# Output: List view for <=10 items, grid view for >10 items
+_dynamic_view() {
+    local dir_path=${1:-.}
+    local item_count
+
+    if [[ ! -d "$dir_path" ]]; then
+        echo "Error: '$dir_path' is not a valid directory."
+        return 1
+    fi
+
+    item_count=$(eza -a "$dir_path" | head -n 11 | wc -l)
+
+    local -a base_flags=(
+        --icons
+        --color=auto
+        --sort=name
+        --group-directories-first
+        --color-scale=all
+        -aahlo
+    )
+
+    if (( item_count <= 10 )); then
+        eza "${base_flags[@]}" -m "$dir_path"
+    else
+        eza "${base_flags[@]}" -Gm "$dir_path"
+    fi
 }
-
-aireview() {
-  local input; input="$(_ai_input "$@")"
-  _ai_run \
-    groq:qwen/qwen3-32b \
-    ollama:deepseek-coder:6.7b \
-    --sys \
-    "${AI_REVIEW_PROMPT}"$'\n'"${input}"
-}
-
-aiplan() {
-  local input; input="$(_ai_input "$@")"
-  _ai_run \
-    gemini:gemini-2.5-flash \
-    ollama:phi3:mini \
-    --sys \
-    "$input"
-}
-
-aithink() {
-  local input; input="$(_ai_input "$@")"
-  _ai_run \
-    groq:qwen/qwen3-32b \
-    ollama:llama3 \
-    --sys \
-    "$input"
-}
-
-aioffline() {
-  local input; input="$(_ai_input "$@")"
-  aichat -m ollama:phi3:mini "${AI_CODE_PROMPT}"$'\n'"${input}"
-}
-
-# ── file shortcuts ────────────────────────────────────────────────────────────
-# Usage: aireview_file path/to/file.go
-aicode_file()    { aicode    "$(cat "$1")"; }
-aireview_file()  { aireview  "$(cat "$1")"; }
-airefactor_file(){ airefactor "$(cat "$1")"; }
-aitest_file()    { aitest    "$(cat "$1")"; }
-# ── End of AI Chat helpers ──────────────────────────────────────────────────────
-
-
 
 # Interactive alias search using fzf
 # Input: None (displays all aliases for selection)
@@ -193,6 +299,53 @@ _delfile() {
     rm -i "$1" && echo "File $1 deleted.";
 }
 
+# This functions enhance default 'cd' command
+cd() {
+  if [[ $# -gt 0 ]]; then
+    builtin cd "$@"
+    clear
+    _dynamic_view
+    return
+  fi
+
+  # Interactive mode
+  local dir
+  dir=$(fd -t d --max-depth 1 --strip-cwd-prefix 2>/dev/null \
+    | fzf \
+        --prompt="📁 Select directory > " \
+        --height 40% \
+        --layout=reverse \
+        --border \
+        --preview '
+          if [ "{}" = ".." ]; then
+            eza --icons -lah --color=always ..
+          else
+            eza --icons -lah --color=always {}
+          fi
+        '
+  ) || return
+
+  builtin cd "$dir"
+  clear
+  _dynamic_view
+}
+
+# This functions will list all of parent folder for easy navigation
+_dir_parent() {
+  local dir=$(dirname "$PWD")
+  local selected
+
+  selected=$(while true; do
+      echo "$dir"
+      [[ "$dir" == "/" ]] && break
+      dir=$(dirname "$dir")
+    done | fzf \
+        --prompt="⬆ jump to parent > " \
+        --preview 'eza --icons -lah --color=always {}') || return
+
+  cd "$selected"
+}
+
 # Run a MySQL Docker container with predefined settings
 # Input: $1 - MySQL version (e.g., '8.0', 'latest')
 # Output: Starts MySQL container named 'mysql-local' on port 3306
@@ -221,34 +374,19 @@ _docker_run_postgresql() {
     docker run --name postgresql-local -e POSTGRESQL_USERNAME=postgres -e POSTGRESQL_PASSWORD=test1234 -p 5432:5432 -v postgres_data:/bitnami/postgresql -d bitnami/postgresql:$1
 }
 
-# Dynamic file/folder view using eza - switches between list and grid based on item count
-# Input: $1 - directory path (optional, defaults to current directory)
-# Output: List view for <=10 items, grid view for >10 items
-_dynamic_view() {
-    local dir_path=${1:-.}  #-- use the provided directory path, or default to the current directory
-    local item_count
-
-    #-- check if the directory exists
-    if [[ ! -d "$dir_path" ]]; then
-        echo "Error: '$dir_path' is not a valid directory."
-        return 1
-    fi
-
-    #-- get the first 11 items and count them
-    item_count=$(find "$dir_path" -maxdepth 1 -mindepth 1 | head -n 11 | wc -l)
-
-    if (( item_count < 10 )); then
-        eza -aahlom --icons --color=auto --sort=Name --group-directories-first --color-scale=all "$dir_path" # List
-    else
-        eza -aahloGm --icons --color=auto --sort=Name --group-directories-first --color-scale=all "$dir_path" # Grid
-    fi
-}
-
 # Interactive git branch selector with preview using fzf
 # Input: None (shows all git branches)
 # Output: Displays branch list with git log preview for selection
 _fzf_git_branch() {
-    git branch --all | fzf --preview="git log --oneline --graph {}";
+  git for-each-ref --sort=-committerdate --format='%(refname:short)' refs/heads refs/remotes \
+  | fzf \
+    --preview '
+      git log --graph --oneline --decorate --color=always -n 30 {} \
+      | bat --color=always --style=plain --paging=never
+    ' \
+    --bind 'ctrl-d:preview:git log -p -n 5 {} | delta' \
+    --bind 'ctrl-s:preview:git show {} | delta' \
+    --preview-window=right:70%
 }
 
 # Generate new project scaffolding for various technologies
@@ -315,6 +453,37 @@ EOF
     esac
 }
 
+# An enhancement version of git checkout
+_git_checkout() {
+  if [[ $# -gt 0 ]]; then
+    git checkout "$@"
+    return
+  fi
+
+  local branch
+  branch=$(git branch --all \
+    | sed 's/^[* ] //' \
+    | fzf \
+        --prompt="🌿 Branch > " \
+        --preview 'git log --oneline --graph --decorate --color=always -n 20 {}'
+  ) || return
+
+  # Handle remote branches properly
+  if [[ "$branch" == remotes/* ]]; then
+    local clean_branch=${branch#remotes/origin/}
+    git checkout -t "origin/$clean_branch"
+  else
+    git checkout "$branch"
+  fi
+}
+
+# An enhancement version of git log
+_git_log() {
+  git log --oneline --graph --decorate --color=always \
+  | fzf --ansi \
+        --preview 'git show --color=always $(echo {} | awk "{print \$1}")'
+}
+
 # Initialize git repository and push to new remote repository
 # Input: $1 - GitHub repository URL
 # Output: Initializes git, commits all files, and pushes to remote repository
@@ -330,6 +499,16 @@ _git_push_new() {
   git remote add origin "$1" &&
   git pull origin main &&
   git push -u origin main || echo "Push failed. Possibly due to conflicts or no upstream branch.";
+}
+
+_home() {
+  clear
+  cd "$HOME" || return
+}
+
+_proj() {
+  clear
+  cd "$HOME/projects" || return
 }
 
 # Initialize a new Vite project with customizable template
@@ -375,6 +554,7 @@ _versions() {
     print_version "Bun" "bun -v"
     print_version "Git" "git --version"
     print_version "Go" "go version"
+    print_version "PNPM" "pnpm -v"			
     print_version "NVM" "nvm -v"
     print_version "NPM" "npm -v"
     print_version "Node.js" "node -v"
@@ -397,6 +577,7 @@ _versions() {
     echo
     echo "=== AI CLI ==="
     print_version "Claude" "claude --version"
+    print_version "Copilot" "copilot -v"
     print_version "Gemini" "gemini --v"
     print_version "Ollama" "ollama --version"
     print_version "AI Chat" "aichat --version"
@@ -455,8 +636,8 @@ claude_sums() {
 # Input: $* - task description to pass to Gemini
 # Output: Runs Gemini with shell context file reference and specified task
 gemini_sh() {
-  export TASK="$*"
-  CONTEXT="~/.zsh/.ai_context/shell_context.md"
+  local TASK="$*"
+  local CONTEXT="$HOME/.zsh/.ai_context/shell_context.md"
 
   gemini -p "Use file as reference: $CONTEXT, do: '$TASK'"
 }
